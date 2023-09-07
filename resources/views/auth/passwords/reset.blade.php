@@ -74,7 +74,7 @@
         <div class="row no-gutters pt-2">
             <div class="col-6">
 
-                <a anim="ripple" href="{{ route('register') }}" class="btn kpaw_btn kpaw_btn--light-primary kpaw_weight--bold">
+                <a anim="ripple" href="{{ route('login.form') }}" class="btn kpaw_btn kpaw_btn--light-primary kpaw_weight--bold">
                     Cancel
                 </a>
             </div>
