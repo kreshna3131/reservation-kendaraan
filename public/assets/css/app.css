@@ -1,0 +1,840 @@
+@import url('../css/base.css');
+@import url('../css/datatable.css');
+@import url('../css/datepicker.css');
+@import url('../css/pnotify.css');
+@import url('../css/select2.css');
+@import url('../css/tooltip.css');
+@import url('../css/widget.css');
+@import url('../css/summernote.css');
+
+/* ======================================
+ *
+ * RULES :
+ * Taruh custom css disini atau bikin file baru
+ * Import file baru berada di bawah base.css
+ * Jangan mengubah apapun di base.css kecuali diskusikan terlebih dahulu
+ * Terkhusus base.css jangan pakai prettier
+ *
+ * INFO :
+ * Base.css akan selalu kita bawa ke project terkait
+ * Berharap menjadi sebuah standar custom untuk theme modern porto
+ * Sementara informasi ditaruh di sini
+ * Saat deploy production, informasi akan dihapus
+ *
+ ====================================== */
+
+/* ======================================
+ * Nav tabs
+====================================== */
+.nav-tabs.kpaw_nav--tabs {
+    background-color: var(--white);
+    border-radius: 10px;
+    min-height: 54px;
+    border: none;
+    padding: 0 20px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    box-shadow: 0px 3px 24px 0px rgba(0, 99, 248, 0.08);
+    -webkit-box-shadow: 0px 3px 24px 0px rgba(0, 99, 248, 0.08);
+    -moz-box-shadow: 0px 3px 24px 0px rgba(0, 99, 248, 0.08);
+}
+
+.nav-tabs.kpaw_nav--tabs .nav-link {
+    position: relative;
+    padding: 16px 24px 16px;
+    margin-bottom: 0;
+    font-size: 15px;
+}
+
+.nav-tabs.kpaw_nav--tabs .nav-link:not(.active) {
+    font-family: "Montserrat Bold", sans-serif;
+    color: var(--dark) !important;
+}
+
+.nav-tabs.kpaw_nav--tabs .nav-link.active {
+    font-family: "Montserrat Bold", sans-serif;
+    color: var(--primary) !important;
+}
+
+.nav-tabs.kpaw_nav--tabs .nav-item.show .nav-link,
+.nav-tabs.kpaw_nav--tabs .nav-link.active,
+.nav-tabs.kpaw_nav--tabs .nav-link {
+    border: none !important;
+    background-color: transparent !important;
+    border-radius: 0;
+}
+
+.nav-tabs.kpaw_nav--tabs .nav-link span {
+    margin-left: 8px;
+}
+
+@media only screen and (max-width: 992px) {
+    .nav-tabs.kpaw_nav--tabs .nav-link span {
+        display: none;
+    }
+}
+
+.nav-tabs.kpaw_nav--tabs .nav-link::after {
+    content: '';
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    height: 4px;
+    border-radius: 4px;
+    background-color: transparent;
+}
+
+.nav-tabs.kpaw_nav--tabs .nav-link.active::after {
+    background-color: var(--primary);
+}
+
+.nav-tabs.kpaw_nav--tabs .nav-link.active svg .kpaw_custom {
+    fill: var(--primary);
+}
+
+/* ======================================
+ * Image Cropper Modal
+====================================== */
+.kpaw_modal--cropper .modal-content {
+    border-radius: 12px;
+    border: none;
+    overflow: hidden;
+}
+
+.kpaw_modal--cropper .modal-body {
+    padding: 20px;
+}
+
+.kpaw_modal--cropper .cropper-container {
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.kpaw_modal--cropper .modal-footer {
+    background-color: var(--light);
+    border-top: 1px solid #F0EEF2;
+}
+
+/* ======================================
+ * Other style
+====================================== */
+.kpaw_header--submit {
+    margin-right: 50px;
+}
+
+@media only screen and (max-width: 767px) {
+    .kpaw_header--submit {
+        display: none;
+    }
+}
+
+html .apexcharts-tooltip {
+    border-radius: 10px !important;
+    border: none !important;
+    box-shadow: 0px 12px 24px 0px rgba(0, 99, 248, 0.12);
+    -webkit-box-shadow: 0px 12px 24px 0px rgba(0, 99, 248, 0.12);
+    -moz-box-shadow: 0px 12px 24px 0px rgba(0, 99, 248, 0.12);
+}
+
+.kpaw_apex--tooltip {
+    min-width: 190px;
+    overflow: hidden;
+}
+
+.kpaw_apex--tooltip .kpaw_header {
+    padding: 10px 24px;
+    background-color: var(--light);
+}
+
+.kpaw_apex--tooltip .kpaw_body {
+    padding: 16px 24px;
+    background-color: var(--white);
+}
+
+.kpaw_apex--tooltip .kpaw_item {
+    margin-bottom: 6px;
+}
+
+.kpaw_apex--tooltip .kpaw_item:last-child {
+    margin-bottom: 0;
+}
+
+.kpaw_apex--tooltip .kpaw_dot {
+    display: inline-block;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    margin-right: 10px;
+    margin-bottom: -1px;
+    background-color: var(--success);
+}
+
+.kpaw_apex--tooltip .kpaw_item:nth-child(2) .kpaw_dot {
+    background-color: var(--warning);
+}
+
+.kpaw_apex--tooltip .kpaw_item:nth-child(3) .kpaw_dot {
+    background-color: var(--danger);
+}
+
+.kpaw_apex--tooltip .kpaw_dot.kpaw_dot--member { background-color: var(--primary); }
+.kpaw_apex--tooltip .kpaw_dot.kpaw_dot--transaction { background-color: var(--success); }
+
+.kpaw_chart--wrap {
+    margin-right: -20px;
+    margin-left: -20px;
+    margin-bottom: -20px;
+}
+
+hr.kpaw_solid {
+    height: 0;
+    border-bottom: 1px solid #F2F3F8;
+}
+
+.kpaw_datatable--auth-log .pagination {
+    justify-content: flex-end;
+}
+
+.kpaw_datatable--auth-log .dataTables_length,
+.kpaw_datatable--auth-log .dataTables_filter {
+    display: none;
+}
+
+html .kpaw_edit--error-https .modal-dialog {
+    box-shadow: none;
+    background-color: transparent;
+}
+
+html .kpaw_edit--error-https .modal-dialog .modal-content {
+    border: none;
+    border-radius: 20px;
+    box-shadow: none;
+    overflow: hidden;
+}
+
+html .kpaw_edit--error-https .modal-title {
+    font-family: "Montserrat Bold";
+    margin: 0;
+    font-size: 18px;
+}
+
+html .kpaw_edit--error-https .modal-header {
+    background-color: var(--light);
+    border: none;
+    padding: 20px 30px 18px;
+}
+
+html .kpaw_edit--error-https .modal-footer {
+    background-color: var(--light);
+    border: none;
+    padding: 16px 30px 14px;
+}
+
+html .kpaw_edit--error-https .modal-body {
+    padding: 30px;
+}
+
+html .kpaw_edit--error-https .btn {
+    font-size: 14px;
+    min-height: 48px;
+    padding-right: 24px;
+    padding-left: 24px;
+    border-radius: 10px;
+    letter-spacing: 0.5px;
+    color: var(--dark);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: none;
+}
+
+html .kpaw_edit--error-https .btn:hover,
+html .kpaw_edit--error-https .btn:focus,
+html .kpaw_edit--error-https .btn:active {
+    border: none !important;
+    box-shadow: none !important;
+    outline: none !important;
+}
+
+html .kpaw_edit--error-https .btn-primary {
+    background-color: var(--primary) !important;
+    color: #FFFFFF !important;
+    transition: all 0.3s ease;
+    box-shadow: 0px 8px 24px 0px rgba(0,99,248,0.2);
+    -webkit-box-shadow: 0px 8px 24px 0px rgba(0,99,248,0.2);
+    -moz-box-shadow: 0px 8px 24px 0px rgba(0,99,248,0.2);
+}
+
+html .kpaw_edit--error-https .form-control {
+    color: var(--paragraph);
+    min-height: 48px;
+    border-radius: 10px;
+    background-color: var(--light);
+    border-width: 3px;
+    border-style: solid;
+    border-color: var(--light);
+    box-shadow: none !important;
+    outline: none !important;
+    padding-right: 20px;
+    padding-left: 20px;
+}
+
+html .kpaw_edit--error-https .form-control:focus,
+html .kpaw_edit--error-https .form-control:active {
+    color: var(--paragraph);
+    background-color: var(--light);
+    border-color: rgba(var(--rgb-primary), 0.7);
+}
+
+html .kpaw_edit--error-https .form-group {
+    padding-top: 0;
+    border: none;
+}
+
+html #nprogress .bar {
+    background: var(--primary);
+    height: 3px;
+}
+
+html #nprogress .peg {
+    box-shadow: 0 0 10px var(--purple), 0 0 5px var(--primary);
+}
+
+/* Custom logo and header for Absensi only */
+.kpaw_custom--logo {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 265px;
+    height: 150px;
+    background: #28293d;
+    z-index: 1012;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px 20px 20px;
+}
+
+.kpaw_custom--logo img {
+    width: auto;
+    height: 100%;
+}
+
+html.modern .sidebar-left {
+    padding-top: 66px;
+}
+
+html.sidebar-left-collapsed .kpaw_custom--logo {
+    width: 73px;
+    height: 73px;
+    padding: 10px;
+}
+
+html.sidebar-left-collapsed .kpaw_custom--logo img {
+    width: 100%;
+    height: auto;
+}
+
+html.sidebar-left-collapsed .sidebar-left {
+    padding-top: 10px;
+}
+
+html .toggle-sidebar-left,
+html [data-toggle-class="sidebar-left-collapsed"] {
+    cursor: pointer;
+}
+
+@media only screen and (min-width: 768px) {
+    html.sidebar-left-collapsed .sidebar-left .nano {
+        transition: all 0.3s ease;
+        border-radius: 0 16px 0 0;
+    }
+
+    .kpaw_custom--logo .toggle-sidebar-left {
+        display: none;
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    .kpaw_custom--logo {
+        width: 100%;
+        height: 58px;
+        padding: 6px;
+        justify-content: space-between;
+        padding-right: 15px;
+        padding-left: 15px;
+    }
+
+    .kpaw_user--box {
+        margin-right: 15px;
+    }
+}
+
+/* Custom label for Absensi only */
+.kpaw_label {
+    font-family: "Montserrat Semi Bold", sans-serif;
+}
+
+.kpaw_table tr td .kpaw_label {
+    display: block;
+}
+
+/* Custom anim ripple background for Absensi only */
+.sidebar-left [anim="ripple"]:before {
+    background: var(--ripple-background, #0F102A);
+}
+
+/* Square button in table */
+.kpaw_btn--column {
+    padding-top: 7px !important;
+    padding-bottom: 7px !important;
+}
+
+.kpaw_btn.kpaw_btn--table-square {
+    width: 42px;
+    height: 42px;
+    min-height: unset;
+    padding: 0;
+    margin-top: -6px;
+    margin-bottom: -6px;
+}
+
+/* Modal schedule */
+.kpaw_modal--schedule .modal-content {
+    border: none;
+    border-radius: 20px;
+}
+
+.kpaw_modal--schedule .modal-body {
+    padding: 30px 40px 40px;
+}
+
+.kpaw_schedule--title {
+    font-size: 22px;
+    color: var(--heading);
+    font-family: "Montserrat Bold", sans-serif;
+    margin: 15px 0 10px;
+}
+
+@media (min-width: 576px) {
+    .kpaw_modal--schedule .modal-dialog {
+        max-width: 800px;
+    }
+}
+
+/* Schedule checkbox */
+.kpaw_schedule--checkbox {
+    padding-left: 0;
+    margin: 2px !important;
+}
+
+.kpaw_schedule--checkbox .custom-control-label {
+    width: 80px;
+    height: 80px;
+    border-radius: 10px;
+}
+
+.kpaw_schedule--checkbox .custom-control-label::before,
+.kpaw_schedule--checkbox .custom-control-label::after {
+    top: 0 !important;
+    left: 0 !important;
+    transition: all 0.3s ease;
+}
+
+.kpaw_schedule--checkbox .custom-control-label::after {
+    background-image: url('../svg/icons/Schedule-Unchecked.svg');background-size: initial;
+    background-position: top 4px left 4px;
+    background-size: initial;
+    width: 80px;
+    height: 80px;
+    border-radius: 10px;
+}
+
+.kpaw_schedule--checkbox .custom-control-label::before {
+    background-color: rgba(var(--rgb-danger), 0.1);
+    width: 80px;
+    height: 80px;
+    border-radius: 10px;
+}
+
+.kpaw_schedule--checkbox .custom-control-input:checked~.custom-control-label::after {
+    background-image: url('../svg/icons/Schedule-Checked.svg');
+    background-position: top 4px left 4px;
+    background-size: initial;
+    background-color: rgba(var(--rgb-success), 0.1);
+    width: 80px;
+    height: 80px;
+    border-radius: 10px;
+}
+
+.kpaw_schedule--checkbox .custom-control-input:checked~.custom-control-label::before {
+    background-color: rgba(var(--rgb-success), 0.1);
+}
+
+.kpaw_schedule--dayname {
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--danger);
+    font-family: "Montserrat Semi Bold", sans-serif;
+}
+
+.kpaw_schedule--dayname span {
+    margin-bottom: -6px;
+}
+
+.kpaw_schedule--checkbox .custom-control-input:checked~.custom-control-label .kpaw_schedule--dayname {
+    color: var(--success);
+}
+
+.kpaw_modal--schedule .schedule {
+    flex-wrap: wrap;
+    margin-top: 28px;
+    margin-bottom: 38px;
+}
+
+/* Spinner */
+.kpaw_modal--schedule .kpaw_modal_loading .spinner-border {
+    border: 3px solid var(--primary);
+    border-right-color: transparent;
+}
+
+.kpaw_modal--schedule .kpaw_modal_loading {
+    margin-top: 20px;
+}
+
+.kpaw_modal--schedule .kpaw_modal_loading .spinner-border {
+    margin-bottom: 10px;
+}
+
+/* Card footer */
+.card-footer {
+    background-color: var(--light);
+    border-top: 1px solid #F0EEF2;
+    margin-top: 0;
+}
+
+.card-footer.report {
+    padding-top: 4px;
+    padding-bottom: 4px;
+}
+
+.card-footer .kpaw_btn {
+    margin: 8px;
+}
+
+@media only screen and (max-width: 1200px) {
+    .card-footer.report {
+        justify-content: center !important;
+        flex-wrap: wrap;
+    }
+}
+
+/*=============================================
+=                  Breadcrumbs                =
+=============================================*/
+.page-header h2 {
+    font-size: 1.2rem;
+}
+
+.page-header.page-header-left-inline-breadcrumb h2 {
+    color: var(--heading);
+}
+
+/*=============================================
+=                   HR DOT                   =
+=============================================*/
+.kpaw_hr_dot {
+    border-bottom: 3px dotted #D6E6FA;
+}
+
+.kpaw_square_img {
+    width: 100%;
+    border-radius: 20px;
+}
+
+.kpaw_total_widget {
+    border: 1px solid #EAEAEA;
+    border-radius: 15px;
+    padding: 10px 20px;
+}
+
+.kpaw_total_widget img {
+    opacity: 0.3;
+}
+
+.kpaw_total_widget--success {
+    border: 2px solid rgba(var(--rgb-success), 0.1);
+}
+
+.kpaw_total_widget--danger {
+    border: 2px solid rgba(var(--rgb-danger), 0.1);
+}
+
+.kpaw_total_widget--warning {
+    border: 2px solid rgba(var(--rgb-warning), 0.1);
+}
+
+.kpaw_nav_widget {
+    margin-bottom: -25px;
+}
+
+.kpaw_nav_widget .nav-item {
+    width: 100%;
+}
+
+@media (min-width: 420px) {
+    .kpaw_nav_widget .nav-item {
+        width: 140px;
+    }
+}
+
+.kpaw_nav_widget li .nav-link {
+    text-align: center;
+    font-family: "Montserrat Semi Bold";
+    color: var(--heading);
+    background: none;
+    border: none;
+    padding: 1rem;
+}
+
+.kpaw_nav_widget .nav-item.show .nav-link,
+.kpaw_nav_widget .nav-link.active,
+.kpaw_nav_widget li.active .nav-link,
+.kpaw_nav_widget li .nav-link:hover,
+.kpaw_nav_widget li.active .nav-link:hover,
+.kpaw_nav_widget li.active .nav-link:focus {
+    text-align: center;
+    font-family: "Montserrat Semi Bold";
+    color: var(--primary);
+    background: none;
+    border: none;
+    position: relative;
+}
+
+.kpaw_nav_widget li.active .nav-link::after {
+    content: "";
+    width: 100%;
+    height: 5px;
+    background: var(--primary);
+    position: absolute;
+    left: 0;
+    bottom: 1px;
+    border-radius: 10px;
+}
+
+.kpaw_transparent_tab_content {
+    padding: 0;
+    background: transparent;
+    box-shadow: none;
+    border: none;
+}
+
+.kpaw_progress--success {
+    height: 10px;
+    border-radius: 10px;
+    box-shadow: none;
+    background: rgba(var(--rgb-success), 0.1);
+    box-shadow: 0px 8px 24px 0px rgba(var(--rgb-success), 0.1);
+    -webkit-box-shadow: 0px 8px 24px 0px rgba(var(--rgb-success), 0.1);
+    -moz-box-shadow: 0px 8px 24px 0px rgba(var(--rgb-success), 0.1);
+}
+
+.kpaw_progress--success .progress-bar {
+    background: var(--success);
+}
+
+.kpaw_progress--danger {
+    height: 10px;
+    border-radius: 10px;
+    box-shadow: none;
+    background: rgba(var(--rgb-danger), 0.1);
+    box-shadow: 0px 8px 24px 0px rgba(var(--rgb-danger), 0.1);
+    -webkit-box-shadow: 0px 8px 24px 0px rgba(var(--rgb-danger), 0.1);
+    -moz-box-shadow: 0px 8px 24px 0px rgba(var(--rgb-danger), 0.1);
+}
+
+.kpaw_progress--danger .progress-bar {
+    background: var(--danger);
+}
+
+.kpaw_progress--warning {
+    height: 10px;
+    border-radius: 10px;
+    box-shadow: none;
+    background: rgba(var(--rgb-warning), 0.1);
+    box-shadow: 0px 8px 24px 0px rgba(var(--rgb-warning), 0.1);
+    -webkit-box-shadow: 0px 8px 24px 0px rgba(var(--rgb-warning), 0.1);
+    -moz-box-shadow: 0px 8px 24px 0px rgba(var(--rgb-warning), 0.1);
+}
+
+.kpaw_progress--warning .progress-bar {
+    background: var(--warning);
+}
+
+.kpaw_circle {
+    border-radius: 50%;
+    width: 10px;
+    height: 10px;
+    left: -18px;
+    top: 4px;
+    position: absolute;
+    background: #000;
+}
+
+.kpaw_circle.kpaw_circle-success {
+    background: var(--success);
+}
+
+.card-footer::after {
+    content: none;
+}
+
+.kpaw_profile_photo, #cropper-photo {
+    display: block;
+    max-width: 100%;
+}
+
+.kpaw_profile_photo {
+    border-radius: 50%;
+}
+
+.kpaw_member_card_header {
+    display: flex;
+    background-color: #faf9fb;
+    padding: 20px;
+}
+
+.kpaw_member_photo {
+    border-radius: 50%;
+    margin-right: 20px;
+    height: 80px;
+    width: 80px;
+}
+
+.kpaw_member_detail {
+    padding-left: 15px;
+}
+
+/* Progress bar datatable attendance */
+.bar-attendance {
+    border-radius: 10px;
+    background-color: rgba(0, 0, 0, 0.10);
+}
+
+.bar-attendance .bar-percent {
+    height: 10px;
+    border-radius: 10px;
+}
+
+.bar-attendance .bar-percent.bar-success {
+    background-color: var(--success);
+}
+
+.bar-attendance .bar-percent.bar-danger {
+    background-color: var(--danger);
+}
+
+.bar-attendance .bar-percent.bar-warning {
+    background-color: var(--warning);
+}
+
+.kpaw_attendance-link {
+    padding: 4px 10px;
+    color: white;
+    border-radius: 8px;
+}
+
+.kpaw_attendance-link.attendance-success {
+    background-color: var(--success);
+}
+
+.kpaw_attendance-link.attendance-warning {
+    background-color: var(--warning);
+}
+
+.kpaw_attendance-link.attendance-danger {
+    background-color: var(--danger);
+}
+
+.nav-item.attendance .nav-link.active,
+.nav-item.attendance .nav-link {
+    color: var(--dark) !important;
+}
+
+.attendance-header p {
+    font-size: 22px;
+    color: #000000;
+}
+
+.attendance-date p {
+    font-size: 22px;
+    color: #000000;
+    margin-bottom: 10px;
+}
+
+
+.kpaw_attendance_detail {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.kpaw_hour_calculation {
+    display: flex;
+    align-items: center;
+    min-height: 100px;
+    margin-bottom: 15px;
+}
+
+.kpaw_attendance_detail .percent {
+    position: relative;
+    scale: 1.5;
+}
+
+.kpaw_attendance_detail .percent svg {
+    position: relative;
+    width: 70px;
+    height: 70px;
+    transform: rotate(-90deg);
+}
+
+.kpaw_attendance_detail .percent svg circle {
+    width: 100%;
+    height: 100%;
+    fill: none;
+    stroke-width: 3;
+    stroke-linecap: round;
+}
+
+.kpaw_attendance_detail .percent svg circle:last-of-type {
+    stroke-dasharray: 185px;
+    stroke-dashoffset: calc(185px - (185px * var(--percent)) / 100);
+}
+
+.kpaw_attendance_detail .percent .circle-number {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.kpaw_clock_detail {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    margin-bottom: 15px;
+}
+
+.kpaw_circle_foto {
+    height: 42px;
+    width: 42px;
+    border-radius: 100%;
+    background-color: var(--primary);
+    background-size: cover;
+}

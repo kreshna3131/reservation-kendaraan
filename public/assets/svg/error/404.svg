@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="403" height="144" viewBox="0 0 403 144">
+  <defs>
+    <linearGradient id="linear-gradient" x1="0.5" x2="0.5" y2="2.443" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#70f"/>
+      <stop offset="1" stop-color="#3b1567"/>
+    </linearGradient>
+  </defs>
+  <path id="_404-number" data-name="404-number" d="M-69.829-56.278H-92.606V-82.334h-30.57v26.055h-37.563L-99.6-140.013h-33.966L-199.5-51.7v21.68h75.325V-.787h31.569V-30.024h22.777ZM-.3,1.6c34.566,0,59.941-26.055,59.941-72s-25.375-72-59.941-72c-34.366,0-59.941,26.055-59.941,72S-34.664,1.6-.3,1.6Zm0-27.249c-15.984,0-27.173-13.127-27.173-44.751S-16.282-115.151-.3-115.151c16.184,0,27.373,13.127,27.373,44.751S15.886-25.649-.3-25.649Zm203.8-30.63H180.723V-82.334h-30.57v26.055H112.59l61.139-83.735H139.763L73.829-51.7v21.68h75.325V-.787h31.569V-30.024H203.5Z" transform="translate(199.5 142.4)" fill="url(#linear-gradient)"/>
+</svg>

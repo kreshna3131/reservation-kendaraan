@@ -1,0 +1,26 @@
+.kpaw_input_photo {
+    background-color: var(--primary);
+    width: 8rem;
+    height: 8rem;
+    border-radius: 7px;
+    background-size: cover;
+}
+
+.kpaw_wrapper {
+    position: absolute;
+    top: 45px;
+    left: 170px;
+}
+
+.button-upload,
+.button-delete {
+    cursor: pointer;
+}
+
+.button-upload:hover .action-svg {
+    fill: white;
+}
+
+.button-delete:hover .action-svg {
+    fill: white;
+}

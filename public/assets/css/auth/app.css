@@ -1,0 +1,41 @@
+html .strength {
+    height: 10px;
+    width: 100%;
+    background: #fff;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    border-radius: 4px;
+    overflow: hidden;
+    transition: height 0.3s;
+}
+
+html .strength span {
+    width: 0px;
+    height: 10px;
+    display: block;
+    transition: width 0.3s;
+    text-align: center;
+    color: white;
+}
+
+html #kpaw_sidebar_auth {
+    background-image: url('../../svg/etc/Auth-Bg-Bottom.svg'), url('../../svg/etc/Auth-Bg-Top.svg');
+    background-position: bottom, top;
+    background-size: 100%, 100%;
+    background-repeat: no-repeat;
+}
+
+.kpaw_contact_admin_btn {
+    position: absolute;
+    top: 30px;
+    left: 15px;
+}
+
+@media (min-width: 992px) {
+    .kpaw_contact_admin_btn {
+        position: absolute;
+        top: 30px;
+        right: 30px;
+        left: auto;
+    }
+}

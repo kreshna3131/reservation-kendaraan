@@ -1,0 +1,173 @@
+::-webkit-scrollbar {
+    width: 8px;
+    border: 2px solid transparent;
+}
+
+::-webkit-scrollbar-track {
+    border-radius: 0;
+    background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+    border-radius: 10;
+    background: rgba(0096FF, 0.2);
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--primary);
+    border: 2px solid var(--primary);
+}
+
+html,
+body {
+    overflow-y: hidden !important;
+}
+
+body {
+    background-color: #FFFFFF;
+}
+
+.kpaw_auth--wrap {
+    position: relative;
+    display: block;
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.kpaw_auth--aside {
+    width: 400px;
+    min-width: 400px;
+    max-width: 400px;
+    min-height: 100vh;
+    height: 100%;
+    background-color: #FFFFFF;
+    box-shadow: 0px 0px 90px 0px rgba(79, 66, 180, 0.1);
+    -webkit-box-shadow: 0px 0px 90px 0px rgba(79, 66, 180, 0.1);
+    -moz-box-shadow: 0px 0px 90px 0px rgba(79, 66, 180, 0.1);
+}
+
+.kpaw_auth--contents {
+    width: calc(100% - 400px);
+    min-width: calc(100% - 400px);
+    max-width: calc(100% - 400px);
+    padding: 40px;
+    background-color: transparent;
+    height: 100vh;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    justify-self: center;
+}
+
+.kpaw_auth--bg-top {
+    background-image: url('../svg/etc/Auth-Bg-Top.svg');
+    background-size: 100%;
+    background-position: top;
+    background-repeat: no-repeat;
+    min-height: 100vh;
+}
+
+.kpaw_auth--bg-bottom {
+    background-image: url('../svg/etc/Auth-Bg-Bottom.svg');
+    background-size: 100%;
+    background-position: bottom;
+    background-repeat: no-repeat;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.kpaw_auth--aside-contents {
+    padding: 40px;
+}
+
+.kpaw_auth--aside-contents img {
+    max-width: 160px;
+}
+
+.kpaw_contact--administrator {
+    text-align: right;
+}
+
+.kpaw_auth--form-wrap {
+    position: relative;
+    display: block;
+    width: 100%;
+    max-width: 415px;
+    margin: auto;
+    padding: 20px 0 0;
+}
+
+.kpaw_auth--form-wrap .form-group {
+    border-top: none;
+}
+
+.kpaw_auth--form-wrap label {
+    font-family: "Montserrat Bold", sans-serif;
+}
+
+.kpaw_auth--form-wrap .kpaw_form--control {
+    height: 64px;
+    font-size: 16px !important;
+    letter-spacing: .5px;
+}
+
+.kpaw_auth--form-wrap .kpaw_alert {
+    margin: 25px 0 32px;
+}
+
+.kpaw_show_password {
+    position: absolute;
+    top: 299px;
+    right: 25px;
+}
+
+.kpaw_show_password:hover {
+    cursor: pointer;
+}
+
+@media only screen and (min-width: 992px) {
+    .kpaw_mobile--contents,
+    .kpaw_contact--mobile-administrator {
+        display: none;
+    }
+}
+
+@media only screen and (max-width: 992px) {
+    .kpaw_auth--aside {
+        display: none;
+    }
+
+    .kpaw_auth--contents {
+        width: 100%;
+        min-width: 100%;
+        max-width: 100%;
+        padding: 40px 20px;
+    }
+
+    .kpaw_contact--administrator {
+        display: none;
+    }
+
+    .kpaw_auth--form-wrap {
+        padding-top: 0;
+        margin-top: 0;
+    }
+
+    .kpaw_mobile--contents {
+        margin-bottom: 40px;
+    }
+
+    .kpaw_mobile--contents img {
+        width: 100px;
+    }
+
+    .kpaw_contact--mobile-administrator {
+        text-align: center;
+        margin-top: 40px;
+    }
+}

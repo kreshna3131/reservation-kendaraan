@@ -1,0 +1,1459 @@
+/* ======================================
+ * Import Font
+====================================== */
+@font-face {
+    font-family: "Montserrat Thin";
+    src: url("../fonts/Montserrat/Montserrat-Thin.otf");
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "Montserrat Thin Italic";
+    src: url("../fonts/Montserrat/Montserrat-ThinItalic.otf");
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "Montserrat Extra Light";
+    src: url("../fonts/Montserrat/Montserrat-ExtraLight.otf");
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "Montserrat Extra Light Italic";
+    src: url("../fonts/Montserrat/Montserrat-ExtraLightItalic.otf");
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "Montserrat Light";
+    src: url("../fonts/Montserrat/Montserrat-Light.o/*tf");
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "Montserrat Light Italic";
+    src: url("../fonts/Montserrat/Montserrat-LightItalic.otf");
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "Montserrat Regular";
+    src: url("../fonts/Montserrat/Montserrat-Regular.otf");
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "Montserrat Italic";
+    src: url("../fonts/Montserrat/Montserrat-Italic.otf");
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "Montserrat Medium";
+    src: url("../fonts/Montserrat/Montserrat-Medium.otf");
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "Montserrat Medium Italic";
+    src: url("../fonts/Montserrat/Montserrat-MediumItalic.otf");
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "Montserrat Semi Bold";
+    src: url("../fonts/Montserrat/Montserrat-SemiBold.otf");
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "Montserrat Semi Bold Italic";
+    src: url("../fonts/Montserrat/Montserrat-SemiBoldItalic.otf");
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "Montserrat Bold";
+    src: url("../fonts/Montserrat/Montserrat-Bold.otf");
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "Montserrat Bold Italic";
+    src: url("../fonts/Montserrat/Montserrat-BoldItalic.otf");
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "Montserrat Extra Bold";
+    src: url("../fonts/Montserrat/Montserrat-ExtraBold.otf");
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "Montserrat Extra Bold Italic";
+    src: url("../fonts/Montserrat/Montserrat-ExtraBoldItalic.otf");
+    font-weight: normal;
+    font-style: normal;
+}
+
+/* ======================================
+ * CSS Variables
+====================================== */
+:root {
+    --primary             : #5800FF;
+    --secondary           : #663259;
+    --danger              : #F1416C;
+    --success             : #05C270;
+    --warning             : #FFB300;
+    --info                : #00CFDD;
+    --teal                : #00CFDD;
+    --purple              : #5800FF;
+    --dark                : #28293D;
+    --light               : #FAF9FB;
+    --white               : #FFFFFF;
+    --heading             : #3C3F58;
+    --paragraph           : #707793;
+    --rgb-primary         : 114, 57, 234;
+    --rgb-secondary       : 102, 50, 89;
+    --rgb-danger          : 241, 65, 108;
+    --rgb-success         : 5, 194, 112;
+    --rgb-warning         : 255, 179, 0;
+    --rgb-info            : 0, 207, 221;
+    --rgb-teal            : 0, 207, 221;
+    --rgb-purple          : 0096FF;
+    --rgb-dark            : 40, 41, 61;
+    --rgb-light           : 245, 248, 250;
+    --rgb-heading         : 40, 41, 61;
+    --rgb-paragraph       : 112, 119, 147;
+    --box-shadow-h-offset : 0px;
+    --box-shadow-v-offset : 3px;
+    --box-shadow-blur     : 24px;
+    --box-shadow-opacity  : 0.08;
+}
+
+/* ======================================
+ * Global CSS
+====================================== */
+::-webkit-scrollbar {
+    width: 8px;
+    border: 2px solid transparent;
+}
+
+::-webkit-scrollbar-track {
+    border-radius: 10px;
+    background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    background: rgba(114, 57, 234, 0.2);
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--primary);
+    border: 2px solid var(--primary);
+}
+
+[anim="ripple"] {
+    position: relative;
+    overflow: hidden;
+}
+
+[anim="ripple"]:before {
+    content: "";
+    position: absolute;
+    display: block;
+    background: var(--ripple-background, #FFFFFF);
+    border-radius: 50%;
+    pointer-events: none;
+    top: calc(var(--y) * 1px);
+    left: calc(var(--x) * 1px);
+    width: calc(var(--d) * 1px);
+    height: calc(var(--d) * 1px);
+    opacity: calc(var(--o, 1) * var(--ripple-opacity, 0.3));
+    transition: calc(var(--t, 0) * var(--ripple-duration, 600ms))
+        var(--ripple-easing, linear);
+    transform: translate(-50%, -50%) scale(var(--s, 1));
+    transform-origin: center;
+}
+
+[anim="ripple"].kpaw_ripple-dark:before {
+    background: var(--ripple-background, var(--dark));
+    opacity: calc(var(--o, 1) * var(--ripple-opacity, 0.05));
+}
+
+body {
+    font-family: "Montserrat Medium", sans-serif !important;
+    font-size: 14px;
+    letter-spacing: 0.3px;
+    line-height: 24px;
+    color: var(--paragraph);
+    background-color: var(--bg-primary);
+    -webkit-font-smoothing: antialiased;
+    -moz-font-smoothing: antialiased;
+    -o-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+p { color: var(--paragraph); }
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    color: var(--heading);
+    letter-spacing: 0px;
+    line-height: 1.2;
+    font-family: "Montserrat Semi Bold", sans-serif;
+}
+
+h1 { font-size: 46px; }
+h2 { font-size: 40px; }
+h3 { font-size: 34px; }
+h4 { font-size: 28px; }
+h5 { font-size: 22px; }
+h6 { font-size: 16px; }
+
+@media only screen and (max-width: 767px) {
+    h1 { font-size: 32px; }
+    h2 { font-size: 24px; }
+    h3 { font-size: 20px; }
+    h4 { font-size: 18px; }
+    h5 { font-size: 16px; }
+}
+
+a,
+a:hover,
+a:focus,
+a:active {
+    color: var(--primary);
+    text-decoration: none !important;
+    outline: none !important;
+    box-shadow: none;
+}
+
+strong, b { font-family: "Montserrat Bold", sans-serif; }
+
+.kpaw_weight--thin             { font-family: "Montserrat Thin", sans-serif !important; }
+.kpaw_weight--extra-light      { font-family: "Montserrat Extra Light", sans-serif !important; }
+.kpaw_weight--light            { font-family: "Montserrat Light", sans-serif !important; }
+.kpaw_weight--ragular          { font-family: "Montserrat Regular", sans-serif !important; }
+.kpaw_weight--italic           { font-family: "Montserrat Italic", sans-serif !important; }
+.kpaw_weight--medium           { font-family: "Montserrat Medium", sans-serif !important; }
+.kpaw_weight--medium-italic    { font-family: "Montserrat Medium Italic", sans-serif !important; }
+.kpaw_weight--semi-bold        { font-family: "Montserrat Semi Bold", sans-serif !important; }
+.kpaw_weight--semi-bold-italic { font-family: "Montserrat Semi Bold Italic", sans-serif !important; }
+.kpaw_weight--bold             { font-family: "Montserrat Bold", sans-serif !important; }
+.kpaw_weight--extra-bold       { font-family: "Montserrat Extra Bold", sans-serif !important; }
+
+.kpaw_text--primary   { color: var(--primary) !important; }
+.kpaw_text--secondary { color: var(--secondary) !important; }
+.kpaw_text--danger    { color: var(--danger) !important; }
+.kpaw_text--success   { color: var(--success) !important; }
+.kpaw_text--warning   { color: var(--warning) !important; }
+.kpaw_text--info      { color: var(--info) !important; }
+.kpaw_text--teal      { color: var(--teal) !important; }
+.kpaw_text--purple    { color: var(--purple) !important; }
+.kpaw_text--dark      { color: var(--dark) !important; }
+.kpaw_text--light     { color: var(--light) !important; }
+.kpaw_text--white     { color: var(--white) !important; }
+
+/* ======================================
+ * Button
+====================================== */
+.btn,
+.btn:hover,
+.btn:focus,
+.btn:active {
+    border: none;
+    box-shadow: none;
+    outline: none;
+}
+
+.kpaw_btn {
+    font-size: 14px;
+    min-height: 48px;
+    padding-right: 24px;
+    padding-left: 24px;
+    border-radius: 10px;
+    letter-spacing: 0.5px;
+    color: var(--dark);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.kpaw_btn--primary {
+    background-color: var(--primary);
+    color: #FFFFFF !important;
+    transition: all 0.3s ease;
+    box-shadow: 0px 8px 24px 0px rgba(114,57,234,0.2);
+    -webkit-box-shadow: 0px 8px 24px 0px rgba(114,57,234,0.2);
+    -moz-box-shadow: 0px 8px 24px 0px rgba(114,57,234,0.2);
+}
+
+.kpaw_btn--secondary {
+    background-color: var(--secondary);
+    color: #FFFFFF !important;
+    transition: all 0.3s ease;
+    box-shadow: 0px 8px 24px 0px rgba(102,50,89,0.2);
+    -webkit-box-shadow: 0px 8px 24px 0px rgba(102,50,89,0.2);
+    -moz-box-shadow: 0px 8px 24px 0px rgba(102,50,89,0.2);
+}
+
+.kpaw_btn--danger {
+    background-color: var(--danger);
+    color: #FFFFFF !important;
+    transition: all 0.3s ease;
+    box-shadow: 0px 8px 24px 0px rgba(241,65,108,0.2);
+    -webkit-box-shadow: 0px 8px 24px 0px rgba(241,65,108,0.2);
+    -moz-box-shadow: 0px 8px 24px 0px rgba(241,65,108,0.2);
+}
+
+.kpaw_btn--success {
+    background-color: var(--success);
+    color: #FFFFFF !important;
+    transition: all 0.3s ease;
+    box-shadow: 0px 8px 24px 0px rgba(5,194,112,0.2);
+    -webkit-box-shadow: 0px 8px 24px 0px rgba(5,194,112,0.2);
+    -moz-box-shadow: 0px 8px 24px 0px rgba(5,194,112,0.2);
+}
+
+.kpaw_btn--warning {
+    background-color: var(--warning);
+    color: #FFFFFF !important;
+    transition: all 0.3s ease;
+    box-shadow: 0px 8px 24px 0px rgba(255,179,0,0.2);
+    -webkit-box-shadow: 0px 8px 24px 0px rgba(255,179,0,0.2);
+    -moz-box-shadow: 0px 8px 24px 0px rgba(255,179,0,0.2);
+}
+
+.kpaw_btn--info {
+    background-color: var(--info);
+    color: #FFFFFF !important;
+    transition: all 0.3s ease;
+    box-shadow: 0px 8px 24px 0px rgba(25,163,236,0.2);
+    -webkit-box-shadow: 0px 8px 24px 0px rgba(25,163,236,0.2);
+    -moz-box-shadow: 0px 8px 24px 0px rgba(25,163,236,0.2);
+}
+
+.kpaw_btn--teal {
+    background-color: var(--teal);
+    color: #FFFFFF !important;
+    transition: all 0.3s ease;
+    box-shadow: 0px 8px 24px 0px rgba(0,207,221,0.2);
+    -webkit-box-shadow: 0px 8px 24px 0px rgba(0,207,221,0.2);
+    -moz-box-shadow: 0px 8px 24px 0px rgba(0,207,221,0.2);
+}
+
+.kpaw_btn--purple {
+    background-color: var(--purple);
+    color: #FFFFFF !important;
+    transition: all 0.3s ease;
+    box-shadow: 0px 8px 24px 0px rgba(0096FF,0.2);
+    -webkit-box-shadow: 0px 8px 24px 0px rgba(0096FF,0.2);
+    -moz-box-shadow: 0px 8px 24px 0px rgba(0096FF,0.2);
+}
+
+.kpaw_btn--white {
+    background-color: var(--white);
+    color: var(--paragraph) !important;
+    transition: all 0.3s ease;
+    box-shadow: none;
+}
+
+.kpaw_btn--light-primary {
+    color: var(--primary);
+    background-color: rgba(var(--rgb-primary), 0.1);
+}
+
+.kpaw_btn--light-secondary {
+    color: var(--secondary);
+    background-color: rgba(var(--rgb-secondary), 0.1);
+}
+
+.kpaw_btn--light-danger {
+    color: var(--danger);
+    background-color: rgba(var(--rgb-danger), 0.1);
+}
+
+.kpaw_btn--light-success {
+    color: var(--success);
+    background-color: rgba(var(--rgb-success), 0.1);
+}
+
+.kpaw_btn--light-warning {
+    color: var(--warning);
+    background-color: rgba(var(--rgb-warning), 0.1);
+}
+
+.kpaw_btn--light-info {
+    color: var(--info);
+    background-color: rgba(var(--rgb-info), 0.1);
+}
+
+.kpaw_btn--light-teal {
+    color: var(--teal);
+    background-color: rgba(var(--rgb-teal), 0.1);
+}
+
+.kpaw_btn--light-purple {
+    color: var(--purple);
+    background-color: rgba(var(--rgb-purple), 0.1);
+}
+
+.kpaw_btn--light-primary:hover,
+.kpaw_btn--light-primary:focus,
+.kpaw_btn--light-primary:active {
+    background-color: var(--primary);
+    color: #FFFFFF !important;
+    transition: all 0.3s ease;
+    box-shadow: 0px 8px 24px 0px rgba(114,57,234,0.2);
+    -webkit-box-shadow: 0px 8px 24px 0px rgba(114,57,234,0.2);
+    -moz-box-shadow: 0px 8px 24px 0px rgba(114,57,234,0.2);
+}
+
+.kpaw_btn--light-secondary:hover,
+.kpaw_btn--light-secondary:focus,
+.kpaw_btn--light-secondary:active {
+    background-color: var(--secondary);
+    color: #3C3F58 !important;
+    transition: all 0.3s ease;
+    box-shadow: 0px 8px 24px 0px rgba(102,50,89,0.2);
+    -webkit-box-shadow: 0px 8px 24px 0px rgba(102,50,89,0.2);
+    -moz-box-shadow: 0px 8px 24px 0px rgba(102,50,89,0.2);
+}
+
+.kpaw_btn--light-danger:hover,
+.kpaw_btn--light-danger:focus,
+.kpaw_btn--light-danger:active {
+    background-color: var(--danger);
+    color: #FFFFFF !important;
+    transition: all 0.3s ease;
+    box-shadow: 0px 8px 24px 0px rgba(241,65,108,0.2);
+    -webkit-box-shadow: 0px 8px 24px 0px rgba(241,65,108,0.2);
+    -moz-box-shadow: 0px 8px 24px 0px rgba(241,65,108,0.2);
+}
+
+.kpaw_btn--light-success:hover,
+.kpaw_btn--light-success:focus,
+.kpaw_btn--light-success:active {
+    background-color: var(--success);
+    color: #FFFFFF !important;
+    transition: all 0.3s ease;
+    box-shadow: 0px 8px 24px 0px rgba(5,194,112,0.2);
+    -webkit-box-shadow: 0px 8px 24px 0px rgba(5,194,112,0.2);
+    -moz-box-shadow: 0px 8px 24px 0px rgba(5,194,112,0.2);
+}
+
+.kpaw_btn--light-warning:hover,
+.kpaw_btn--light-warning:focus,
+.kpaw_btn--light-warning:active {
+    background-color: var(--warning);
+    color: #FFFFFF !important;
+    transition: all 0.3s ease;
+    box-shadow: 0px 8px 24px 0px rgba(255,179,0,0.2);
+    -webkit-box-shadow: 0px 8px 24px 0px rgba(255,179,0,0.2);
+    -moz-box-shadow: 0px 8px 24px 0px rgba(255,179,0,0.2);
+}
+
+.kpaw_btn--light-info:hover,
+.kpaw_btn--light-info:focus,
+.kpaw_btn--light-info:active {
+    background-color: var(--info);
+    color: #FFFFFF !important;
+    transition: all 0.3s ease;
+    box-shadow: 0px 8px 24px 0px rgba(25,163,236,0.2);
+    -webkit-box-shadow: 0px 8px 24px 0px rgba(25,163,236,0.2);
+    -moz-box-shadow: 0px 8px 24px 0px rgba(25,163,236,0.2);
+}
+
+.kpaw_btn--light-teal:hover,
+.kpaw_btn--light-teal:focus,
+.kpaw_btn--light-teal:active {
+    background-color: var(--teal);
+    color: #FFFFFF !important;
+    transition: all 0.3s ease;
+    box-shadow: 0px 8px 24px 0px rgba(0,207,221,0.2);
+    -webkit-box-shadow: 0px 8px 24px 0px rgba(0,207,221,0.2);
+    -moz-box-shadow: 0px 8px 24px 0px rgba(0,207,221,0.2);
+}
+
+.kpaw_btn--light-purple:hover,
+.kpaw_btn--light-purple:focus,
+.kpaw_btn--light-purple:active {
+    background-color: var(--purple);
+    color: #FFFFFF !important;
+    transition: all 0.3s ease;
+    box-shadow: 0px 8px 24px 0px rgba(0096FF,0.2);
+    -webkit-box-shadow: 0px 8px 24px 0px rgba(0096FF,0.2);
+    -moz-box-shadow: 0px 8px 24px 0px rgba(0096FF,0.2);
+}
+
+.kpaw_btn--square {
+    width: 48px;
+    min-width: 48px;
+    padding-right: 0;
+    padding-left: 0;
+}
+
+.kpaw_btn svg .kpaw_custom {
+    transition: all 0.3s ease;
+}
+
+.kpaw_btn:hover svg .kpaw_custom,
+.kpaw_btn:focus svg .kpaw_custom,
+.kpaw_btn:active svg .kpaw_custom {
+    fill: #FFFFFF;
+}
+
+.kpaw_btn .spinner-border {
+    width: 24px;
+    height: 24px;
+    border: 2px solid #FFFFFF;
+    border-right-color: transparent;
+}
+
+/* ======================================
+ * Form
+====================================== */
+.kpaw_form--control::-webkit-input-placeholder { color: var(--form-placeholder); }
+.kpaw_form--control:-ms-input-placeholder { color: var(--form-placeholder); }
+.kpaw_form--control::placeholder { color: var(--form-placeholder); }
+
+.kpaw_form--control {
+    color: var(--paragraph);
+    letter-spacing: 0.3px;
+    height: 48px;
+    border-radius: 10px;
+    background-color: var(--light);
+    border-width: 3px;
+    border-style: solid;
+    border-color: var(--light);
+    box-shadow: none !important;
+    outline: none !important;
+    padding-right: 20px;
+    padding-left: 20px;
+}
+
+.kpaw_form--control:focus,
+.kpaw_form--control:active {
+    color: var(--paragraph);
+    background-color: var(--light);
+    border-color: rgba(var(--rgb-primary), 0.7);
+}
+
+.kpaw_form--control[readonly],
+.kpaw_form--control[disabled] {
+    background-color: var(--light);
+    border-color: var(--light);
+    color: rgba(var(--rgb-paragraph), .5);
+}
+
+/* Input group prepend and append */
+.input-group-prepend {
+    min-width: 48px;
+    min-height: 48px;
+    height: 100%;
+    background-color: #F0EEF2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px 0 0 10px;
+    z-index: 3;
+    margin-right: 0;
+}
+
+.input-group-append {
+    min-width: 48px;
+    min-height: 48px;
+    height: 100%;
+    background-color: #F2F3F8;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 0 10px 10px 0;
+    z-index: 3;
+    margin-left: 0;
+}
+
+/* Custom checkbox */
+.kpaw_custom--checkbox {
+    padding-left: 38px;
+}
+
+.kpaw_custom--checkbox .custom-control-label::before {
+    width: 22px;
+    height: 22px;
+    border-radius: 6px;
+    background-color: #EDEBF7;
+    border: none;
+    left: -38px;
+    top: 1px;
+    transition: none;
+}
+
+.kpaw_custom--checkbox .custom-control-input:checked~.custom-control-label::before {
+    background-color: var(--primary);
+}
+
+.kpaw_custom--checkbox .custom-control-input:checked~.custom-control-label::before,
+.kpaw_custom--checkbox .custom-control-input:checked~.custom-control-label::after {
+    box-shadow: none;
+    outline: none;
+}
+
+.kpaw_custom--checkbox .custom-control-input:not(:disabled):active~.custom-control-label::before {
+    background-color: initial;
+    border-color: initial;
+}
+
+.kpaw_custom--checkbox .custom-control-input:focus~.custom-control-label::before {
+    box-shadow: none;
+    border-color: initial;
+}
+
+.kpaw_custom--checkbox .custom-control-input:checked~.custom-control-label::after {
+    width: 22px;
+    height: 22px;
+    border-radius: 6px;
+    background-image: url('../svg/icons/Checked.svg');
+    background-position: center;
+    background-size: 70%;
+    background-repeat: no-repeat;
+    left: -38px;
+    top: 1px;
+}
+
+/* Custom radio */
+.kpaw_custom--radio {
+    padding-left: 38px;
+}
+
+.kpaw_custom--radio .custom-control-label::before {
+    width: 22px;
+    height: 22px;
+    border-radius: 22px;
+    border: 6px solid #EDEBF7;
+    background-color: transparent;
+    left: -38px;
+    top: 1px;
+    transition: none;
+}
+
+.kpaw_custom--radio .custom-control-input:checked~.custom-control-label::before {
+    background-color: transparent !important;
+    border: 6px solid var(--primary);
+}
+
+.kpaw_custom--radio .custom-control-input:checked~.custom-control-label::after {
+    background-image: none;
+}
+
+.kpaw_custom--radio .custom-control-input:not(:disabled):active~.custom-control-label::before {
+    background-color: initial;
+    border: 6px solid #EDEBF7;
+}
+
+.kpaw_custom--radio .custom-control-input:focus~.custom-control-label::before {
+    box-shadow: none;
+}
+
+/* Invalid feedback */
+.kpaw_form--control.is-invalid,
+.was-validated .kpaw_form--control:invalid {
+    background-image: none;
+    padding-right: 20px;
+    border-color: rgba(var(--rgb-danger), 0.7 ) !important;
+}
+
+.invalid-feedback {
+    font-size: 12px;
+    line-height: 20px;
+    margin-top: 8px;
+    margin-bottom: -6px;
+}
+
+/* Form search */
+.kpaw_form--inner-icon {
+    position: relative;
+}
+
+.kpaw_form--inner-icon::after {
+    content: url('../svg/icons/Icon-Search.svg');
+    position: absolute;
+    top: calc(50% - 12px);
+    left: 14px;
+    width: 24px;
+    height: 24px;
+    z-index: 9;
+}
+
+.kpaw_form--inner-icon .kpaw_form--control {
+    padding-left: 48px;
+}
+
+/* Daterange input group */
+.kpaw_input--daterange .kpaw_form--control {
+    border-radius: 0;
+}
+
+.kpaw_input--daterange .kpaw_form--control:last-child {
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+
+.kpaw_input--daterange .input-group-prepend {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-width: 48px;
+    min-height: 48px;
+    background-color: #F2F3F8;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+}
+
+/* Password strength */
+.kpaw_password--strength {
+    display: block;
+    position: relative;
+    width: 100%;
+    height: 6px;
+    border-radius: 8px;
+    margin: 0;
+    background-color: #EDEBF7;
+    transition: width 0.3s;
+}
+
+.kpaw_password--strength span {
+    display: block;
+    width: 0;
+    height: 6px;
+    border-radius: 6px;
+    transition: width 0.3s;
+}
+
+/* Other style */
+.kpaw_form--note {
+    font-size: 14px;
+    margin-top: 10px;
+    opacity: .5;
+}
+
+.kpaw_form--container .form-group {
+    padding-top: 0;
+    margin-bottom: 24px;
+    border: none;
+}
+
+textarea.kpaw_disables--resizing {
+    resize: none !important;
+}
+
+@media only screen and (max-width: 992px) {
+    .kpaw_form--container .form-group {
+        margin-bottom: 8px;
+    }
+}
+
+/* ======================================
+ * Alert
+====================================== */
+.kpaw_alert {
+    position: relative;
+    width: 100%;
+    height: initial;
+    background-color: #F6F5FB;
+    padding: 20px 24px;
+    border-radius: 10px;
+}
+
+.kpaw_alert--primary {
+    background-color: rgba(var(--rgb-primary), 0.1);
+    color: var(--primary);
+}
+
+.kpaw_alert--success {
+    background-color: rgba(var(--rgb-success), 0.1);
+    color: var(--success);
+}
+
+.kpaw_alert--warning {
+    background-color: rgba(var(--rgb-warning), 0.1);
+    color: var(--warning);
+}
+
+.kpaw_alert--danger {
+    background-color: rgba(var(--rgb-danger), 0.1);
+    color: var(--danger);
+}
+
+/* ======================================
+ * Label
+====================================== */
+.kpaw_label {
+    padding: 8px 16px;
+    border-radius: 6px;
+    background-color: var(--light);
+    text-align: center;
+}
+
+.kpaw_label.kpaw_label--primary {
+    background-color: rgba(var(--rgb-primary), 0.15);
+    color: var(--primary);
+}
+
+.kpaw_label.kpaw_label--secondary {
+    background-color: rgba(var(--rgb-secondary), 0.15);
+    color: var(--secondary);
+}
+
+.kpaw_label.kpaw_label--danger {
+    background-color: rgba(var(--rgb-danger), 0.15);
+    color: var(--danger);
+}
+
+.kpaw_label.kpaw_label--warning {
+    background-color: rgba(var(--rgb-warning), 0.15);
+    color: var(--warning);
+}
+
+.kpaw_label.kpaw_label--success {
+    background-color: rgba(var(--rgb-success), 0.15);
+    color: var(--success);
+}
+
+/* ======================================
+ * Modal Confirm
+====================================== */
+html .modal-backdrop {
+    background: #242630;
+    opacity: .3 !important;
+}
+
+.kpaw_modal--zoom-anim {
+    position: fixed !important;
+    top: 0;
+    right: 0;
+    left: 0;
+    padding: 0 10px;
+}
+
+.kpaw_modal--confirm {
+    max-width: 500px;
+}
+
+.kpaw_modal--confirm .card-body {
+    border-radius: 20px;
+    padding: 35px 40px 45px;
+}
+
+.kpaw_modal .modal-dialog .modal-content {
+    border-radius: 20px;
+    border: none;
+}
+
+.kpaw_modal .modal-dialog .modal-content .modal-body {
+    padding: 40px;
+}
+
+
+html .mfp-bg {
+    background: #242630;
+    opacity: .3 !important;
+}
+
+/* ======================================
+ * Userbox (dropdown with accordion inside)
+====================================== */
+.kpaw_user--box {
+    margin-right: 30px;
+}
+
+.kpaw_user--box a.kpaw_avatar {
+    font-family: "Montserrat Semi Bold";
+    font-size: 16px;
+    color: var(--white);
+    text-transform: uppercase;
+    display: block;
+    width: 48px;
+    min-width: 48px;
+    height: 48px;
+    border-radius: 48px;
+    background-color: var(--primary);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.kpaw_user--box .dropdown-menu {
+    max-height: calc(100vh - 120px);
+    overflow-y: auto;
+    min-width: 280px;
+    border: none;
+    border-radius: 16px;
+    padding: 24px;
+    margin-top: 15px;
+    box-shadow: 0px 12px 24px 0px rgba(102,50,89,0.24);
+    -webkit-box-shadow: 0px 12px 24px 0px rgba(102,50,89,0.24);
+    -moz-box-shadow: 0px 12px 24px 0px rgba(102,50,89,0.24);
+}
+
+.kpaw_user--box span,
+.kpaw_user--box p {
+    color: var(--paragraph);
+}
+
+.kpaw_user--box .kpaw_info--user {
+    font-size: 17px;
+}
+
+.kpaw_user--box .kpaw_role {
+    color: var(--paragraph);
+    font-size: 13px;
+    opacity: .7;
+    margin-top: -2px;
+}
+
+.kpaw_user--box ul {
+    padding: 0;
+    margin: 0;
+}
+
+.kpaw_user--box ul > li {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.kpaw_user--box ul > li > a {
+    font-size: 13px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 4px 8px 4px 0;
+    height: initial !important;
+}
+
+.kpaw_user--box ul > li > a:hover span,
+.kpaw_user--box ul > li > a:focus span,
+.kpaw_user--box ul > li > a:active span {
+    color: var(--primary);
+}
+
+.kpaw_user--box ul > li > a svg {
+    width: 24px;
+    min-width: 24px;
+    max-width: 24px;
+    margin-right: 14px;
+}
+
+.kpaw_user--box ul > li > a:hover svg .kpaw_custom,
+.kpaw_user--box ul > li > a:focus svg .kpaw_custom,
+.kpaw_user--box ul > li > a:active svg .kpaw_custom {
+    fill: var(--primary);
+}
+
+.kpaw_user--box .kpaw_collapse {
+    padding-left: 38px;
+}
+
+.kpaw_user--box .kpaw_collapse p {
+    font-size: 13px;
+}
+
+.kpaw_user--box .kpaw_collapse a {
+    display: block;
+    font-size: 13px;
+    color: var(--paragraph);
+    margin-bottom: 4px;
+    opacity: .7;
+}
+
+.kpaw_user--box .kpaw_collapse a:hover,
+.kpaw_user--box .kpaw_collapse a:focus,
+.kpaw_user--box .kpaw_collapse a:active {
+    color: var(--primary);
+}
+
+.kpaw_user--box .kpaw_parent li > a {
+    position: relative;
+}
+
+.kpaw_user--box .kpaw_parent li > a::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 24px;
+    height: 100%;
+    background-image: url('../svg/icons/Userbox-Arrow.svg');
+    background-size: initial;
+    background-position: center;
+    background-repeat: no-repeat;
+    transition: all 0.3s ease;
+}
+
+.kpaw_user--box .kpaw_parent li > a[aria-expanded="true"]::after {
+    transform: rotate(90deg);
+}
+
+@media only screen and (max-width: 767px) {
+    .kpaw_user--box .dropdown-menu {
+        margin-top: 10px;
+    }
+
+    .kpaw_user--box .dropdown-menu {
+        max-height: 300px;
+    }
+}
+
+/* ======================================
+ * Custom Header PORTO
+====================================== */
+html.modern .header.header-nav-menu .logo {
+    position: relative;
+    padding: 0;
+    margin: 0;
+    height: 70px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+html.modern .header {
+    border-top: none;
+    border-bottom: none;
+    box-shadow: 0px 3px 24px 0px rgba(102,50,89,0.08);
+    -webkit-box-shadow: 0px 3px 24px 0px rgba(102,50,89,0.08);
+    -moz-box-shadow: 0px 3px 24px 0px rgba(102,50,89,0.08);
+}
+
+html.modern .userbox .profile-picture.profile-picture-as-text {
+    width: 46px;
+    height: 46px;
+    background-color: var(--primary);
+    font-weight: normal;
+    text-transform: uppercase;
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    line-height: 25px;
+}
+
+html.modern.fixed .page-header.page-header-left-inline-breadcrumb {
+    background-color: transparent !important;
+    padding: 12px 0 0 15px;
+    margin-bottom: 0;
+    left: 0;
+}
+
+html.modern.fixed .page-header.page-header-left-inline-breadcrumb.border {
+    border: none !important;
+}
+
+html .page-header.page-header-left-inline-breadcrumb h2 {
+    font-family: "Montserrat Bold";
+    font-size: 22px;
+    padding-left: 0;
+}
+
+html .page-header.page-header-left-inline-breadcrumb .breadcrumbs a,
+html .page-header.page-header-left-inline-breadcrumb .breadcrumbs span {
+    font-size: 14px;
+    text-transform: initial;
+    color: #707793;
+}
+
+html .page-header.page-header-left-inline-breadcrumb .breadcrumbs li:last-child a,
+html .page-header.page-header-left-inline-breadcrumb .breadcrumbs li:last-child span {
+    opacity: .5;
+}
+
+html .page-header.page-header-left-inline-breadcrumb .breadcrumbs li:after {
+    content: '';
+    background-image: url('../svg/icons/Arrow-Breadcrumbs.svg');
+    background-size: initial;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 14px;
+    width: 14px;
+}
+
+html.modern .userbox.show .dropdown-menu {
+    min-width: 220px !important;
+    border-radius: 10px;
+    padding: 24px;
+    margin-top: 67px;
+    box-shadow: 0px 12px 24px 0px rgba(0, 99, 248, 0.12);
+    -webkit-box-shadow: 0px 12px 24px 0px rgba(0, 99, 248, 0.12);
+    -moz-box-shadow: 0px 12px 24px 0px rgba(0, 99, 248, 0.12);
+}
+
+html .logo-container {
+    height: 70px;
+    width: 265px;
+    float: left;
+    background-color: var(--dark);
+}
+
+html.sidebar-left-collapsed .logo-container {
+    width: 73px;
+}
+
+html .header .logo {
+    float: none;
+}
+
+html.modern .header.header-nav-menu .header-nav {
+    margin-left: 0 !important;
+}
+
+html.modern .header-right {
+    right: 0 !important;
+    height: 70px;
+}
+
+@media only screen and (min-width: 767px) {
+    html.fixed .page-header {
+        position: relative;
+        top: -10px !important;
+        left: 0;
+        padding-left: 0 !important;
+    }
+}
+
+@media only screen and (max-width: 992px) {
+    html .page-header .breadcrumbs {
+        display: none;
+    }
+}
+
+@media only screen and (max-width: 767px) {
+    html.modern .header {
+        border-top: 3px solid var(--dark);
+    }
+
+    html .header .logo-container {
+        width: 100%;
+        border: none;
+    }
+
+    html.modern .header.header-nav-menu .logo {
+        height: 100%;
+        background-color: var(--dark);
+    }
+
+    html .header .header-right {
+        height: 60px;
+        margin-top: 57px;
+    }
+
+    html .userbox:after {
+        display: none;
+    }
+
+    html.modern.fixed .page-header.page-header-left-inline-breadcrumb {
+        padding-top: 0;
+    }
+}
+
+@media (max-width: 991px) and (min-width: 768px) {
+    html.fixed .page-header.page-header-left-inline-breadcrumb + .ecommerce-form,
+    html.fixed .page-header.page-header-left-inline-breadcrumb + .row {
+        margin-top: 0 !important;
+    }
+}
+
+/* ======================================
+ * Custom Sidebar PORTO
+====================================== */
+html .sidebar-left,
+html.modern .header.header-nav-menu .logo:after,
+html.no-overflowscrolling .sidebar-left .nano {
+    background: var(--dark);
+}
+
+html.no-overflowscrolling .sidebar-left .nano {
+    box-shadow: none;
+}
+
+html.modern .sidebar-left .sidebar-header .sidebar-toggle {
+    background-color: var(--dark);
+    width: 73px;
+    height: 73px;
+}
+
+html.modern ul.nav-main > li.nav-active > a {
+    background-color: var(--primary) !important;
+}
+
+html.modern ul.nav-main {
+    margin-top: 24px;
+}
+
+ul.nav-main {
+    margin-right: 0;
+}
+
+ul.nav-main > li > a {
+    padding: 16px 25px;
+}
+
+ul.nav-main li a {
+    color: #FFFFFF;
+    letter-spacing: .5px;
+    transition: all 0.3s ease;
+}
+
+ul.nav-main > li > a:hover,
+ul.nav-main > li > a:focus {
+    background-color: #212236;
+}
+
+html.modern ul.nav-main li.nav-expanded > a,
+ul.nav-main li .nav-children {
+    background: #212236;
+}
+
+ul.nav-main li .nav-children {
+    padding: 10px 0 25px;
+}
+
+ul.nav-main li .nav-children li a:hover,
+ul.nav-main li .nav-children li a:focus {
+    background: transparent;
+}
+
+ul.nav-main li .nav-children li a {
+    padding-left: 100px;
+}
+
+ul.nav-main li .nav-children {
+    box-shadow: none;
+}
+
+html .sidebar-left {
+    width: 265px;
+}
+
+html.no-overflowscrolling .nano > .nano-pane > .nano-slider {
+    background-color: transparent;
+}
+
+html.modern ul.nav-main > li.nav-active > a > svg .kpaw_custom {
+    fill: #FFFFFF;
+}
+
+html.modern ul.nav-main > li > a > svg {
+    width: 24px;
+    min-width: 24px;
+    max-width: 24px;
+    margin-right: 20px;
+}
+
+html.modern ul.nav-main li .nav-children li a {
+    position: relative;
+}
+
+html.modern ul.nav-main li .nav-children li a::before {
+    content: '';
+    position: absolute;
+    top: calc(50% - 5px);
+    left: 70px;
+    width: 10px;
+    height: 10px;
+    border-radius: 10px;
+    background-color: #28293D;
+    transition: all 0.3s ease;
+}
+
+ul.nav-main li .nav-children li a:hover::before,
+ul.nav-main li .nav-children li a:focus::before,
+ul.nav-main li .nav-children li.nav-active a::before {
+    background-color: var(--primary) !important;
+}
+
+html.modern ul.nav-main li.nav-parent > a:after {
+    content: '';
+    background-image: url('../svg/icons/Arrow-Sidebar.svg');
+    background-size: initial;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 100%;
+    padding: 8px 20px;
+    opacity: .7;
+}
+
+html.modern ul.nav-main li.nav-parent.nav-expanded > a:after {
+    opacity: 1;
+}
+
+@media only screen and (min-width: 767px) {
+    html.modern .header.header-nav-menu .logo:after {
+        width: 265px;
+    }
+}
+
+/* ======================================
+ * Custom Content Body PORTO
+====================================== */
+html.modern html,
+html.modern body {
+    background-color: var(--light);
+}
+
+html .content-body {
+    padding: 30px;
+}
+
+html .card.card-big-info .card-body > .row > div[class*="col-"]:first-child {
+    background-color: var(--light);
+}
+
+@media only screen and (min-width: 767px) {
+    html.fixed .inner-wrapper {
+        padding-top: 90px;
+    }
+
+    html.fixed .content-body {
+        padding-top: 0;
+        margin-top: 0 !important;
+        margin-left: 265px;
+    }
+}
+
+@media only screen and (max-width: 767px) {
+    html.modern.fixed .content-body {
+        padding: 15px !important;
+        margin-top: 0;
+    }
+}
+
+/* ======================================
+ * Card PORTO
+====================================== */
+html .card.card-modern {
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0px 3px 24px 0px rgba(102,50,89,0.08);
+    -webkit-box-shadow: 0px 3px 24px 0px rgba(102,50,89,0.08);
+    -moz-box-shadow: 0px 3px 24px 0px rgba(102,50,89,0.08);
+}
+
+@media only screen and (min-width: 992px) {
+    html .kpaw_card--advanced {
+        padding: 40px !important;
+    }
+}
+
+@media only screen and (max-width: 992px) {
+    html .kpaw_card--advanced {
+        padding: 20px !important;
+    }
+}
+
+/* ======================================
+ * Custom Pagination PORTO
+====================================== */
+html.modern .pagination > li.page-item a {
+    color: var(--paragraph);
+    background-color: #FAF9FB;
+    width: 48px;
+    height: 48px;
+    border-radius: 10px;
+    border: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 2px 0 !important;
+}
+
+html.modern .pagination > li.page-item.active a {
+    color: #FFFFFF;
+    background-color: var(--primary);
+    box-shadow: 0px 8px 24px 0px rgba(114,57,234,0.2);
+    -webkit-box-shadow: 0px 8px 24px 0px rgba(114,57,234,0.2);
+    -moz-box-shadow: 0px 8px 24px 0px rgba(114,57,234,0.2);
+}
+
+/* ======================================
+ * Custom Scroll to Top PORTO
+====================================== */
+html.modern .scroll-to-top {
+    background-image: url('../svg/icons/Scroll-Top.svg');
+    background-size: initial;
+    background-position: center;
+    background-repeat: no-repeat;
+    right: 10px;
+    bottom: 10px;
+    background-color: #FFFFFF;
+    box-shadow: 0px 8px 24px 0px rgba(114,57,234,0.2) !important;
+    -webkit-box-shadow: 0px 8px 24px 0px rgba(114,57,234,0.2);
+    -moz-box-shadow: 0px 8px 24px 0px rgba(114,57,234,0.2);
+}
+
+html.modern .scroll-to-top.visible {
+    opacity: 1;
+}
+
+/* ======================================
+ * Component Tambahan
+====================================== */
+.circle-success {
+    fill: rgba(var(--rgb-success), 0.12) !important;
+}
+
+.stroke-success {
+    stroke: var(--success) !important;
+}
+
+.circle-danger {
+    fill: rgba(var(--rgb-danger), 0.12) !important;
+}
+
+.stroke-danger {
+    stroke: var(--danger) !important;
+}
+
+.circle-warning {
+    fill: rgba(var(--rgb-warning), 0.12) !important;
+}
+
+.stroke-warning {
+    stroke: var(--warning) !important;
+}
+
+.circle-primary {
+    fill: rgba(var(--rgb-primary), 0.12) !important;
+}
+
+.stroke-primary {
+    stroke: var(--primary) !important;
+}
+
+.circle-number {
+    font-size: 22px;
+}

@@ -1,0 +1,25 @@
+
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="465" height="157" viewBox="0 0 465 157">
+  <defs>
+    <clipPath id="clip-path">
+      <rect id="Rectangle_5158" data-name="Rectangle 5158" width="465" height="157" transform="translate(0)" fill="#fff"/>
+    </clipPath>
+    <linearGradient id="linear-gradient" x1="0.583" x2="1.063" y2="0.881" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#70f"/>
+      <stop offset="1" stop-color="#486dff"/>
+    </linearGradient>
+    <linearGradient id="linear-gradient-8" x1="0.628" y1="0.674" x2="-0.027" y2="-0.073" xlink:href="#linear-gradient"/>
+    <linearGradient id="linear-gradient-9" x1="0.711" y1="0.252" x2="-0.073" y2="0.035" xlink:href="#linear-gradient"/>
+  </defs>
+  <g id="other-pattern-top" clip-path="url(#clip-path)">
+    <rect id="Rectangle_5151" data-name="Rectangle 5151" width="666.776" height="666.776" rx="2" transform="translate(435.047 91.103) rotate(-135)" opacity="0.06" fill="url(#linear-gradient)"/>
+    <rect id="Rectangle_5152" data-name="Rectangle 5152" width="740.017" height="740.017" rx="2" transform="translate(321.04 151.183) rotate(-135)" opacity="0.02" fill="url(#linear-gradient)"/>
+    <path id="Path_1709" data-name="Path 1709" d="M2.269,0H664.508a2.269,2.269,0,0,1,2.269,2.269V664.507a2.269,2.269,0,0,1-2.269,2.269H2.269A2.269,2.269,0,0,1,0,664.507V2.269A2.269,2.269,0,0,1,2.269,0Z" transform="translate(320.473 108.469) rotate(-135)" opacity="0.6" fill="url(#linear-gradient)"/>
+    <path id="Path_1710" data-name="Path 1710" d="M2.269,0H664.508a2.269,2.269,0,0,1,2.269,2.269V664.507a2.269,2.269,0,0,1-2.269,2.269H2.269A2.269,2.269,0,0,1,0,664.507V2.269A2.269,2.269,0,0,1,2.269,0Z" transform="translate(320.473 51.749) rotate(-135)" opacity="0.6" fill="url(#linear-gradient)"/>
+    <rect id="Rectangle_5153" data-name="Rectangle 5153" width="489.81" height="489.81" rx="2" transform="translate(128.192 116.06) rotate(-135)" opacity="0.02" fill="url(#linear-gradient)"/>
+    <rect id="Rectangle_5154" data-name="Rectangle 5154" width="489.81" height="489.81" rx="2" transform="translate(207.817 91.103) rotate(-135)" opacity="0.06" fill="url(#linear-gradient)"/>
+    <rect id="Rectangle_5155" data-name="Rectangle 5155" width="489.81" height="489.81" rx="2" transform="translate(513.888 116.06) rotate(-135)" opacity="0.02" fill="url(#linear-gradient)"/>
+    <rect id="Rectangle_5156" data-name="Rectangle 5156" width="666.776" height="666.776" rx="2" transform="translate(206.683 37.395) rotate(-135)" opacity="0.05" fill="url(#linear-gradient-8)"/>
+    <rect id="Rectangle_5157" data-name="Rectangle 5157" width="666.776" height="666.776" rx="2" transform="translate(434.697 37.395) rotate(-135)" opacity="0.05" fill="url(#linear-gradient-9)"/>
+  </g>
+</svg>

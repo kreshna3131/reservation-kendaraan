@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 22 22">
+  <g id="Group_10101" data-name="Group 10101" transform="translate(9048 8972)">
+    <rect id="Rectangle_6802" data-name="Rectangle 6802" width="22" height="22" rx="6" transform="translate(-9048 -8972)" fill="#05c270"/>
+    <g id="Layer_2" data-name="Layer 2" transform="translate(-9048 -8972)">
+      <g id="checkmark">
+        <rect id="Rectangle_6803" data-name="Rectangle 6803" width="22" height="22" fill="#fff" opacity="0"/>
+        <path id="Path_2033" data-name="Path 2033" d="M9.372,17A.917.917,0,0,1,8.7,16.7L4.247,11.964a.918.918,0,1,1,1.338-1.256l3.777,4.024L17.072,6.3a.917.917,0,1,1,1.357,1.228L10.05,16.694a.917.917,0,0,1-.669.3Z" transform="translate(-0.333 -0.496)" fill="#fff"/>
+      </g>
+    </g>
+  </g>
+</svg>

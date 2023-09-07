@@ -1,0 +1,33 @@
+/* .content-body {
+    overflow: hidden !important;
+} */
+
+.inner-wrapper {
+    background-image: url('../images/etc/Coming-Sooon-Bg.png');
+    background-size: cover;
+    background-position: top left;
+}
+
+.kpaw_coming_soon--wrap {
+    height: calc(100vh - 70px);
+}
+
+.kpaw_coming_soon--wrap .kpaw_title {
+    font-size: 60px;
+    margin-top: -60px;
+}
+
+.kpaw_coming_soon--wrap .kpaw_desc {
+    font-size: 22px;
+    line-height: 1.7;
+}
+
+@media only screen and (max-width: 480px) {
+    .kpaw_coming_soon--wrap .kpaw_title {
+        font-size: 40px;
+    }
+    
+    .kpaw_coming_soon--wrap .kpaw_desc {
+        font-size: 20px;
+    }
+}

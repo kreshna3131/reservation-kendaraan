@@ -1,0 +1,48 @@
+.kpaw_btn_date {
+    cursor: pointer;
+}
+
+.kpaw_btn_date:hover .action-svg {
+    fill: white;
+}
+
+.kpaw_input_photo {
+    background-color: #FAF9FB;
+    width: 8rem;
+    height: 8rem;
+    border-radius: 50%;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.kpaw_input_photo.kpaw_icon {
+    width: 4rem;
+    height: 6rem;
+}
+
+#photo {
+    opacity: 0;
+    position: absolute;
+    z-index: -1;
+}
+
+.kpaw_wrapper {
+    position: absolute;
+    top: 45px;
+    left: 170px;
+}
+
+.button-upload,
+.button-delete {
+    cursor: pointer;
+}
+
+.button-upload:hover .action-svg {
+    fill: white;
+}
+
+.button-delete:hover .action-svg {
+    fill: white;
+}
