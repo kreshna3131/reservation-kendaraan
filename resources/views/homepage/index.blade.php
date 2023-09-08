@@ -37,50 +37,7 @@
 
 <body>
 
-    <!-- ======= Header ======= -->
-    <header id="header" class="header d-flex align-items-center">
-        <div class="container-fluid container-xl d-flex align-items-center justify-content-between">
-
-            <a href="index.html" class="logo d-flex align-items-center">
-                <!-- Uncomment the line below if you also wish to use an image logo -->
-                <!-- <img src="assets/img/logo.png" alt=""> -->
-                <h1>KendReserv<span>.</span></h1>
-            </a>
-
-            <i class="mobile-nav-toggle mobile-nav-show bi bi-list"></i>
-            <i class="mobile-nav-toggle mobile-nav-hide d-none bi bi-x"></i>
-            <nav id="navbar" class="navbar">
-                <ul>
-                    <li><a href="index.html" class="active">Home</a></li>
-                    <li><a href="about.html">About</a></li>
-                    <li><a href="services.html">Services</a></li>
-                    <li><a href="projects.html">Projects</a></li>
-                    <li><a href="blog.html">Blog</a></li>
-                    <li class="dropdown"><a href="#"><span>Dropdown</span> <i
-                                class="bi bi-chevron-down dropdown-indicator"></i></a>
-                        <ul>
-                            <li><a href="#">Dropdown 1</a></li>
-                            <li class="dropdown"><a href="#"><span>Deep Dropdown</span> <i
-                                        class="bi bi-chevron-down dropdown-indicator"></i></a>
-                                <ul>
-                                    <li><a href="#">Deep Dropdown 1</a></li>
-                                    <li><a href="#">Deep Dropdown 2</a></li>
-                                    <li><a href="#">Deep Dropdown 3</a></li>
-                                    <li><a href="#">Deep Dropdown 4</a></li>
-                                    <li><a href="#">Deep Dropdown 5</a></li>
-                                </ul>
-                            </li>
-                            <li><a href="#">Dropdown 2</a></li>
-                            <li><a href="#">Dropdown 3</a></li>
-                            <li><a href="#">Dropdown 4</a></li>
-                        </ul>
-                    </li>
-                    <li><a href="contact.html">Contact</a></li>
-                </ul>
-            </nav><!-- .navbar -->
-
-        </div>
-    </header><!-- End Header -->
+    @include('homepage.partials.header')
 
     <!-- ======= Hero Section ======= -->
     <section id="hero" class="hero">
@@ -93,7 +50,7 @@
                         <p data-aos="fade-up">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
                             tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
                             exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-                        <a data-aos="fade-up" data-aos-delay="200" href="#get-started" class="btn-get-started">Get
+                        <a data-aos="fade-up" data-aos-delay="200" href="/login" class="btn-get-started">Get
                             Started</a>
                     </div>
                 </div>
@@ -103,14 +60,19 @@
         <div id="hero-carousel" class="carousel slide" data-bs-ride="carousel" data-bs-interval="5000">
 
             <div class="carousel-item active"
-                style="background-image: url(https://images.unsplash.com/photo-1536782376847-5c9d14d97cc0?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8ZnJlZXxlbnwwfHwwfHx8MA%3D%3D&w=1000&q=80)"></div>
-            <div class="carousel-item" style="background-image: url(https://i0.wp.com/digital-photography-school.com/wp-content/uploads/2019/05/joseph-barrientos-49318-unsplash-e1558728034701.jpg?resize=1500%2C1000&ssl=1)">
+                style="background-image: url(https://images.unsplash.com/photo-1536782376847-5c9d14d97cc0?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8ZnJlZXxlbnwwfHwwfHx8MA%3D%3D&w=1000&q=80)">
             </div>
-            <div class="carousel-item" style="background-image: url(https://media.istockphoto.com/id/1442179368/photo/maldives-island.webp?b=1&s=170667a&w=0&k=20&c=i8wK-BoIq_B365rf0oMRBNmuMc4U1zlTUllMuyr_QNw=)">
+            <div class="carousel-item"
+                style="background-image: url(https://i0.wp.com/digital-photography-school.com/wp-content/uploads/2019/05/joseph-barrientos-49318-unsplash-e1558728034701.jpg?resize=1500%2C1000&ssl=1)">
             </div>
-            <div class="carousel-item" style="background-image: url(https://media.istockphoto.com/id/184117973/photo/coconut-palmtrees-and-lagoon.webp?s=170667a&w=0&k=20&c=N4bwahxEGkMqvtRZZtv65baK0cL7OxqbJcLkOIjkKzI=)">
+            <div class="carousel-item"
+                style="background-image: url(https://media.istockphoto.com/id/1442179368/photo/maldives-island.webp?b=1&s=170667a&w=0&k=20&c=i8wK-BoIq_B365rf0oMRBNmuMc4U1zlTUllMuyr_QNw=)">
             </div>
-            <div class="carousel-item" style="background-image: url(https://images.unsplash.com/photo-1569317002804-ab77bcf1bce4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8dW5zcGxhc2h8ZW58MHx8MHx8fDA%3D&w=1000&q=80)">
+            <div class="carousel-item"
+                style="background-image: url(https://media.istockphoto.com/id/184117973/photo/coconut-palmtrees-and-lagoon.webp?s=170667a&w=0&k=20&c=N4bwahxEGkMqvtRZZtv65baK0cL7OxqbJcLkOIjkKzI=)">
+            </div>
+            <div class="carousel-item"
+                style="background-image: url(https://images.unsplash.com/photo-1569317002804-ab77bcf1bce4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8dW5zcGxhc2h8ZW58MHx8MHx8fDA%3D&w=1000&q=80)">
             </div>
 
             <a class="carousel-control-prev" href="#hero-carousel" role="button" data-bs-slide="prev">
@@ -152,20 +114,22 @@
                             <div class="row gy-3">
 
                                 <div class="col-md-12">
-                                    <input type="text" name="name" class="form-control" placeholder="Name" required>
+                                    <input type="text" name="name" class="form-control" placeholder="Name"
+                                        required>
                                 </div>
 
                                 <div class="col-md-12 ">
-                                    <input type="email" class="form-control" name="email" placeholder="Email" required>
+                                    <input type="email" class="form-control" name="email" placeholder="Email"
+                                        required>
                                 </div>
 
                                 <div class="col-md-12">
-                                    <input type="text" class="form-control" name="phone" placeholder="Phone" required>
+                                    <input type="text" class="form-control" name="phone" placeholder="Phone"
+                                        required>
                                 </div>
 
                                 <div class="col-md-12">
-                                    <textarea class="form-control" name="message" rows="6" placeholder="Message"
-                                        required></textarea>
+                                    <textarea class="form-control" name="message" rows="6" placeholder="Message" required></textarea>
                                 </div>
 
                                 <div class="col-md-12 text-center">
@@ -202,7 +166,8 @@
                         <div class="card-item">
                             <div class="row">
                                 <div class="col-xl-5">
-                                    <div class="card-bg" style="background-image: url(https://images.unsplash.com/photo-1525789351284-e1e7de240152?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8dW5zcGxhc2h8ZW58MHx8MHx8fDA%3D&w=1000&q=80);">
+                                    <div class="card-bg"
+                                        style="background-image: url(https://images.unsplash.com/photo-1525789351284-e1e7de240152?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8dW5zcGxhc2h8ZW58MHx8MHx8fDA%3D&w=1000&q=80);">
                                     </div>
                                 </div>
                                 <div class="col-xl-7 d-flex align-items-center">
@@ -221,7 +186,8 @@
                         <div class="card-item">
                             <div class="row">
                                 <div class="col-xl-5">
-                                    <div class="card-bg" style="background-image: url(https://images.unsplash.com/photo-1525789351284-e1e7de240152?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8dW5zcGxhc2h8ZW58MHx8MHx8fDA%3D&w=1000&q=80);">
+                                    <div class="card-bg"
+                                        style="background-image: url(https://images.unsplash.com/photo-1525789351284-e1e7de240152?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8dW5zcGxhc2h8ZW58MHx8MHx8fDA%3D&w=1000&q=80);">
                                     </div>
                                 </div>
                                 <div class="col-xl-7 d-flex align-items-center">
@@ -240,7 +206,8 @@
                         <div class="card-item">
                             <div class="row">
                                 <div class="col-xl-5">
-                                    <div class="card-bg" style="background-image: url(https://images.unsplash.com/photo-1525789351284-e1e7de240152?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8dW5zcGxhc2h8ZW58MHx8MHx8fDA%3D&w=1000&q=80);">
+                                    <div class="card-bg"
+                                        style="background-image: url(https://images.unsplash.com/photo-1525789351284-e1e7de240152?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8dW5zcGxhc2h8ZW58MHx8MHx8fDA%3D&w=1000&q=80);">
                                     </div>
                                 </div>
                                 <div class="col-xl-7 d-flex align-items-center">
@@ -259,7 +226,8 @@
                         <div class="card-item">
                             <div class="row">
                                 <div class="col-xl-5">
-                                    <div class="card-bg" style="background-image: url(https://images.unsplash.com/photo-1525789351284-e1e7de240152?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8dW5zcGxhc2h8ZW58MHx8MHx8fDA%3D&w=1000&q=80);">
+                                    <div class="card-bg"
+                                        style="background-image: url(https://images.unsplash.com/photo-1525789351284-e1e7de240152?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8dW5zcGxhc2h8ZW58MHx8MHx8fDA%3D&w=1000&q=80);">
                                     </div>
                                 </div>
                                 <div class="col-xl-7 d-flex align-items-center">
@@ -379,7 +347,8 @@
             <div class="container" data-aos="fade-up">
 
                 <div class="row justify-content-around gy-4">
-                    <div class="col-lg-6 img-bg" style="background-image: url(https://plus.unsplash.com/premium_photo-1675280973827-a81419cfdc73?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8ZGVwdGglMjBvZiUyMGZpZWxkfGVufDB8fDB8fHww&w=1000&q=80);"
+                    <div class="col-lg-6 img-bg"
+                        style="background-image: url(https://plus.unsplash.com/premium_photo-1675280973827-a81419cfdc73?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8ZGVwdGglMjBvZiUyMGZpZWxkfGVufDB8fDB8fHww&w=1000&q=80);"
                         data-aos="zoom-in" data-aos-delay="100"></div>
 
                     <div class="col-lg-5 d-flex flex-column justify-content-center">
@@ -484,7 +453,8 @@
                             </div>
                             <div class="col-lg-6 order-1 order-lg-2 text-center" data-aos="fade-up"
                                 data-aos-delay="200">
-                                <img src="https://bootstrapmade.com/demo/templates/UpConstruction/assets/img/features-1.jpg" alt="" class="img-fluid">
+                                <img src="https://bootstrapmade.com/demo/templates/UpConstruction/assets/img/features-1.jpg"
+                                    alt="" class="img-fluid">
                             </div>
                         </div>
                     </div><!-- End tab content item -->
@@ -512,7 +482,8 @@
                                 </ul>
                             </div>
                             <div class="col-lg-6 order-1 order-lg-2 text-center">
-                                <img src="https://bootstrapmade.com/demo/templates/UpConstruction/assets/img/features-2.jpg" alt="" class="img-fluid">
+                                <img src="https://bootstrapmade.com/demo/templates/UpConstruction/assets/img/features-2.jpg"
+                                    alt="" class="img-fluid">
                             </div>
                         </div>
                     </div><!-- End tab content item -->
@@ -537,7 +508,8 @@
                                 </p>
                             </div>
                             <div class="col-lg-6 order-1 order-lg-2 text-center">
-                                <img src="https://bootstrapmade.com/demo/templates/UpConstruction/assets/img/features-3.jpg" alt="" class="img-fluid">
+                                <img src="https://bootstrapmade.com/demo/templates/UpConstruction/assets/img/features-3.jpg"
+                                    alt="" class="img-fluid">
                             </div>
                         </div>
                     </div><!-- End tab content item -->
@@ -563,7 +535,8 @@
                                 </ul>
                             </div>
                             <div class="col-lg-6 order-1 order-lg-2 text-center">
-                                <img src="https://bootstrapmade.com/demo/templates/UpConstruction/assets/img/features-4.jpg" alt="" class="img-fluid">
+                                <img src="https://bootstrapmade.com/demo/templates/UpConstruction/assets/img/features-4.jpg"
+                                    alt="" class="img-fluid">
                             </div>
                         </div>
                     </div><!-- End tab content item -->
@@ -618,8 +591,8 @@
                                     <h4>Construction 1</h4>
                                     <p>Lorem ipsum, dolor sit amet consectetur</p>
                                     <a href="assets/img/projects/construction-1.jpg" title="Construction 1"
-                                        data-gallery="portfolio-gallery-construction" class="glightbox preview-link"><i
-                                            class="bi bi-zoom-in"></i></a>
+                                        data-gallery="portfolio-gallery-construction"
+                                        class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
                                     <a href="project-details.html" title="More Details" class="details-link"><i
                                             class="bi bi-link-45deg"></i></a>
                                 </div>
@@ -678,8 +651,8 @@
                                     <h4>Construction 2</h4>
                                     <p>Lorem ipsum, dolor sit amet consectetur</p>
                                     <a href="assets/img/projects/construction-2.jpg" title="Construction 2"
-                                        data-gallery="portfolio-gallery-construction" class="glightbox preview-link"><i
-                                            class="bi bi-zoom-in"></i></a>
+                                        data-gallery="portfolio-gallery-construction"
+                                        class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
                                     <a href="project-details.html" title="More Details" class="details-link"><i
                                             class="bi bi-link-45deg"></i></a>
                                 </div>
@@ -738,8 +711,8 @@
                                     <h4>Construction 3</h4>
                                     <p>Lorem ipsum, dolor sit amet consectetur</p>
                                     <a href="assets/img/projects/construction-3.jpg" title="Construction 3"
-                                        data-gallery="portfolio-gallery-construction" class="glightbox preview-link"><i
-                                            class="bi bi-zoom-in"></i></a>
+                                        data-gallery="portfolio-gallery-construction"
+                                        class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
                                     <a href="project-details.html" title="More Details" class="details-link"><i
                                             class="bi bi-link-45deg"></i></a>
                                 </div>
@@ -799,8 +772,8 @@
                         <div class="swiper-slide">
                             <div class="testimonial-wrap">
                                 <div class="testimonial-item">
-                                    <img src="https://bootstrapmade.com/demo/templates/UpConstruction/assets/img/testimonials/testimonials-1.jpg" class="testimonial-img"
-                                        alt="">
+                                    <img src="https://bootstrapmade.com/demo/templates/UpConstruction/assets/img/testimonials/testimonials-1.jpg"
+                                        class="testimonial-img" alt="">
                                     <h3>Saul Goodman</h3>
                                     <h4>Ceo &amp; Founder</h4>
                                     <div class="stars">
@@ -822,8 +795,8 @@
                         <div class="swiper-slide">
                             <div class="testimonial-wrap">
                                 <div class="testimonial-item">
-                                    <img src="https://bootstrapmade.com/demo/templates/UpConstruction/assets/img/testimonials/testimonials-1.jpg" class="testimonial-img"
-                                        alt="">
+                                    <img src="https://bootstrapmade.com/demo/templates/UpConstruction/assets/img/testimonials/testimonials-1.jpg"
+                                        class="testimonial-img" alt="">
                                     <h3>Sara Wilsson</h3>
                                     <h4>Designer</h4>
                                     <div class="stars">
@@ -845,8 +818,8 @@
                         <div class="swiper-slide">
                             <div class="testimonial-wrap">
                                 <div class="testimonial-item">
-                                    <img src="https://bootstrapmade.com/demo/templates/UpConstruction/assets/img/testimonials/testimonials-1.jpg" class="testimonial-img"
-                                        alt="">
+                                    <img src="https://bootstrapmade.com/demo/templates/UpConstruction/assets/img/testimonials/testimonials-1.jpg"
+                                        class="testimonial-img" alt="">
                                     <h3>Jena Karlis</h3>
                                     <h4>Store Owner</h4>
                                     <div class="stars">
@@ -868,8 +841,8 @@
                         <div class="swiper-slide">
                             <div class="testimonial-wrap">
                                 <div class="testimonial-item">
-                                    <img src="https://bootstrapmade.com/demo/templates/UpConstruction/assets/img/testimonials/testimonials-4.jpg" class="testimonial-img"
-                                        alt="">
+                                    <img src="https://bootstrapmade.com/demo/templates/UpConstruction/assets/img/testimonials/testimonials-4.jpg"
+                                        class="testimonial-img" alt="">
                                     <h3>Matt Brandon</h3>
                                     <h4>Freelancer</h4>
                                     <div class="stars">
@@ -891,8 +864,8 @@
                         <div class="swiper-slide">
                             <div class="testimonial-wrap">
                                 <div class="testimonial-item">
-                                    <img src="https://bootstrapmade.com/demo/templates/UpConstruction/assets/img/testimonials/testimonials-5.jpg" class="testimonial-img"
-                                        alt="">
+                                    <img src="https://bootstrapmade.com/demo/templates/UpConstruction/assets/img/testimonials/testimonials-5.jpg"
+                                        class="testimonial-img" alt="">
                                     <h3>John Larson</h3>
                                     <h4>Entrepreneur</h4>
                                     <div class="stars">
@@ -924,110 +897,113 @@
 
 
 
-  <div class=" section-header">
-                <h2>Recent Blog Posts</h2>
-                <p>In commodi voluptatem excepturi quaerat nihil error autem voluptate ut et officia consequuntu</p>
-            </div>
+                <div class=" section-header">
+                    <h2>Recent Blog Posts</h2>
+                    <p>In commodi voluptatem excepturi quaerat nihil error autem voluptate ut et officia consequuntu</p>
+                </div>
 
-            <div class="row gy-5">
+                <div class="row gy-5">
 
-                <div class="col-xl-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
-                    <div class="post-item position-relative h-100">
+                    <div class="col-xl-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
+                        <div class="post-item position-relative h-100">
 
-                        <div class="post-img position-relative overflow-hidden">
-                            <img src="https://images.unsplash.com/photo-1509391618207-32f1fa13c1d2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8b3JhbmdlJTIwZnJ1aXR8ZW58MHx8MHx8fDA%3D&w=1000&q=80" class="img-fluid" alt="">
-                            <span class="post-date">December 12</span>
-                        </div>
-
-                        <div class="post-content d-flex flex-column">
-
-                            <h3 class="post-title">Eum ad dolor et. Autem aut fugiat debitis</h3>
-
-                            <div class="meta d-flex align-items-center">
-                                <div class="d-flex align-items-center">
-                                    <i class="bi bi-person"></i> <span class="ps-2">Julia Parker</span>
-                                </div>
-                                <span class="px-3 text-black-50">/</span>
-                                <div class="d-flex align-items-center">
-                                    <i class="bi bi-folder2"></i> <span class="ps-2">Politics</span>
-                                </div>
+                            <div class="post-img position-relative overflow-hidden">
+                                <img src="https://images.unsplash.com/photo-1509391618207-32f1fa13c1d2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8b3JhbmdlJTIwZnJ1aXR8ZW58MHx8MHx8fDA%3D&w=1000&q=80"
+                                    class="img-fluid" alt="">
+                                <span class="post-date">December 12</span>
                             </div>
 
-                            <hr>
+                            <div class="post-content d-flex flex-column">
 
-                            <a href="blog-details.html" class="readmore stretched-link"><span>Read More</span><i
-                                    class="bi bi-arrow-right"></i></a>
+                                <h3 class="post-title">Eum ad dolor et. Autem aut fugiat debitis</h3>
 
-                        </div>
-
-                    </div>
-                </div><!-- End post item -->
-
-                <div class="col-xl-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
-                    <div class="post-item position-relative h-100">
-
-                        <div class="post-img position-relative overflow-hidden">
-                            <img src="https://images.unsplash.com/photo-1509391618207-32f1fa13c1d2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8b3JhbmdlJTIwZnJ1aXR8ZW58MHx8MHx8fDA%3D&w=1000&q=80" class="img-fluid" alt="">
-                            <span class="post-date">July 17</span>
-                        </div>
-
-                        <div class="post-content d-flex flex-column">
-
-                            <h3 class="post-title">Et repellendus molestiae qui est sed omnis</h3>
-
-                            <div class="meta d-flex align-items-center">
-                                <div class="d-flex align-items-center">
-                                    <i class="bi bi-person"></i> <span class="ps-2">Mario Douglas</span>
+                                <div class="meta d-flex align-items-center">
+                                    <div class="d-flex align-items-center">
+                                        <i class="bi bi-person"></i> <span class="ps-2">Julia Parker</span>
+                                    </div>
+                                    <span class="px-3 text-black-50">/</span>
+                                    <div class="d-flex align-items-center">
+                                        <i class="bi bi-folder2"></i> <span class="ps-2">Politics</span>
+                                    </div>
                                 </div>
-                                <span class="px-3 text-black-50">/</span>
-                                <div class="d-flex align-items-center">
-                                    <i class="bi bi-folder2"></i> <span class="ps-2">Sports</span>
-                                </div>
+
+                                <hr>
+
+                                <a href="blog-details.html" class="readmore stretched-link"><span>Read More</span><i
+                                        class="bi bi-arrow-right"></i></a>
+
                             </div>
 
-                            <hr>
-
-                            <a href="blog-details.html" class="readmore stretched-link"><span>Read More</span><i
-                                    class="bi bi-arrow-right"></i></a>
-
                         </div>
+                    </div><!-- End post item -->
 
-                    </div>
-                </div><!-- End post item -->
+                    <div class="col-xl-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
+                        <div class="post-item position-relative h-100">
 
-                <div class="col-xl-4 col-md-6">
-                    <div class="post-item position-relative h-100" data-aos="fade-up" data-aos-delay="300">
-
-                        <div class="post-img position-relative overflow-hidden">
-                            <img src="https://images.unsplash.com/photo-1509391618207-32f1fa13c1d2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8b3JhbmdlJTIwZnJ1aXR8ZW58MHx8MHx8fDA%3D&w=1000&q=80" class="img-fluid" alt="">
-                            <span class="post-date">September 05</span>
-                        </div>
-
-                        <div class="post-content d-flex flex-column">
-
-                            <h3 class="post-title">Quia assumenda est et veritati tirana ploder</h3>
-
-                            <div class="meta d-flex align-items-center">
-                                <div class="d-flex align-items-center">
-                                    <i class="bi bi-person"></i> <span class="ps-2">Lisa Hunter</span>
-                                </div>
-                                <span class="px-3 text-black-50">/</span>
-                                <div class="d-flex align-items-center">
-                                    <i class="bi bi-folder2"></i> <span class="ps-2">Economics</span>
-                                </div>
+                            <div class="post-img position-relative overflow-hidden">
+                                <img src="https://images.unsplash.com/photo-1509391618207-32f1fa13c1d2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8b3JhbmdlJTIwZnJ1aXR8ZW58MHx8MHx8fDA%3D&w=1000&q=80"
+                                    class="img-fluid" alt="">
+                                <span class="post-date">July 17</span>
                             </div>
 
-                            <hr>
+                            <div class="post-content d-flex flex-column">
 
-                            <a href="blog-details.html" class="readmore stretched-link"><span>Read More</span><i
-                                    class="bi bi-arrow-right"></i></a>
+                                <h3 class="post-title">Et repellendus molestiae qui est sed omnis</h3>
+
+                                <div class="meta d-flex align-items-center">
+                                    <div class="d-flex align-items-center">
+                                        <i class="bi bi-person"></i> <span class="ps-2">Mario Douglas</span>
+                                    </div>
+                                    <span class="px-3 text-black-50">/</span>
+                                    <div class="d-flex align-items-center">
+                                        <i class="bi bi-folder2"></i> <span class="ps-2">Sports</span>
+                                    </div>
+                                </div>
+
+                                <hr>
+
+                                <a href="blog-details.html" class="readmore stretched-link"><span>Read More</span><i
+                                        class="bi bi-arrow-right"></i></a>
+
+                            </div>
 
                         </div>
+                    </div><!-- End post item -->
 
-                    </div>
-                </div><!-- End post item -->
+                    <div class="col-xl-4 col-md-6">
+                        <div class="post-item position-relative h-100" data-aos="fade-up" data-aos-delay="300">
 
-            </div>
+                            <div class="post-img position-relative overflow-hidden">
+                                <img src="https://images.unsplash.com/photo-1509391618207-32f1fa13c1d2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8b3JhbmdlJTIwZnJ1aXR8ZW58MHx8MHx8fDA%3D&w=1000&q=80"
+                                    class="img-fluid" alt="">
+                                <span class="post-date">September 05</span>
+                            </div>
+
+                            <div class="post-content d-flex flex-column">
+
+                                <h3 class="post-title">Quia assumenda est et veritati tirana ploder</h3>
+
+                                <div class="meta d-flex align-items-center">
+                                    <div class="d-flex align-items-center">
+                                        <i class="bi bi-person"></i> <span class="ps-2">Lisa Hunter</span>
+                                    </div>
+                                    <span class="px-3 text-black-50">/</span>
+                                    <div class="d-flex align-items-center">
+                                        <i class="bi bi-folder2"></i> <span class="ps-2">Economics</span>
+                                    </div>
+                                </div>
+
+                                <hr>
+
+                                <a href="blog-details.html" class="readmore stretched-link"><span>Read More</span><i
+                                        class="bi bi-arrow-right"></i></a>
+
+                            </div>
+
+                        </div>
+                    </div><!-- End post item -->
+
+                </div>
 
             </div>
         </section>
@@ -1035,100 +1011,7 @@
 
     </main><!-- End #main -->
 
-    <!-- ======= Footer ======= -->
-    <footer id="footer" class="footer">
-
-        <div class="footer-content position-relative">
-            <div class="container">
-                <div class="row">
-
-                    <div class="col-lg-4 col-md-6">
-                        <div class="footer-info">
-                            <h3>KendReserv</h3>
-                            <p>
-                                A108 Adam Street <br>
-                                NY 535022, USA<br><br>
-                                <strong>Phone:</strong> +1 5589 55488 55<br>
-                                <strong>Email:</strong> info@example.com<br>
-                            </p>
-                            <div class="social-links d-flex mt-3">
-                                <a href="#" class="d-flex align-items-center justify-content-center"><i
-                                        class="bi bi-twitter"></i></a>
-                                <a href="#" class="d-flex align-items-center justify-content-center"><i
-                                        class="bi bi-facebook"></i></a>
-                                <a href="#" class="d-flex align-items-center justify-content-center"><i
-                                        class="bi bi-instagram"></i></a>
-                                <a href="#" class="d-flex align-items-center justify-content-center"><i
-                                        class="bi bi-linkedin"></i></a>
-                            </div>
-                        </div>
-                    </div><!-- End footer info column-->
-
-                    <div class="col-lg-2 col-md-3 footer-links">
-                        <h4>Useful Links</h4>
-                        <ul>
-                            <li><a href="#">Home</a></li>
-                            <li><a href="#">About us</a></li>
-                            <li><a href="#">Services</a></li>
-                            <li><a href="#">Terms of service</a></li>
-                            <li><a href="#">Privacy policy</a></li>
-                        </ul>
-                    </div><!-- End footer links column-->
-
-                    <div class="col-lg-2 col-md-3 footer-links">
-                        <h4>Our Services</h4>
-                        <ul>
-                            <li><a href="#">Web Design</a></li>
-                            <li><a href="#">Web Development</a></li>
-                            <li><a href="#">Product Management</a></li>
-                            <li><a href="#">Marketing</a></li>
-                            <li><a href="#">Graphic Design</a></li>
-                        </ul>
-                    </div><!-- End footer links column-->
-
-                    <div class="col-lg-2 col-md-3 footer-links">
-                        <h4>Hic solutasetp</h4>
-                        <ul>
-                            <li><a href="#">Molestiae accusamus iure</a></li>
-                            <li><a href="#">Excepturi dignissimos</a></li>
-                            <li><a href="#">Suscipit distinctio</a></li>
-                            <li><a href="#">Dilecta</a></li>
-                            <li><a href="#">Sit quas consectetur</a></li>
-                        </ul>
-                    </div><!-- End footer links column-->
-
-                    <div class="col-lg-2 col-md-3 footer-links">
-                        <h4>Nobis illum</h4>
-                        <ul>
-                            <li><a href="#">Ipsam</a></li>
-                            <li><a href="#">Laudantium dolorum</a></li>
-                            <li><a href="#">Dinera</a></li>
-                            <li><a href="#">Trodelas</a></li>
-                            <li><a href="#">Flexo</a></li>
-                        </ul>
-                    </div><!-- End footer links column-->
-
-                </div>
-            </div>
-        </div>
-
-        <div class="footer-legal text-center position-relative">
-            <div class="container">
-                <div class="copyright">
-                    &copy; Copyright <strong><span>KendReserv</span></strong>. All Rights Reserved
-                </div>
-                <div class="credits">
-                    <!-- All the links in the footer should remain intact. -->
-                    <!-- You can delete the links only if you purchased the pro version. -->
-                    <!-- Licensing information: https://bootstrapmade.com/license/ -->
-                    <!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/upconstruction-bootstrap-construction-website-template/ -->
-                    Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
-                </div>
-            </div>
-        </div>
-
-    </footer>
-    <!-- End Footer -->
+    @include('homepage.partials.footer')
 
     <a href="#" class="scroll-top d-flex align-items-center justify-content-center"><i
             class="bi bi-arrow-up-short"></i></a>
