@@ -55,7 +55,7 @@ Register
             </div>
         </div>
         <input class="form-control kpaw_form--control @error('password') is-invalid @enderror" type="password"
-            name="password" autocomplete="on" />
+            name="password confirmation" autocomplete="on" />
         {{-- jika konfirmasi password tidak sama dengan password maka munculkan pesan error --}}
         @error('password')
         <span class="invalid-feedback" role="alert">
