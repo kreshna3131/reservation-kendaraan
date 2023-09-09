@@ -3,28 +3,34 @@
 Register
 @endsection
 @section('content')
+
+
 <h3 class="kpaw_weight--extra-bold pt-0 mt-0">Register</h3>
 <p class="mb-3 pb-2">Masukkan alamat email dan password.</p>
 
-{{-- @if (session()->has('error'))
-<div class="kpaw_alert kpaw_alert--danger">
-    {{ session('error') }}
+@if ($errors->any())
+<div class="alert alert-danger" role="alert">
+    @if ($errors->count() == 1)
+    {{ $errors->first() }}
+    @else
+    <ul class="error-list m-0 p-0">
+        @foreach ($errors->all() as $key => $error)
+        {{ $key + 1 }}. {{ $error }} <br>
+        @endforeach
+    </ul>
+    @endif
 </div>
 @endif
 
-@if (isset($_COOKIE['login-status']))
-<div class="kpaw_alert kpaw_alert--danger" id="throttle-alert" data-throttle-end="{{ $_COOKIE['throttle-end'] }}">
-    Anda sudah melakukan 5 kali percobaan gagal. Silahkan tunggu setelah <span id="minutes">00</span> menit <span
-        id="seconds">00</span> detik.
-    Jika Anda mencoba login pada waktu tersebut dan gagal, maka IP Anda akan di Banned.
-</div>
-@endif --}}
+
+
 
 <form action="{{ route('register') }}" method="post">
     @csrf
     <div class="form-group pt-0 mb-4">
         <label>Email</label>
-        <input class="form-control kpaw_form--control @error('email') is-invalid @enderror" type="text" name="email"
+        {{-- <input class="form-control kpaw_form--control @error('email') is-invalid @enderror" type="text" name="email" --}}
+        <input class="form-control kpaw_form--control" type="text" name="email"
             autocomplete="on" autofocus value="{{ old('email') }}" />
         @error('email')
         <span class="invalid-feedback" role="alert">
@@ -39,7 +45,8 @@ Register
                 <label>Password</label>
             </div>
         </div>
-        <input class="form-control kpaw_form--control @error('password') is-invalid @enderror" type="password"
+        {{-- <input class="form-control kpaw_form--control @error('password') is-invalid @enderror" type="password" --}}
+        <input class="form-control kpaw_form--control" type="password"
             name="password" autocomplete="on" />
         @error('password')
         <span class="invalid-feedback" role="alert">
@@ -54,7 +61,8 @@ Register
                 <label>Konfirmasi Password</label>
             </div>
         </div>
-        <input class="form-control kpaw_form--control @error('password') is-invalid @enderror" type="password"
+        {{-- <input class="form-control kpaw_form--control @error('password') is-invalid @enderror" type="password" --}}
+        <input class="form-control kpaw_form--control" type="password"
             name="password confirmation" autocomplete="on" />
         {{-- jika konfirmasi password tidak sama dengan password maka munculkan pesan error --}}
         @error('password')
