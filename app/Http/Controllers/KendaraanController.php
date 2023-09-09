@@ -100,4 +100,15 @@ class KendaraanController extends Controller
             ], 500); // 500 adalah kode status untuk "Internal Server Error"
         }
     }
+
+    public function destroy($id)
+    {
+        try {
+            $kendaraan = Kendaraan::find($id);
+            $kendaraan->delete();
+            return response()->json(['message' => 'Berhasil Dihapus'], 200);
+        } catch (\Throwable $th) {
+            return response()->json(['message' => 'Gagal Dihapus'], 500);
+        }
+    }
 }
