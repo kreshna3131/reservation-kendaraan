@@ -50,10 +50,10 @@ class RegisterController extends Controller
         ]);
 
         if ($user) {
-            Session::flash('register_success', 'Register Berhasil, Silakan Verifikisi Email Anda.');
-            return redirect('/login');
+            Session::flash('register_success', 'Register Berhasil, Silakan Verifikasi Email Anda.');
+            return redirect()->route('login');
         }
-        
+
         Session::flash('register_error', 'Register Gagal, Silakan Data Anda.');
     }
 }
