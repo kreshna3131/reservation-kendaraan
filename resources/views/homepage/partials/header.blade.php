@@ -3,8 +3,6 @@
     <div class="container-fluid container-xl d-flex align-items-center justify-content-between">
 
         <a href="/" class="logo d-flex align-items-center">
-            <!-- Uncomment the line below if you also wish to use an image logo -->
-            <!-- <img src="assets/img/logo.png" alt=""> -->
             <h1>KendReserv<span>.</span></h1>
         </a>
 
@@ -38,11 +36,13 @@
                         <li><a href="#">Dropdown 4</a></li>
                     </ul>
                 </li> --}}
-                <a href="/login" class="btn kpaw_btn kpaw_btn--primary kpaw_weight--bold w-100"><i
-                        class="fa-solid fa-right-to-bracket"></i>
-                    Login</a>
+                <a href="/login" class="btn kpaw_btn kpaw_btn--primary kpaw_weight--bold w-100">
+                    <i class="fa-solid fa-right-to-bracket" style="margin-right: 3px;"></i>
+                    Login
+                </a>
+
                 <a href="/register" class="btn kpaw_btn kpaw_btn--primary kpaw_weight--bold w-100"><i
-                        class="fa-regular fa-address-card"></i>
+                        class="fa-regular fa-address-card" style="margin-right: 3px;"></i>
                     Register</a>
             </ul>
         </nav><!-- .navbar -->
