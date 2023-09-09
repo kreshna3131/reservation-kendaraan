@@ -11,7 +11,8 @@
         <nav id="navbar" class="navbar">
             <ul>
                 <li><a href="/" class="nav-item nav-link {{ Request::is('/') ? 'active' : '' }}">Home</a></li>
-                <li><a href="/transport">Kendaraan</a></li>
+                <li><a href="/transport"
+                        class="nav-item nav-link {{ Request::is('transport') ? 'active' : '' }}">Transport</a></li>
                 <li><a href="/about" class="nav-item nav-link {{ Request::is('about') ? 'active' : '' }}">About</a>
                 </li>
                 <li><a href="/contact"

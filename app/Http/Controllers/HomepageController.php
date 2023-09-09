@@ -22,6 +22,11 @@ class HomepageController extends Controller
         return view( 'homepage.about' );
     }
 
+    public function showTransport()
+ {
+        return view( 'homepage.transport' );
+    }
+
     public function showContact()
  {
         return view( 'homepage.contact' );
