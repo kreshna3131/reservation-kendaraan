@@ -72,4 +72,31 @@ class KendaraanController extends Controller
             'data' => $kendaraan
         ], 201); // 201 adalah kode status untuk "Created"
     }
+
+    /**
+     * Display the specified resource.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function show($id)
+    {
+        try {
+            $kendaraan = Kendaraan::find($id);
+
+            if (!$kendaraan) {
+                return response()->json([
+                    'message' => 'Data kendaraan tidak ditemukan',
+                ], 404);
+            }
+
+            return response()->json([
+                'data' => $kendaraan
+            ]);
+        } catch (\Exception $e) {
+            return response()->json([
+                'error' => 'Terjadi kesalahan: ' . $e->getMessage()
+            ], 500); // 500 adalah kode status untuk "Internal Server Error"
+        }
+    }
 }
