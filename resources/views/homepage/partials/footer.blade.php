@@ -31,9 +31,9 @@
                     <h4>Useful Links</h4>
                     <ul>
                         <li><a href="/">Home</a></li>
+                        <li><a href="/transport">Kendaraan</a></li>
                         <li><a href="/about">About us</a></li>
                         <li><a href="/contact">Contact</a></li>
-                        <li><a href="#">Terms of service</a></li>
                         <li><a href="#">Privacy policy</a></li>
                     </ul>
                 </div><!-- End footer links column-->

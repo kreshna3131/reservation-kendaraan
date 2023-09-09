@@ -23,7 +23,7 @@ use App\Http\Controllers\KendaraanController;
 
 Route::get('/', [HomepageController::class, 'showHomepage'])->name('homepage');
 Route::get('/about', [HomepageController::class, 'showAboutus'])->name('aboutus');
-// Route::get('/transport', [HomepageController::class, 'showTransport'])->name('transport');
+Route::get('/transport', [HomepageController::class, 'showTransport'])->name('transport');
 Route::get('/contact', [HomepageController::class, 'showContact'])->name('contact');
 
 Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard.index');
