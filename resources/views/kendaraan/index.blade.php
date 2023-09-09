@@ -4,14 +4,14 @@
 <link rel="stylesheet" href="{{ asset('assets/css/dropdown-action.css') }}" />
 @endsection
 @section('title')
-Users
+Kendaraan
 @endsection
 @section('content')
 <header class="page-header page-header-left-inline-breadcrumb">
-    <h2 class="kpaw_weight-bold">Users</h2>
+    <h2 class="kpaw_weight-bold">Kendaraan</h2>
     <div class="right-wrapper">
         <ol class="breadcrumbs">
-            <li><a href="{{ route('users.index') }}">Users</a></li>
+            <li><a href="{{ route('kendaraan.index') }}">Kendaraan</a></li>
             <li><span>Semua</span></li>
         </ol>
     </div>
@@ -24,6 +24,10 @@ Users
                 <div class="datatables-header-footer-wrapper">
                     <div class="datatable-header mb-3">
                         <div class="row justify-content-between align-items-center">
+                            <div class="col-12 col-lg-auto mb-2 mb-lg-0">
+                                <a anim="ripple" href="{{ route('kendaraan.create') }}"
+                                    class="kpaw_btn kpaw_btn--primary kpaw_weight--bold">Tambah</a>
+                            </div>
                             <div class="col-12 col-lg-4 mb-2 mb-lg-0">
                                 <div class="input-group kpaw_form--inner-icon">
                                     <input type="text" class="form-control kpaw_form--control" placeholder="Search"
@@ -38,72 +42,53 @@ Users
                             <tr>
                                 <th width="7%">No</th>
                                 <th width="5%">Foto</th>
-                                <th width="">Nama</th>
-                                <th width="30%">Email</th>
-                                <th width="14%">No Whatsapp</th>
-                                <th width="14%">Lama Peminjaman</th>
-                                <th width="15%">Waktu peminjaman</th>
-                                <th width="15%">Batas Pengembalian</th>
+                                <th width="">Jenis Kendaraan</th>
+                                <th width="30%">Jumlah Unit</th>
+                                <th width="14%">Tersedia</th>
+                                <th width="14%">Sisa</th>
                                 <th width="12%">Actions</th>
                             </tr>
                         </thead>
-                        <tbody>
+                        <tbody textalign="center">
                             <tr>
                                 <td>1</td>
-                                <td></td>
-                                <td>Rudi Tabuti</td>
-                                <td>mlehoy@gmail.com</td>
-                                <td>081234567</td>
-                                <td>Gatau dah</td>
-                                <td>Senin 1 Juli 2023 07.00</td>
-                                <td>Senin 1 Juli 2023 18.00</td>
+                                <td><img src="https://assets.ayobandung.com/crop/0x0:0x0/750x500/webp/photo/p1/77/2023/08/22/image-2116317303.png"
+                                        alt="" style="max-width: 200px;"></td>
+                                <td>Honda Vario</td>
+                                <td>20 unit</td>
+                                <td>11 unit</td>
+                                <td>9 unit</td>
                                 <td>
                                     <div class="kpaw_label kpaw_label--warning mb-2">Edit</div>
+                                    {{-- <div class="kpaw_label kpaw_label--danger">Hapus</div> --}}
                                 </td>
                             </tr>
                             <tr>
                                 <td>2</td>
-                                <td></td>
-                                <td>Ipun</td>
-                                <td>ipangantenk@gmail.com</td>
-                                <td>081234567</td>
-                                <td>Gatau dah</td>
-                                <td>Rabu 3 Juli 2023 09.00</td>
-                                <td>Kamis 4 Juli 2023 10.00</td>
+                                <td><img src="https://cdn0-production-images-kly.akamaized.net/qbAbeMYQpMQ676enTea_yev3P6Y=/1200x900/smart/filters:quality(75):strip_icc():format(webp)/kly-media-production/medias/2830929/original/091089700_1560837842-AHM_BeATStreet._02_.jpg"
+                                        alt="" style="max-width: 200px;"></td>
+                                <td>Honda Beat</td>
+                                <td>30 unit</td>
+                                <td>11 unit</td>
+                                <td>19 unit</td>
                                 <td>
                                     <div class="kpaw_label kpaw_label--warning mb-2">Edit</div>
+                                    {{-- <div class="kpaw_label kpaw_label--danger">Hapus</div> --}}
                                 </td>
                             </tr>
                             <tr>
                                 <td>3</td>
-                                <td></td>
-                                <td>hemalia</td>
-                                <td>hemaclalucayank@gmail.com</td>
-                                <td>081234567</td>
-                                <td>Gatau dah</td>
-                                <td>Rabu 3 Juli 2023 07.00</td>
-                                <td>Rabu 3 Juli 2023 12.00</td>
+                                <td><img src="https://momotor.id/news/wp-content/uploads/2023/04/Yamaha-Aerox-155.jpg"
+                                        alt="" style="max-width: 200px;"></td>
+                                <td>Yamaha Aerox</td>
+                                <td>5 unit</td>
+                                <td>0 unit</td>
+                                <td>5 unit</td>
                                 <td>
                                     <div class="kpaw_label kpaw_label--warning mb-2">Edit</div>
+                                    {{-- <div class="kpaw_label kpaw_label--danger">Hapus</div> --}}
                                 </td>
                             </tr>
-                            {{-- @foreach ($staticData as $memberData)
-                            <tr>
-                                <td>{{ $memberData['id'] }}</td>
-                                <td></td>
-                                <td>{{ $memberData['name'] }}</td>
-                                <td>{{ $memberData['email'] }}</td>
-                                <td>{{ $memberData['department'] }}</td>
-                                <td>{{ $memberData['user_name'] }}</td>
-                                <td>{!! $memberData['html_status_team'] !!}</td>
-                                <td>
-                                    <!-- Tambahkan tombol aksi sesuai kebutuhan Anda -->
-                                    <button class="btn btn-primary">Edit</button>
-                                    <button class="btn btn-danger">Hapus</button>
-                                </td>
-                            </tr>
-                            @endforeach --}}
-
 
                         </tbody>
                     </table>
@@ -133,7 +118,7 @@ Users
 <script src="{{ asset('assets/js/modals.js') }}"></script>
 <script src="{{ asset('assets/js/member/external-filter.js') }}"></script>
 <script>
-    const url = "{{ route('users.list') }}";
+    const url = "{{ route('kendaraan.list') }}";
         let orderDatatable;
         let orderFalse = [1, 6];
         let visibleFalse = [];
@@ -166,8 +151,8 @@ Users
             })
         })
 
-        $('.kpaw_user').addClass('nav-expanded nav-active');
-        $('.kpaw_user_all').addClass('nav-active');
+        $('.kpaw_team').addClass('nav-expanded nav-active');
+        $('.kpaw_team_all').addClass('nav-active');
 
 </script>
 @endsection
