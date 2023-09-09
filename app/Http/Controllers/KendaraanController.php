@@ -23,20 +23,21 @@ class KendaraanController extends Controller
     {
         $kendaraans = Kendaraan::orderBy('created_at', 'desc')->get();
 
-        $no = 0;
-        $row = [];
+        $data = [];
 
         foreach ($kendaraans as $kendaraan) {
-            $row[] = $no;
-            $row[] = $kendaraan->name;
-            $row[] = $kendaraan->jeniskendaraan;
-            $row[] = $kendaraan->jumlahunit;
-            $data[] = $row;
+            $data[] = [
+                'name' => $kendaraan->name,
+                'jeniskendaraan' => $kendaraan->jeniskendaraan,
+                'jumlahunit' => $kendaraan->jumlahunit,
+            ];
         }
+
         return response()->json([
             'data' => $data
         ]);
     }
+
 
     /**
      * menampilkan halaman create kendaraan.
