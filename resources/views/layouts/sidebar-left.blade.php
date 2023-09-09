@@ -47,8 +47,8 @@
                             <span class="kpaw_weight-semi-bold">Kelola Users</span>
                         </a>
                     </li>
-                    {{-- <li class="kpaw_attendance">
-                        <a anim="ripple" class="nav-link" href="/absensi">
+                    <li class="kpaw_kendaraan">
+                        <a anim="ripple" class="nav-link" href="/kendaraan">
                             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
                                 <g id="Group_9907" data-name="Group 9907" transform="translate(11442 11106)">
                                     <rect id="Rectangle_4189" data-name="Rectangle 4189" width="24" height="24"
@@ -63,10 +63,11 @@
                                     </g>
                                 </g>
                             </svg>
-                            <span class="kpaw_weight-semi-bold">Kehadiran</span>
+                            <span class="kpaw_weight-semi-bold">Kelola Kendaraan</span>
                         </a>
                     </li>
-                    <li class="nav-parent kpaw_team">
+
+                    {{-- <li class="nav-parent kpaw_team">
                         <a anim="ripple" class="nav-link" href="#">
                             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
                                 <g id="Group_9905" data-name="Group 9905" transform="translate(11438 11172)">
