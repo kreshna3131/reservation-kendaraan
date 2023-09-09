@@ -20,6 +20,12 @@ Sign in
 </div>
 @endif --}}
 
+@if (session('register_success'))
+<div class="alert alert-success" role="alert">
+    {{ session('register_success') }}
+</div>
+@endif
+
 <form action="{{ route('login') }}" method="post">
     @csrf
     <div class="form-group pt-0 mb-4">
