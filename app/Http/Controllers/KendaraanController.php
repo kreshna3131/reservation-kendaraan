@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Kendaraan;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Redirect;
 
 class KendaraanController extends Controller
 {
@@ -19,45 +21,18 @@ class KendaraanController extends Controller
 
     public function list()
     {
-        $staticData = [
-            [
-                'id' => 1,
-                'name' => 'John Doe',
-                'email' => 'john@example.com',
-                'department' => 'HR',
-                'user_name' => 'Admin',
-                'html_status_team' => '<span class="badge badge-primary">Active</span>',
-            ],
-            [
-                'id' => 2,
-                'name' => 'Jane Smith',
-                'email' => 'jane@example.com',
-                'department' => 'Marketing',
-                'user_name' => 'User',
-                'html_status_team' => '<span class="badge badge-success">Active</span>',
-            ],
-            // Tambahkan data lainnya sesuai kebutuhan
-        ];
+        $kendaraans = Kendaraan::orderBy('created_at', 'desc')->get();
 
-        $data = [];
+        $no = 0;
+        $row = [];
 
-        foreach ($staticData as $no => $memberData) {
-            $param = $this->actionButtonData($memberData);
-
-            $row = [
-                ++$no,
-                "<p>ini image</p>",
-                $memberData['name'],
-                $memberData['email'],
-                $memberData['department'],
-                $memberData['user_name'],
-                $memberData['html_status_team'],
-                $this->actionButton($param),
-            ];
-
+        foreach ($kendaraans as $kendaraan) {
+            $row[] = $no;
+            $row[] = $kendaraan->name;
+            $row[] = $kendaraan->jeniskendaraan;
+            $row[] = $kendaraan->jumlahunit;
             $data[] = $row;
         }
-
         return response()->json([
             'data' => $data
         ]);
@@ -73,33 +48,28 @@ class KendaraanController extends Controller
         return view('kendaraan.create');
     }
 
-    public function store()
+    public function store(Request $request)
     {
-        // try {
-        //     $member = Member::create($request->except(['photo', 'user_id', 'birth_date']) + [
-        //         'user_id' => $request->supervisi,
-        //         'birth_date' => Carbon::parse($request->birth_date)->format('Y-m-d'),
-        //         'photo_name' => $request->file('photo') ? $request->file('photo')->getClientOriginalName() : null,
-        //         'photo_path' => $request->file('photo') ? $this->uploadFile($request->file('photo')) : null,
+        // Validasi input data
+        $validatedData = $request->validate([
+            'name' => 'required|string|max:255',
+            'jeniskendaraan' => 'required|string|max:255',
+            'jumlahunit' => 'required|integer',
+        ]);
 
-        //     ]);
+        // Membuat instance model Kendaraan dan mengisi nilai-nilainya
+        $kendaraan = new Kendaraan();
+        $kendaraan->name = $validatedData['name'];
+        $kendaraan->jeniskendaraan = $validatedData['jeniskendaraan'];
+        $kendaraan->jumlahunit = $validatedData['jumlahunit'];
 
-        //     // $member->sendCreatePasswordNotification();
-        //     $member->schedule()->create([
-        //         'user_id' => $request->supervisi,
-        //     ]);
+        // Menyimpan data ke database
+        $kendaraan->save();
+        return Redirect::route('kendaraan.index')->with('success', 'Data kendaraan berhasil disimpan');
 
-        //     $member->attendance()->create([
-        //         'member_name' => $member->name,
-        //         'member_department' => $member->department,
-        //         'member_status_team' => $member->status_team,
-        //     ]);
-        //     $this->sendCreateEmail($member);
-
-        //     return response()->json(['message' => 'Berhasil Ditambahkan']);
-        // } catch (\Throwable $th) {
-        //     info($th->getMessage());
-        //     return response()->json(['message' => 'Gagal Ditambahkan'], 500);
-        // }
+        return response()->json([
+            'message' => 'Data kendaraan berhasil disimpan',
+            'data' => $kendaraan
+        ], 201); // 201 adalah kode status untuk "Created"
     }
 }

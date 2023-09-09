@@ -40,8 +40,9 @@ Route::post('/send-email', [ForgotPasswordController::class, 'sendResetLinkEmail
 Route::get('users/list', [UsersController::class, 'list'])->name('users.list');
 Route::resource('users', UsersController::class);
 
-Route::get('kendaraan/list', [KendaraanController::class, 'list'])->name('kendaraan.list');
 Route::resource('kendaraan', KendaraanController::class);
+Route::get('kendaraan/list', [KendaraanController::class, 'list'])->name('kendaraan.list');
+
 
 // Route::middleware([
 //     'auth',
