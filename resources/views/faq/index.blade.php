@@ -17,11 +17,43 @@ FAQ
     <div class="right-wrapper">
         <ol class="breadcrumbs">
             <li><a href="{{ route('faq.index') }}">FAQ</a></li>
-            <li><span>Semua</span></li>
+            <li><span>Tentang Kami</span></li>
         </ol>
     </div>
 </header>
 <!-- card content -->
+<section class="kpaw_form--container">
+    {{-- <form action="{{ route('faq.store') }}" method="POST" class="kpaw_main_form" enctype="multipart/form-data">
+        --}}
+        <form action="#" method="POST" class="kpaw_main_form" enctype="multipart/form-data">
+            @csrf
+            <div class="row">
+                <div class="col-xl-12">
+                    <div class="mb-4">
+                        <div class="mb-4">
+                            <input type="text" class="form-control kpaw_form--control bg-white m-0" id="title"
+                                name="title" />
+                            <input type="hidden" name="user_id">
+                            <input type="hidden" name="preview" value="1" id="preview">
+                        </div>
+                        <div>
+                            <textarea class="summernote d-none" name="content" id="content"></textarea>
+                        </div>
+                    </div>
+                </div>
+        </form>
+</section>
+<div>
+    <header class="page-header page-header-left-inline-breadcrumb">
+        {{-- <h2 class="kpaw_weight-bold">FAQ</h2> --}}
+        <div class="right-wrapper">
+            <ol class="breadcrumbs">
+                <li><a href="{{ route('faq.index') }}">FAQ</a></li>
+                <li class="disabled"><span>Persyaratan</span></li>
+            </ol>
+        </div>
+    </header>
+</div>
 <section class="kpaw_form--container">
     {{-- <form action="{{ route('faq.store') }}" method="POST" class="kpaw_main_form" enctype="multipart/form-data">
         --}}
