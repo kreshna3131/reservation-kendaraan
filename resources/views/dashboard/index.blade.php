@@ -4,6 +4,7 @@
 @endsection
 @section('blockhead')
     <link rel="stylesheet" href="{{ asset('assets/css/widget.css') }}" />
+    
 @endsection
 @section('content')
     <header class="page-header page-header-left-inline-breadcrumb">

@@ -2,6 +2,7 @@
 @section('blockhead')
 <link rel="stylesheet" href="{{ asset('porto/vendor/datatables/media/css/dataTables.bootstrap4.css') }}" />
 <link rel="stylesheet" href="{{ asset('assets/css/dropdown-action.css') }}" />
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 @endsection
 @section('title')
 Kendaraan
@@ -80,6 +81,8 @@ Kendaraan
 <script src="{{ asset('assets/js/modals.js') }}"></script>
 <script src="{{ asset('assets/js/default-ajax.js') }}"></script>
 <script src="{{ asset('assets/js/default-datatable.js') }}"></script>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
 {{-- <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script>
     $(document).ready(function () {

@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Kendaraan;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Redirect;
+use Illuminate\Support\Facades\Storage;
 
 class KendaraanController extends Controller
 {
@@ -27,6 +28,7 @@ class KendaraanController extends Controller
 
         foreach ($kendaraans as $kendaraan) {
             $data[] = [
+                'photo' => "<div class='kpaw_circle_foto' style='background-image: url(" . Storage::url($kendaraan->photo_path) . ")'></div>",
                 'name' => $kendaraan->name,
                 'jeniskendaraan' => $kendaraan->jeniskendaraan,
                 'jumlahunit' => $kendaraan->jumlahunit,
@@ -56,23 +58,32 @@ class KendaraanController extends Controller
             'name' => 'required|string|max:255',
             'jeniskendaraan' => 'required|string|max:255',
             'jumlahunit' => 'required|integer',
+            'photo' => 'image|mimes:jpeg,png,jpg,gif|max:2048', // Validasi foto (sesuaikan dengan kebutuhan Anda)
         ]);
+
+        // Menyimpan file foto jika ada
+        $photo_name = null;
+        $photo_path = null;
+
+        if ($request->file('photo')) {
+            $photo_name = $request->file('photo')->getClientOriginalName();
+            $photo_path = $this->uploadFile($request->file('photo')); // Anda perlu mengganti ini dengan logika upload file yang sesuai dengan aplikasi Anda.
+        }
 
         // Membuat instance model Kendaraan dan mengisi nilai-nilainya
         $kendaraan = new Kendaraan();
         $kendaraan->name = $validatedData['name'];
         $kendaraan->jeniskendaraan = $validatedData['jeniskendaraan'];
         $kendaraan->jumlahunit = $validatedData['jumlahunit'];
+        $kendaraan->photo_name = $photo_name;
+        $kendaraan->photo_path = $photo_path;
 
         // Menyimpan data ke database
         $kendaraan->save();
-        return Redirect::route('kendaraan.index')->with('success', 'Data kendaraan berhasil disimpan');
 
-        return response()->json([
-            'message' => 'Data kendaraan berhasil disimpan',
-            'data' => $kendaraan
-        ], 201); // 201 adalah kode status untuk "Created"
+        return Redirect::route('kendaraan.index')->with('success', 'Data kendaraan berhasil disimpan');
     }
+
 
     /**
      * Display the specified resource.

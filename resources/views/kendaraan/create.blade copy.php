@@ -9,8 +9,7 @@ Kendaraan
 
 @endsection
 @section('kpaw_action--submit')
-{{-- <button anim="ripple" type="submit"
-    class="submit-button btn kpaw_btn kpaw_btn--primary kpaw_weight--bold mr-5">Simpan
+{{-- <button anim="ripple" type="submit" class="submit-button btn kpaw_btn kpaw_btn--primary kpaw_weight--bold mr-5">Simpan
 </button> --}}
 @endsection
 @section('content')
@@ -38,9 +37,7 @@ Kendaraan
                             <p class="col-lg-5 col-xl-4 control-label kpaw_weight--semi-bold mt-2 mb-2 mb-lg-0">Foto
                             </p>
                             <div class="col-lg-7 col-xl-8 flex">
-                                <div class="kpaw_input_photo"
-                                    data-image="{{ asset('path_to_previous_uploaded_image.jpg') }}"
-                                    style="background-image: url('{{ asset('path_to_previous_uploaded_image.jpg') }}');">
+                                <div class="kpaw_input_photo">
                                     <img src="{{ asset('assets/svg/icons/Upload-Logo.svg') }}"
                                         class="kpaw_profile_photo" alt="">
                                 </div>
@@ -86,26 +83,23 @@ Kendaraan
                                                         d="M12.9,0H7.1A3.475,3.475,0,0,0,4.98.88L.88,4.98A3.475,3.475,0,0,0,0,7.1v5.8a3.475,3.475,0,0,0,.88,2.12l4.1,4.1A3.475,3.475,0,0,0,7.1,20h5.8a3.475,3.475,0,0,0,2.12-.88l4.1-4.1A3.475,3.475,0,0,0,20,12.9V7.1a3.475,3.475,0,0,0-.88-2.12L15.02.88A3.475,3.475,0,0,0,12.9,0Z"
                                                         transform="translate(110 702)" fill="#f1416c" opacity="0.4" />
                                                     <path class="kpaw_custom" id="Vector-3" data-name="Vector"
-                                                        d="M5.307,4.247l2.97-2.97A.75.75,0,0,0,7.218.218l-2.97,2.97L1.277,.218a.75.75,0,0,0-1.06,1.06l2.97,2.97L.218,7.218a.754.754,0,0,0,0,1.06.748.748,0,0,0,1.06,0l2.97-2.97,2.97,2.97a.748.748,0,0,0,1.06,0,.754.754,0,0,0,0-1.06Z"
+                                                        d="M5.307,4.247l2.97-2.97A.75.75,0,0,0,7.218.218l-2.97,2.97L1.277.218a.75.75,0,0,0-1.06,1.06l2.97,2.97L.218,7.218a.754.754,0,0,0,0,1.06.748.748,0,0,0,1.06,0l2.97-2.97,2.97,2.97a.748.748,0,0,0,1.06,0,.754.754,0,0,0,0-1.06Z"
                                                         transform="translate(115.753 707.753)" fill="#f1416c" />
                                                 </g>
                                             </g>
                                         </svg>
                                     </button>
                                 </div>
-                                <p class="kpaw_form--note mb-0">Unggah gambar kendaraan dengan ukuran 600 x 600 pixel.
-                                </p>
+                                <p class="kpaw_form--note mb-0">Unggah gambar kendaraan dengan ukuran 600 x 600 pixel. </p>
                                 <p class="kpaw_form--note mt-0 mb-0">Jenis file yang diizinkan png, jpg, dan jpeg. </p>
                             </div>
                         </div>
                         <form action="{{ route('kendaraan.store') }}" method="POST" class="kpaw_main_form"
-                            data-redirect="{{ route('kendaraan.index') }}" enctype="multipart/form-data"
-                            autocomplete="off">
+                            data-redirect="{{ route('kendaraan.index') }}" enctype="multipart/form-data" autocomplete="off">
                             @csrf
                             <div class="form-group row">
                                 <label
-                                    class="col-lg-5 col-xl-4 control-label kpaw_weight--semi-bold mt-2 mb-2 mb-lg-0">Nama
-                                    Kendaraan</label>
+                                    class="col-lg-5 col-xl-4 control-label kpaw_weight--semi-bold mt-2 mb-2 mb-lg-0">Nama Kendaraan</label>
                                 <div class="col-lg-7 col-xl-8">
                                     <input type="text" class="form-control kpaw_form--control" name="name"
                                         value="{{ old('name') }}" />
@@ -113,8 +107,7 @@ Kendaraan
                             </div>
                             <div class="form-group row">
                                 <label
-                                    class="col-lg-5 col-xl-4 control-label kpaw_weight--semi-bold mt-2 mb-2 mb-lg-0">Jenis
-                                    Kendaraan</label>
+                                    class="col-lg-5 col-xl-4 control-label kpaw_weight--semi-bold mt-2 mb-2 mb-lg-0">Jenis Kendaraan</label>
                                 <div class="col-lg-7 col-xl-8">
                                     <input type="text" class="form-control kpaw_form--control" name="jeniskendaraan"
                                         value="{{ old('jeniskendaraan') }}" />
@@ -122,8 +115,7 @@ Kendaraan
                             </div>
                             <div class="form-group row">
                                 <label
-                                    class="col-lg-5 col-xl-4 control-label kpaw_weight--semi-bold mt-2 mb-2 mb-lg-0">Jumlah
-                                    Unit</label>
+                                    class="col-lg-5 col-xl-4 control-label kpaw_weight--semi-bold mt-2 mb-2 mb-lg-0">Jumlah Unit</label>
                                 <div class="col-lg-7 col-xl-8">
                                     <input type="number" class="form-control kpaw_form--control" name="jumlahunit"
                                         value="{{ old('jumlahunit') }}" />
