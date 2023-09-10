@@ -47,6 +47,26 @@
                             <span class="kpaw_weight-semi-bold">Kelola Users</span>
                         </a>
                     </li>
+                    <li class="kpaw_masterkendaraan">
+                        <a anim="ripple" class="nav-link" href="/masterkendaraan">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+                                <g id="Group_9907" data-name="Group 9907" transform="translate(11442 11106)">
+                                    <rect id="Rectangle_4189" data-name="Rectangle 4189" width="24" height="24"
+                                        transform="translate(-11442 -11106)" fill="none" />
+                                    <g id="Group_9906" data-name="Group 9906" transform="translate(-11442 -11106)">
+                                        <path class="kpaw_custom" id="Path_1999" data-name="Path 1999"
+                                            d="M2.1,10a9.992,9.992,0,0,1,9.1-8L8.8,4.4,11.1,7A4.914,4.914,0,0,0,7.6,9.6L4.5,12.4Zm17.2,1.5L16.4,14a5.011,5.011,0,0,1-3.7,2.9L15,19.5l-2.4,2.4a10.1,10.1,0,0,0,9.1-8Z"
+                                            fill="#5800FF" opacity="0.3" />
+                                        <path class="kpaw_custom" id="Path_2000" data-name="Path 2000"
+                                            d="M13.8,2.1a9.992,9.992,0,0,1,8,9.1L19.4,8.8,16.8,11A4.9,4.9,0,0,0,14,7.4l-2.6-3ZM12.3,19.4l-2.6-3A5.019,5.019,0,0,1,7,12.8L4.4,15.1,2,12.7a10.1,10.1,0,0,0,8,9.1Z"
+                                            fill="#5800FF" />
+                                    </g>
+                                </g>
+                            </svg>
+                            <span class="kpaw_weight-semi-bold">Master Kendaraan</span>
+                        </a>
+                    </li>
+
                     <li class="kpaw_kendaraan">
                         <a anim="ripple" class="nav-link" href="/kendaraan">
                             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
@@ -63,7 +83,7 @@
                                     </g>
                                 </g>
                             </svg>
-                            <span class="kpaw_weight-semi-bold">Kelola Kendaraan</span>
+                            <span class="kpaw_weight-semi-bold">Kendaraan</span>
                         </a>
                     </li>
 

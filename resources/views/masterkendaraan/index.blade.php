@@ -5,14 +5,14 @@
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 @endsection
 @section('title')
-Kendaraan
+Master Kendaraan
 @endsection
 @section('content')
 <header class="page-header page-header-left-inline-breadcrumb">
-    <h2 class="kpaw_weight-bold">Kendaraan</h2>
+    <h2 class="kpaw_weight-bold">Master Kendaraan</h2>
     <div class="right-wrapper">
         <ol class="breadcrumbs">
-            <li><a href="{{ route('kendaraan.index') }}">Kendaraan</a></li>
+            <li><a href="{{ route('masterkendaraan.index') }}">Master Kendaraan</a></li>
             <li><span>Semua</span></li>
         </ol>
     </div>
@@ -26,13 +26,13 @@ Kendaraan
                     <div class="datatable-header mb-3">
                         <div class="row justify-content-between align-items-center">
                             <div class="col-12 col-lg-auto mb-2 mb-lg-0">
-                                <a anim="ripple" href="{{ route('kendaraan.create') }}"
+                                <a anim="ripple" href="{{ route('masterkendaraan.create') }}"
                                     class="kpaw_btn kpaw_btn--primary kpaw_weight--bold">Tambah</a>
                             </div>
                             <div class="col-12 col-lg-4 mb-2 mb-lg-0">
                                 <div class="input-group kpaw_form--inner-icon">
                                     <input type="text" class="form-control kpaw_form--control" placeholder="Search"
-                                        id="search-kendaraan" />
+                                        id="search-masterkendaraan" />
                                 </div>
                             </div>
                         </div>
@@ -42,31 +42,20 @@ Kendaraan
                         <thead>
                             <tr>
                                 <th width="7%">No</th>
-                                <th width="5%">Foto</th>
-                                <th width="">Jenis Kendaraan</th>
-                                <th width="">Merk Kendaraan</th>
-                                <th width="">Tipe Kendaraan</th>
-                                <th width="">Jumlah Unit</th>
-                                <th width="">Tersedia</th>
-                                <th width="">Sisa</th>
-                                <th width="12%">Actions</th>
+                                <th>Jenis Kendaraan</th>
+                                <th>Merk Kendaraan</th>
+                                <th width="15%">Actions</th>
                             </tr>
                         </thead>
                         <tbody>
                             <tr>
                                 <td>1</td>
-                                <td></td>
                                 <td>Mobil</td>
                                 <td>Honda</td>
-                                <td>Civic</td>
-                                <td>3 Unit</td>
-                                <td>1 Unit</td>
-                                <td>2 Unit</td>
                                 <td>
                                     <button
                                         class="btn btn-block kpaw_btn kpaw_btn--light-warning kpaw_weight--bold mb-2">Edit</button>
-                                    <button
-                                        class="btn btn-block kpaw_btn kpaw_btn--light-danger kpaw_weight--bold">Hapus</button>
+                                    <button class="btn btn-block kpaw_btn kpaw_btn--light-danger kpaw_weight--bold">Hapus</button>
                                 </td>
                             </tr>
                         </tbody>
@@ -94,8 +83,8 @@ Kendaraan
 <script src="{{ asset('porto/vendor/datatables/media/js/dataTables.bootstrap4.min.js') }}"></script>
 <script src="{{ asset('porto/vendor/bootstrap-datepicker/js/bootstrap-datepicker.min.js') }}"></script>
 <script src="{{ asset('porto/vendor/bootstrap-datepicker/locales/bootstrap-datepicker.id.min.js') }}"></script>
-<script src="{{ asset('assets/js/kendaraan/datatable-serverside.js') }}"></script>
-<script src="{{ asset('assets/js/kendaraan/kendaraan-datatable.js') }}"></script>
+<script src="{{ asset('assets/js/masterkendaraan/datatable-serverside.js') }}"></script>
+<script src="{{ asset('assets/js/masterkendaraan/masterkendaraan-datatable.js') }}"></script>
 <script src="{{ asset('assets/js/default-delete.js') }}"></script>
 <script src="{{ asset('assets/js/modals.js') }}"></script>
 <script src="{{ asset('assets/js/default-ajax.js') }}"></script>
@@ -127,7 +116,7 @@ Kendaraan
     });
 </script> --}}
 <script>
-    const url = "{{ route('kendaraan.list') }}";
+    const url = "{{ route('masterkendaraan.list') }}";
         let orderDatatable;
         let orderFalse = [1, 6];
         let visibleFalse = [];
@@ -136,8 +125,8 @@ Kendaraan
             $(element).hasClass("invisible") ? visibleFalse.push(index) : false;
         })
 
-        $('.kpaw_kendaraan').addClass('nav-expanded nav-active');
-        $('.kpaw_kendaraan_all').addClass('nav-active');
+        $('.kpaw_masterkendaraan').addClass('nav-expanded nav-active');
+        $('.kpaw_masterkendaraan_all').addClass('nav-active');
 
 </script>
 @endsection

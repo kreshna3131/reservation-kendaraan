@@ -8,6 +8,7 @@ use App\Http\Controllers\HomepageController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\UsersController;
 use App\Http\Controllers\KendaraanController;
+use App\Http\Controllers\MasterKendaraanController;
 use App\Http\Controllers\FaqController;
 
 /*
@@ -40,6 +41,9 @@ Route::post('/send-email', [ForgotPasswordController::class, 'sendResetLinkEmail
 
 Route::get('users/list', [UsersController::class, 'list'])->name('users.list');
 Route::resource('users', UsersController::class);
+
+Route::get('masterkendaraan/list', [MasterKendaraanController::class, 'list'])->name('masterkendaraan.list');
+Route::resource('masterkendaraan', MasterKendaraanController::class);
 
 Route::get('kendaraan/list', [KendaraanController::class, 'list'])->name('kendaraan.list');
 Route::resource('kendaraan', KendaraanController::class);

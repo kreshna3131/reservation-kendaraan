@@ -36,34 +36,38 @@ Users
                     <table class="table kpaw_table kpaw_table--striped mb-0" style="min-width: 900px;">
                         <thead>
                             <tr>
-                                <th width="7%">No</th>
-                                <th width="5%">Foto</th>
-                                <th width="">Nama</th>
-                                <th width="30%">Email</th>
-                                <th width="14%">No Whatsapp</th>
-                                <th width="14%">Lama Peminjaman</th>
-                                <th width="15%">Waktu peminjaman</th>
-                                <th width="15%">Batas Pengembalian</th>
-                                <th width="12%">Actions</th>
+                                <th width="4%">No</th>
+                                {{-- <th width="5%">Foto</th> --}}
+                                <th width="20%">Nama</th>
+                                <th width="15%">Email</th>
+                                <th width="10%">No Whatsapp</th>
+                                <th width="10%">Lama Peminjaman</th>
+                                <th width="12%">Waktu Peminjaman</th>
+                                <th width="12%">Batas Pengembalian</th>
+                                <th width="7%">Actions</th>
                             </tr>
                         </thead>
                         <tbody>
                             <tr>
                                 <td>1</td>
-                                <td></td>
+                                {{-- <td width="4%"><img src="" alt="" style="max-width: 40px;"></td> --}}
                                 <td>Rudi Tabuti</td>
                                 <td>mlehoy@gmail.com</td>
                                 <td>081234567</td>
                                 <td>Gatau dah</td>
-                                <td>Senin 1 Juli 2023 07.00</td>
-                                <td>Senin 1 Juli 2023 18.00</td>
+                                <td>Senin, 1 Juli 2023, 07:00</td>
+                                <td>Senin, 1 Juli 2023, 18:00</td>
                                 <td>
-                                    <div class="kpaw_label kpaw_label--warning mb-2">Edit</div>
+                                    <button
+                                        class="btn btn-block kpaw_btn kpaw_btn--light-warning kpaw_weight--bold mb-2">Edit</button>
+                                    <button
+                                        class="btn btn-block kpaw_btn kpaw_btn--light-danger kpaw_weight--bold">Hapus</button>
                                 </td>
                             </tr>
+
                             <tr>
                                 <td>2</td>
-                                <td></td>
+                                {{-- <td></td> --}}
                                 <td>Ipun</td>
                                 <td>ipangantenk@gmail.com</td>
                                 <td>081234567</td>
@@ -71,12 +75,15 @@ Users
                                 <td>Rabu 3 Juli 2023 09.00</td>
                                 <td>Kamis 4 Juli 2023 10.00</td>
                                 <td>
-                                    <div class="kpaw_label kpaw_label--warning mb-2">Edit</div>
+                                    <button
+                                        class="btn btn-block kpaw_btn kpaw_btn--light-warning kpaw_weight--bold mb-2">Edit</button>
+                                    <button
+                                        class="btn btn-block kpaw_btn kpaw_btn--light-danger kpaw_weight--bold">Hapus</button>
                                 </td>
                             </tr>
                             <tr>
                                 <td>3</td>
-                                <td></td>
+                                {{-- <td></td> --}}
                                 <td>hemalia</td>
                                 <td>hemaclalucayank@gmail.com</td>
                                 <td>081234567</td>
@@ -84,7 +91,10 @@ Users
                                 <td>Rabu 3 Juli 2023 07.00</td>
                                 <td>Rabu 3 Juli 2023 12.00</td>
                                 <td>
-                                    <div class="kpaw_label kpaw_label--warning mb-2">Edit</div>
+                                    <button
+                                        class="btn btn-block kpaw_btn kpaw_btn--light-warning kpaw_weight--bold mb-2">Edit</button>
+                                    <button
+                                        class="btn btn-block kpaw_btn kpaw_btn--light-danger kpaw_weight--bold">Hapus</button>
                                 </td>
                             </tr>
                             {{-- @foreach ($staticData as $memberData)
@@ -168,6 +178,6 @@ Users
 
         $('.kpaw_user').addClass('nav-expanded nav-active');
         $('.kpaw_user_all').addClass('nav-active');
-
 </script>
+
 @endsection
