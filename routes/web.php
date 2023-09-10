@@ -8,6 +8,7 @@ use App\Http\Controllers\HomepageController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\UsersController;
 use App\Http\Controllers\KendaraanController;
+use App\Http\Controllers\FaqController;
 
 /*
 |--------------------------------------------------------------------------
@@ -42,6 +43,8 @@ Route::resource('users', UsersController::class);
 
 Route::get('kendaraan/list', [KendaraanController::class, 'list'])->name('kendaraan.list');
 Route::resource('kendaraan', KendaraanController::class);
+
+Route::get('/faq', [FaqController::class, 'index'])->name('faq.index');
 
 // Route::middleware([
 //     'auth',
