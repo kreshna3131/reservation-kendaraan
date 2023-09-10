@@ -1,4 +1,5 @@
 function initPrivacySummernote() {
+    console.log("Inisialisasi Summernote");
     $(".summernote").summernote({
         height: 320,
         toolbar: [

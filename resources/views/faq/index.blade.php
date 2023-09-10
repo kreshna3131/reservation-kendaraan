@@ -7,7 +7,9 @@ FAQ
 <link rel="stylesheet" href="{{ asset('porto/vendor/summernote/summernote-bs4.min.css') }}">
 <link rel="stylesheet" href="{{ asset('porto/vendor/cropper/cropper.min.css') }}">
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-
+<script src="{{ asset('porto/vendor/summernote/summernote.min.js') }}"></script>
+<script src="{{ asset('porto/vendor/summernote/summernote-bs4.min.js') }}"></script>
+<script src="{{ asset('assets/js/faq/summernote.js') }}"></script>
 @endsection
 @section('content')
 <header class="page-header page-header-left-inline-breadcrumb">
@@ -49,13 +51,13 @@ FAQ
 <script src="{{ asset('porto/vendor/compressor/compressor.min.js') }}"></script>
 <script src="{{ asset('porto/vendor/summernote/summernote.min.js') }}"></script>
 <script src="{{ asset('porto/vendor/summernote/summernote-bs4.min.js') }}"></script>
-<script src="{{ asset('assets/js/faq/summernote.js') }}"></script>
+{{-- <script src="{{ asset('assets/js/faq/summernote.js') }}"></script> --}}
 <script src="{{ asset('assets/js/faq/ajax.js') }}"></script>
 <script src="{{ asset('assets/js/default-ajax.js') }}"></script>
 <script src="{{ asset('assets/js/faq/additional.js') }}"></script>
 <script src="{{ asset('assets/js/faq/create-ajax.js') }}"></script>
-<script src="{{ asset('porto/vendor/summernote/summernote.min.js') }}"></script>
-<script src="{{ asset('porto/vendor/summernote/summernote-bs4.min.js') }}"></script>
+{{-- <script src="{{ asset('porto/vendor/summernote/summernote.min.js') }}"></script>
+<script src="{{ asset('porto/vendor/summernote/summernote-bs4.min.js') }}"></script> --}}
 
 
 <script>
