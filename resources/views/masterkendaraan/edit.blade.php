@@ -4,7 +4,7 @@ Detail Master
 @endsection
 @section('blockhead')
 
-<link rel="stylesheet" href="{{ asset('assets/css/team.css') }}" />
+<link rel="stylesheet" href="{{ asset('assets/css/masterkendaraan.css') }}" />
 {{--
 <link rel="stylesheet" href="{{ asset('porto/vendor/cropper/cropper.min.css') }}"> --}}
 @endsection
@@ -29,7 +29,7 @@ Detail Master
             <div class="card-body">
                 <div class="row">
                     <div class="col-lg-2-5 col-xl-1-5 px-4">
-                        {{-- <img src="{{ asset('assets/svg/icons/Add-New-User.svg') }}" alt=""> --}}
+                        <img src="{{ asset('assets/svg/icons/Add-New-User.svg') }}" alt="">
                         <h5 class="kpaw_weight--bold">Master Kendaraan</h5>
                         <p class="mb-0">Semua form wajib untuk diisi.</p>
                     </div>
@@ -46,8 +46,14 @@ Detail Master
                                     class="col-lg-5 col-xl-4 control-label kpaw_weight--semi-bold mt-2 mb-2 mb-lg-0">Jenis
                                     Kendaraan</label>
                                 <div class="col-lg-7 col-xl-8">
-                                    <input type="text" class="form-control kpaw_form--control" name="jeniskendaraan"
-                                        value="{{ $kendaraan->jeniskendaraan }}" />
+                                    <select name="jeniskendaraan" id="jeniskendaraan"
+                                        class="form-control kpaw_form--control select2-selection">
+                                        {{-- Pilihan Merk Kendaraan --}}
+                                        <option value="mobil" @if ($kendaraan->jeniskendaraan === 'mobil') selected
+                                            @endif>Mobil</option>
+                                        <option value="motor" @if ($kendaraan->jeniskendaraan === 'motor') selected
+                                            @endif>Motor</option>
+                                    </select>
                                 </div>
                             </div>
                             <div class="form-group row">
@@ -55,14 +61,8 @@ Detail Master
                                     class="col-lg-5 col-xl-4 control-label kpaw_weight--semi-bold mt-2 mb-2 mb-lg-0">Merk
                                     Kendaraan</label>
                                 <div class="col-lg-7 col-xl-8">
-                                    <select name="merkkendaraan" id="merkkendaraan"
-                                        class="form-control kpaw_form--control select2-selection">
-                                        {{-- Pilihan Merk Kendaraan --}}
-                                        <option value="mobil" @if ($kendaraan->merkkendaraan === 'mobil') selected
-                                            @endif>Mobil</option>
-                                        <option value="motor" @if ($kendaraan->merkkendaraan === 'motor') selected
-                                            @endif>Motor</option>
-                                    </select>
+                                    <input type="text" class="form-control kpaw_form--control" name="merkkendaraan"
+                                        value="{{ $kendaraan->merkkendaraan }}" />
                                 </div>
                             </div>
                             <div class="d-flex justify-content-end mt-4 pt-3">

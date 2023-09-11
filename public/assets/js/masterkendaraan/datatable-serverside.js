@@ -24,7 +24,7 @@ function initDatatables(url, orderFalse, callback = "") {
             },
         ],
         ajax: {
-            url: "{{ route('masterkendaraan.list') }}",
+            url: url,
             type: "GET",
             data: function (d) {
                 d.date = $("#date_filter").val();
@@ -54,19 +54,32 @@ function initDatatables(url, orderFalse, callback = "") {
                     type: "error",
                     animate_speed: "fast",
                 });
-                if (res.responseJSON?.status === "session_expired") {
-                    setTimeout(function () {
-                        window.location.reload();
-                    }, 1000);
-                }
+                // if (res.responseJSON?.status === "session_expired") {
+                //     setTimeout(function () {
+                //         window.location.reload();
+                //     }, 1000);
+                // }
             },
         },
         columns: [
-            { data: "DT_RowIndex", orderable: false, searchable: false },
-            { data: "jeniskendaraan" },
+            {
+                data: "DT_RowIndex",
+                orderable: false,
+                searchable: false,
+            },
+            {
+                data: "jeniskendaraan",
+            },
+            {
+                data: "merkkendaraan",
+            },
         ],
-        drawCallback: function () {
+        drawCallback: function (settings) {
+            console.log(settings.json().data); // Log the data received from the server
             typeof callback == "function" && callback();
         },
+        // drawCallback: function () {
+        //     typeof callback == "function" && callback();
+        // },
     });
 }
