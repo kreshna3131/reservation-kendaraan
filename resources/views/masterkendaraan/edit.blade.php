@@ -1,8 +1,9 @@
 @extends('layouts.app')
 @section('title')
-Master Kendaraan
+Detail Master
 @endsection
 @section('blockhead')
+
 <link rel="stylesheet" href="{{ asset('assets/css/team.css') }}" />
 {{--
 <link rel="stylesheet" href="{{ asset('porto/vendor/cropper/cropper.min.css') }}"> --}}
@@ -14,11 +15,11 @@ Master Kendaraan
 @endsection
 @section('content')
 <header class="page-header page-header-left-inline-breadcrumb">
-    <h2 class="kpaw_weight-bold">Master Kendaraan</h2>
+    <h2 class="kpaw_weight-bold">Detail Master</h2>
     <div class="right-wrapper">
         <ol class="breadcrumbs">
-            <li><a href="{{ route('masterkendaraan.index') }}">Master Kendaraan</a></li>
-            <li><span>Tambah</span></li>
+            <li><a href="{{ route('masterkendaraan.index') }}">Detail Master</a></li>
+            <li><span>Detail</span></li>
         </ol>
     </div>
 </header>
@@ -28,34 +29,40 @@ Master Kendaraan
             <div class="card-body">
                 <div class="row">
                     <div class="col-lg-2-5 col-xl-1-5 px-4">
+                        {{-- <img src="{{ asset('assets/svg/icons/Add-New-User.svg') }}" alt=""> --}}
                         <h5 class="kpaw_weight--bold">Master Kendaraan</h5>
                         <p class="mb-0">Semua form wajib untuk diisi.</p>
                     </div>
                     <div class="col-lg-3-5 col-xl-4-5 kpaw_card--advanced">
-                        <form action="{{ route('masterkendaraan.store') }}" method="POST" class="kpaw_main_form"
-                            data-redirect="{{ route('masterkendaraan.index') }}" enctype="multipart/form-data"
-                            autocomplete="off">
+                        <div class="form-group row">
+                        </div>
+                        <form action="{{ route('masterkendaraan.update', $kendaraan->id) }}" method="POST"
+                            class="kpaw_main_form" data-redirect="{{ route('masterkendaraan.index') }}"
+                            enctype="multipart/form-data" autocomplete="off">
                             @csrf
+                            @method('PATCH')
                             <div class="form-group row">
-                                <label for="jeniskendaraan"
+                                <label
                                     class="col-lg-5 col-xl-4 control-label kpaw_weight--semi-bold mt-2 mb-2 mb-lg-0">Jenis
                                     Kendaraan</label>
                                 <div class="col-lg-7 col-xl-8">
-                                    <select class="form-control kpaw_form--control w-100" id="jeniskendaraan"
-                                        name="jeniskendaraan" data-plugin-selectTwo>
-                                        <option value="" selected disabled>Pilih</option>
-                                        <option value="mobil">Mobil</option>
-                                        <option value="motor">Motor</option>
-                                    </select>
+                                    <input type="text" class="form-control kpaw_form--control" name="jeniskendaraan"
+                                        value="{{ $kendaraan->jeniskendaraan }}" />
                                 </div>
                             </div>
                             <div class="form-group row">
-                                <label for="merkkendaraan"
+                                <label
                                     class="col-lg-5 col-xl-4 control-label kpaw_weight--semi-bold mt-2 mb-2 mb-lg-0">Merk
                                     Kendaraan</label>
                                 <div class="col-lg-7 col-xl-8">
-                                    <input type="text" class="form-control kpaw_form--control" id="merkkendaraan"
-                                        name="merkkendaraan" value="{{ old('merkkendaraan') }}" />
+                                    <select name="merkkendaraan" id="merkkendaraan"
+                                        class="form-control kpaw_form--control select2-selection">
+                                        {{-- Pilihan Merk Kendaraan --}}
+                                        <option value="mobil" @if ($kendaraan->merkkendaraan === 'mobil') selected
+                                            @endif>Mobil</option>
+                                        <option value="motor" @if ($kendaraan->merkkendaraan === 'motor') selected
+                                            @endif>Motor</option>
+                                    </select>
                                 </div>
                             </div>
                             <div class="d-flex justify-content-end mt-4 pt-3">
@@ -73,7 +80,10 @@ Master Kendaraan
 </div>
 @endsection
 @section('blockfoot')
+<script src="{{ asset('porto/vendor/bootstrap-datepicker/js/bootstrap-datepicker.min.js') }}"></script>
+<script src="{{ asset('porto/vendor/bootstrap-datepicker/locales/bootstrap-datepicker.id.min.js') }}"></script>
 <script src="{{ asset('assets/js/masterkendaraan/create-ajax.js') }}"></script>
+<script src="{{ asset('porto/vendor/cropper/cropper.min.js') }}"></script>
 <script src="{{ asset('porto/vendor/compressor/compressor.min.js') }}"></script>
 <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
 <script>
@@ -81,18 +91,8 @@ Master Kendaraan
     $('.kpaw_masterkendaraan_create').addClass('nav-active');
 
     $(document).ready(function () {
-        // Select2 Multiple
-        $('.select2-selection').select2({
-            placeholder: "Pilih Jenis",
-            allowClear: true,
-            maximumSelectionLength: 1,
-            language: {
-                maximumSelected: function (e) {
-                    return "Anda hanya bisa memilih " + e.maximum + " jenis saja";
-                }
-            }
-        });
+        // Initialize Select2
+        $('#merkkendaraan').select2();
     });
-
 </script>
 @endsection

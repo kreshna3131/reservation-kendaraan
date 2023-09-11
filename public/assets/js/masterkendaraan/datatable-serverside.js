@@ -12,8 +12,8 @@ function initDatatables(url, orderFalse, callback = "") {
                 next: nextIcon,
                 previous: previousIcon,
             },
-            emptyTable: "Belum ada Data Kendaraan",
-            zeroRecords: "Data Kendaraan yang kamu cari tidak ada",
+            emptyTable: "Belum ada Master Kendaraan",
+            zeroRecords: "Master Kendaraan yang kamu cari tidak ada",
         },
         order: [[0, "desc"]],
         processing: true,
@@ -24,7 +24,7 @@ function initDatatables(url, orderFalse, callback = "") {
             },
         ],
         ajax: {
-            url: url,
+            url: "{{ route('masterkendaraan.list') }}",
             type: "GET",
             data: function (d) {
                 d.date = $("#date_filter").val();
@@ -63,7 +63,7 @@ function initDatatables(url, orderFalse, callback = "") {
         },
         columns: [
             { data: "DT_RowIndex", orderable: false, searchable: false },
-            { data: "kendaraan_name" },
+            { data: "jeniskendaraan" },
         ],
         drawCallback: function () {
             typeof callback == "function" && callback();

@@ -16,7 +16,7 @@ class CreateMasterkendaraanTable extends Migration
         Schema::create('masterkendaraan', function (Blueprint $table) {
             $table->id();
             $table->string('jeniskendaraan');
-            $table->string('merkendaraan');
+            $table->string('merkkendaraan');
             $table->timestamps();
         });
     }

@@ -18,9 +18,9 @@ let previousIcon = `<svg xmlns="http://www.w3.org/2000/svg" width="20" height="2
 
 function initDatatables(url, orderFalse, visibleFalse, drawCallback = "") {
     return $(".table").DataTable({
-        sDom: '<"text-right mb-md"T><"row"<"col-lg-6"l><"col-lg-6"f>><"table-responsive"t>pr',
+        sDom: '<"text-right mb-md"T><"row d-none"<"col-lg-6"l><"col-lg-6"f>><"table-responsive"t>pr',
         language: {
-            searchPlaceholder: "Filter data",
+            searchPlaceholder: "filter records",
             processing:
                 '<div class="d-flex justify-content-center align-items-center kpaw_dt_spinner"><div class="spinner-border text-light" role="status"></div> Sedang memproses</div>',
             loadingRecords: "",
@@ -28,7 +28,7 @@ function initDatatables(url, orderFalse, visibleFalse, drawCallback = "") {
                 next: nextIcon,
                 previous: previousIcon,
             },
-            zeroRecords: "Belum ada data kendaraan",
+            emptyTable: "Belum ada data task tambahan",
         },
         processing: true,
         columnDefs: [
@@ -76,7 +76,7 @@ function initDatatables(url, orderFalse, visibleFalse, drawCallback = "") {
             },
         },
         drawCallback: function () {
-            typeof drawCallback == "function" && drawCallback();
+            typeof callback == "function" && callback();
         },
     });
 }
