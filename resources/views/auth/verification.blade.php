@@ -7,9 +7,9 @@ Verification
 <p class="mb-3 pb-2">Masukkan alamat email anda.</p>
 
 
-@if (session('register_success'))
-<div class="alert alert-success" role="alert">
-    {{ session('register_success') }}
+@if (session('verifikasi_error'))
+<div class="alert alert-danger alert-dismissible verifikasi-alert" role="alert" id="verifikasi">
+    {{ session('verifikasi_error') }}
 </div>
 @endif
 
@@ -26,12 +26,13 @@ Verification
         @enderror
     </div>
 
-        <button anim="ripple" type="submit" class="btn kpaw_btn kpaw_btn--primary kpaw_weight--bold w-100">
-            Verifikasi
-        </button>
+    <button anim="ripple" type="submit" class="btn kpaw_btn kpaw_btn--primary kpaw_weight--bold w-100">
+        Verifikasi
+    </button>
 </form>
 @endsection
 @push('script')
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script src="https://moment.github.io/luxon/global/luxon.min.js"></script>
 <script>
     if ($("#throttle-alert").length) {
@@ -54,5 +55,15 @@ Verification
                 }
             }, 1000);
         }
+</script>
+
+<script>
+    // Menghilangkan notifikasi setelah beberapa detik (misalnya, 5 detik)
+    setTimeout(function () {
+        $('.verifikasi-alert').fadeOut('slow', function () {
+            $(this).remove();
+        });
+    }, 3000);
+
 </script>
 @endpush
