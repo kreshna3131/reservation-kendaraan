@@ -27,4 +27,9 @@ class AuthServiceProvider extends ServiceProvider
 
         //
     }
+
+    protected function emailVerificationNotification()
+    {
+        return new \Illuminate\Auth\Notifications\VerifyEmail;
+    }
 }
