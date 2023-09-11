@@ -12,6 +12,12 @@ use App\Http\Controllers\Auth\RegisterController;
 use App\Http\Controllers\MasterKendaraanController;
 use App\Http\Controllers\Auth\VerificationController;
 use App\Http\Controllers\Auth\ForgotPasswordController;
+use App\Http\Controllers\HomepageController;
+use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\UsersController;
+use App\Http\Controllers\KendaraanController;
+use App\Http\Controllers\MasterKendaraanController;
+use App\Http\Controllers\FaqController;
 
 /*
 |--------------------------------------------------------------------------
@@ -23,6 +29,7 @@ use App\Http\Controllers\Auth\ForgotPasswordController;
 | contains the "web" middleware group. Now create something great!
 |
 */
+
 Auth::routes(['verify' => true]);
 
 Route::get('/', [HomepageController::class, 'showHomepage'])->name('homepage');
@@ -30,12 +37,12 @@ Route::get('/about', [HomepageController::class, 'showAboutus'])->name('aboutus'
 // Route::get('/transport', [HomepageController::class, 'showTransport'])->name('transport');
 Route::get('/contact', [HomepageController::class, 'showContact'])->name('contact');
 
-Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard.index');
-
 Route::get('/register', [RegisterController::class, 'showRegisterForm']);
 Route::post('/register', [RegisterController::class, 'register'])->name('register');
+
+Route::get('/verification', [VerificationController::class, 'showVerificationForm'])->name('verification.form');
+Route::post('/register', [VerificationController::class, 'sendverification'])->name('sendverification');
 Route::get('email/verify/{id}/{hash}', [VerificationController::class, 'verify'])->name('verification.verify');
-// Route::get('email/verify/{id}/{hash}', 'Auth\VerificationController@verify')->name('verification.verify');
 
 Route::get('/login', [LoginController::class, 'showLoginForm'])->name('login.form');
 Route::post('/login', [LoginController::class, 'login'])->name('login');
@@ -54,10 +61,14 @@ Route::resource('kendaraan', KendaraanController::class);
 
 Route::get('/faq', [FaqController::class, 'index'])->name('faq.index');
 
+Route::middleware('auth')->group(function () {
+  Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard.index');
+});
+
 // Route::middleware([
-//     'auth',
-// ])->group(function () {
-//     Route::get('/dashboard', function() {
-//         return redirect()->route('dashboard.index');
-//     });
-// });
+  //     'auth',
+  // ])->group(function () {
+    //     Route::get('/dashboard', function() {
+      //         return redirect()->route('dashboard.index');
+      //     });
+      // });
