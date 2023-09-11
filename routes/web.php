@@ -34,7 +34,7 @@ Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard
 
 Route::get('/register', [RegisterController::class, 'showRegisterForm']);
 Route::post('/register', [RegisterController::class, 'register'])->name('register');
-Route::get('email/verify/{id}/{hash}', [VerificationController::class, 'verify']);
+Route::get('email/verify/{id}/{hash}', [VerificationController::class, 'verify'])->name('verification.verify');
 // Route::get('email/verify/{id}/{hash}', 'Auth\VerificationController@verify')->name('verification.verify');
 
 Route::get('/login', [LoginController::class, 'showLoginForm'])->name('login.form');
