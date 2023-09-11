@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\Auth\RegisterController;
+use App\Http\Controllers\Auth\VerificationController;
 use App\Http\Controllers\Auth\ForgotPasswordController;
 use App\Http\Controllers\HomepageController;
 use App\Http\Controllers\DashboardController;
@@ -21,7 +22,7 @@ use App\Http\Controllers\FaqController;
 | contains the "web" middleware group. Now create something great!
 |
 */
-
+Auth::routes(['verify' => true]);
 
 Route::get('/', [HomepageController::class, 'showHomepage'])->name('homepage');
 Route::get('/about', [HomepageController::class, 'showAboutus'])->name('aboutus');
@@ -32,6 +33,8 @@ Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard
 
 Route::get('/register', [RegisterController::class, 'showRegisterForm']);
 Route::post('/register', [RegisterController::class, 'register'])->name('register');
+Route::get('email/verify/{id}/{hash}', [VerificationController::class, 'verify']);
+// Route::get('email/verify/{id}/{hash}', 'Auth\VerificationController@verify')->name('verification.verify');
 
 Route::get('/login', [LoginController::class, 'showLoginForm'])->name('login.form');
 Route::post('/login', [LoginController::class, 'login'])->name('login');

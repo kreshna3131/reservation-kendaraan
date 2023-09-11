@@ -49,6 +49,8 @@ class RegisterController extends Controller
             'password'  => bcrypt($request->password)
         ]);
 
+        $user->sendEmailVerificationNotification();
+
         if ($user) {
             Session::flash('register_success', 'Register Berhasil, Silakan Verifikasi Email Anda.');
             return redirect()->route('login');
