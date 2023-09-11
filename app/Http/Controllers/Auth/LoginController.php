@@ -43,9 +43,12 @@ class LoginController extends Controller
         $email_cek = User::select('email')->where('email',$request->email)->get();
         $verified_cek = User::select('email_verified')->where('email',$request->email)->get();
         
-        if ($email_cek == null && $verified_cek == 0) {
+        if ($email_cek == null) {
+            Session::flash('login_error', 'Login Gagal, Pastikan Username dan Password Anda Benar!!!.');
+            return redirect()->route('/login');
+        } elseif ($verified_cek == 0) {
             Session::flash('verifikasi_error', 'Email Belum Di Verifikasi.');
-            return redirect()->route('login');
+            return redirect()->route('/verification');
         }
         
         $credentials = $request->only('email', 'password');
@@ -61,6 +64,6 @@ class LoginController extends Controller
             }
             return redirect('/admin');
         }
-        return back()->with( 'login_error', 'Login Gagal, Pastikan Username dan Password Anda Benar!!!' );
+        return back()->with('login_error', 'Login Gagal, Pastikan Username dan Password Anda Benar!!!' );
     }
 }

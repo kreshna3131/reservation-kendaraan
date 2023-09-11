@@ -39,6 +39,9 @@ Route::get('/contact', [HomepageController::class, 'showContact'])->name('contac
 
 Route::get('/register', [RegisterController::class, 'showRegisterForm']);
 Route::post('/register', [RegisterController::class, 'register'])->name('register');
+
+Route::get('/verification', [VerificationController::class, 'showVerificationForm'])->name('verification.form');
+Route::post('/register', [VerificationController::class, 'sendverification'])->name('sendverification');
 Route::get('email/verify/{id}/{hash}', [VerificationController::class, 'verify'])->name('verification.verify');
 
 Route::get('/login', [LoginController::class, 'showLoginForm'])->name('login.form');
