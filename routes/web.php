@@ -12,12 +12,6 @@ use App\Http\Controllers\Auth\RegisterController;
 use App\Http\Controllers\MasterKendaraanController;
 use App\Http\Controllers\Auth\VerificationController;
 use App\Http\Controllers\Auth\ForgotPasswordController;
-use App\Http\Controllers\HomepageController;
-use App\Http\Controllers\DashboardController;
-use App\Http\Controllers\UsersController;
-use App\Http\Controllers\KendaraanController;
-use App\Http\Controllers\MasterKendaraanController;
-use App\Http\Controllers\FaqController;
 
 /*
 |--------------------------------------------------------------------------
@@ -37,8 +31,8 @@ Route::get('/about', [HomepageController::class, 'showAboutus'])->name('aboutus'
 // Route::get('/transport', [HomepageController::class, 'showTransport'])->name('transport');
 Route::get('/contact', [HomepageController::class, 'showContact'])->name('contact');
 
-Route::get('/register', [RegisterController::class, 'showRegisterForm']);
-Route::post('/register', [RegisterController::class, 'register'])->name('register');
+Route::get('/register', [RegisterController::class, 'showRegisterForm'])->name('register');
+Route::post('/register', [RegisterController::class, 'register']);
 
 Route::get('/verification', [VerificationController::class, 'showVerificationForm'])->name('verification.form');
 Route::post('/register', [VerificationController::class, 'sendverification'])->name('sendverification');
