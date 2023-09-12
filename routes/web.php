@@ -12,6 +12,7 @@ use App\Http\Controllers\Auth\RegisterController;
 use App\Http\Controllers\MasterKendaraanController;
 use App\Http\Controllers\Auth\VerificationController;
 use App\Http\Controllers\Auth\ForgotPasswordController;
+use App\Http\Controllers\MyprofileController;
 
 /*
 |--------------------------------------------------------------------------
@@ -56,8 +57,11 @@ Route::resource('kendaraan', KendaraanController::class);
 Route::get('/faq', [FaqController::class, 'index'])->name('faq.index');
 
 Route::middleware('auth')->group(function () {
-  Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard.index');
+    Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard.index');
 });
+
+Route::get('/my-profile', [MyprofileController::class, 'myProfile'])->name('setting.myProfile');
+Route::patch('/my-profile', [MyprofileController::class, 'updateMyProfile'])->name('setting.updateMyProfile');
 
 // Route::middleware([
   //     'auth',
