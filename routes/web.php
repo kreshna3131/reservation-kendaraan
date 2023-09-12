@@ -13,6 +13,7 @@ use App\Http\Controllers\MasterKendaraanController;
 use App\Http\Controllers\Auth\VerificationController;
 use App\Http\Controllers\Auth\ForgotPasswordController;
 
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -34,8 +35,8 @@ Route::get('/contact', [HomepageController::class, 'showContact'])->name('contac
 Route::get('/register', [RegisterController::class, 'showRegisterForm'])->name('register');
 Route::post('/register', [RegisterController::class, 'register']);
 
-Route::get('/verification', [VerificationController::class, 'showVerificationForm'])->name('verification.form');
-Route::post('/register', [VerificationController::class, 'sendverification'])->name('sendverification');
+Route::get('/verification', [VerificationController::class, 'showVerificationForm'])->name('verification');
+Route::post('/verification', [VerificationController::class, 'sendVerification']);
 Route::get('email/verify/{id}/{hash}', [VerificationController::class, 'verify'])->name('verification.verify');
 
 Route::get('/login', [LoginController::class, 'showLoginForm'])->name('login.form');
