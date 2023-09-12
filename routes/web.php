@@ -13,7 +13,6 @@ use App\Http\Controllers\MasterKendaraanController;
 use App\Http\Controllers\Auth\VerificationController;
 use App\Http\Controllers\Auth\ForgotPasswordController;
 
-
 /*
 |--------------------------------------------------------------------------
 | Web Routes
