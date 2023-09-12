@@ -43,7 +43,7 @@ class VerificationController extends Controller
         }
     }
 
-    public function sendverification(Request $request)
+    public function sendVerification(Request $request)
     {
         $validator = Validator::make(
             $request->all(),
@@ -60,19 +60,22 @@ class VerificationController extends Controller
             return redirect()->back()->withInput()->withErrors($validator);
         }
 
-        $verification_email_cek = User::select('email')->where('email',$request->email)->get();
-        
-        if ($verification_email_cek == null) {
+        $user = User::where('email', $request->email)->first();
+
+        if (empty($user)) {
             return back()->with('verifikasi_error', 'Send Verifikasi Email Gagal, Email Tidak Terdaftar.');
+        } elseif ($user->email_verified == 1) {
+            return back()->with('verifikasi_error', 'Email Sudah Di Verifikasi.');
         }
 
-        $verification_email_cek->sendEmailVerificationNotification();
+        $user->sendEmailVerificationNotification();
 
-        if ($verification_email_cek) {
+        if ($user) {
             Session::flash('sendverification_success', 'Send Verification Berhasil, Silakan Verifikasi Email Anda.');
             return redirect()->route('login');
         }
-
+        
         Session::flash('sendverification_error', 'Send Verification Gagal, Silakan Data Anda.');
+        return redirect()->back();
     }
 }
