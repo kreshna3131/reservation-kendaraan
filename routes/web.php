@@ -12,12 +12,7 @@ use App\Http\Controllers\Auth\RegisterController;
 use App\Http\Controllers\MasterKendaraanController;
 use App\Http\Controllers\Auth\VerificationController;
 use App\Http\Controllers\Auth\ForgotPasswordController;
-use App\Http\Controllers\HomepageController;
-use App\Http\Controllers\DashboardController;
-use App\Http\Controllers\UsersController;
-use App\Http\Controllers\KendaraanController;
-use App\Http\Controllers\MasterKendaraanController;
-use App\Http\Controllers\FaqController;
+
 
 /*
 |--------------------------------------------------------------------------
