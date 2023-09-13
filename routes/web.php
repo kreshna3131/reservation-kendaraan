@@ -27,23 +27,31 @@ use App\Http\Controllers\MyprofileController;
 
 Auth::routes(['verify' => true]);
 
-Route::get('/', [HomepageController::class, 'showHomepage'])->name('homepage');
-Route::get('/about', [HomepageController::class, 'showAboutus'])->name('aboutus');
-// Route::get('/transport', [HomepageController::class, 'showTransport'])->name('transport');
-Route::get('/contact', [HomepageController::class, 'showContact'])->name('contact');
+// Authentication
+// Login
+Route::get('/login', [LoginController::class, 'showLoginForm'])->name('login.form');
+Route::post('/login', [LoginController::class, 'login'])->name('login');
 
+// Register
 Route::get('/register', [RegisterController::class, 'showRegisterForm'])->name('register');
 Route::post('/register', [RegisterController::class, 'register']);
 
+// Verification
 Route::get('/verification', [VerificationController::class, 'showVerificationForm'])->name('verification');
 Route::post('/verification', [VerificationController::class, 'sendVerification']);
 Route::get('email/verify/{id}/{hash}', [VerificationController::class, 'verify'])->name('verification.verify');
 
-Route::get('/login', [LoginController::class, 'showLoginForm'])->name('login.form');
-Route::post('/login', [LoginController::class, 'login'])->name('login');
-
+// Forget Password
 Route::get('/forgot-password', [ForgotPasswordController::class, 'showLinkRequestForm'])->name('password.request');
 Route::post('/send-email', [ForgotPasswordController::class, 'sendResetLinkEmail'])->name('password.email');
+// Route::get('password/reset', [ForgotPasswordController::class, 'forget'])->name('password.reset');
+
+
+
+Route::get('/', [HomepageController::class, 'showHomepage'])->name('homepage');
+Route::get('/about', [HomepageController::class, 'showAboutus'])->name('aboutus');
+// Route::get('/transport', [HomepageController::class, 'showTransport'])->name('transport');
+Route::get('/contact', [HomepageController::class, 'showContact'])->name('contact');
 
 Route::get('users/list', [UsersController::class, 'list'])->name('users.list');
 Route::resource('users', UsersController::class);

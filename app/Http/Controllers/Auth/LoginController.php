@@ -40,13 +40,12 @@ class LoginController extends Controller
             return redirect()->back()->withInput()->withErrors($validator);
         }
 
-        $email_cek = User::select('email')->where('email',$request->email)->get();
-        $verified_cek = User::select('email_verified')->where('email',$request->email)->get();
+        $user = User::where('email',$request->email)->first();
         
-        if ($email_cek == null) {
+        if ($user->email == null) {
             Session::flash('login_error', 'Login Gagal, Pastikan Username dan Password Anda Benar!!!.');
             return redirect()->route('/login');
-        } elseif ($verified_cek == 0) {
+        } elseif ($user->email_verified == 0) {
             Session::flash('verifikasi_error', 'Email Belum Di Verifikasi.');
             return redirect()->route('/verification');
         }
@@ -62,7 +61,7 @@ class LoginController extends Controller
             } elseif ($role_cek === 'mitra') {
                 return redirect('/dashboard');
             }
-            return redirect('/admin');
+            return redirect('/dashboard');
         }
         return back()->with('login_error', 'Login Gagal, Pastikan Username dan Password Anda Benar!!!' );
     }

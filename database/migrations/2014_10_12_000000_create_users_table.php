@@ -21,6 +21,7 @@ class CreateUsersTable extends Migration
             $table->boolean('email_verified')->default(0);
             $table->enum ('role', ['admin', 'mitra', 'user'])->default('user');
             $table->rememberToken();
+            $table->string('reset_token')->nullable();
             $table->timestamp('email_verified_at')->nullable();
             $table->timestamps();
         });
