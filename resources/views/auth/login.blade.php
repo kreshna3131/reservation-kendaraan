@@ -6,6 +6,12 @@ Sign in
 <h3 class="kpaw_weight--extra-bold pt-0 mt-0">Sign in</h3>
 <p class="mb-3 pb-2">Masukkan alamat email dan password.</p>
 
+@if (session('login_error'))
+<div class="alert alert-danger alert-dismissible login-alert" role="alert" id="login">
+    {{ session('login_error') }}
+</div>
+@endif
+
 @if (session('verifikasi_success'))
 <div class="alert alert-success alert-dismissible verifikasi-alert" role="alert" id="verifikasi">
     {{ session('verifikasi_success') }}
@@ -21,6 +27,12 @@ Sign in
 @if (session('register_success'))
 <div class="alert alert-success alert-dismissible verifikasi-alert" role="alert" id="verifikasi">
     {{ session('register_success') }}
+</div>
+@endif
+
+@if (session('reset_success'))
+<div class="alert alert-success alert-dismissible reset-alert" role="alert" id="reset">
+    {{ session('reset_success') }}
 </div>
 @endif
 

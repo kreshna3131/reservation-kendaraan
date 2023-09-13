@@ -7,7 +7,6 @@ use Illuminate\Foundation\Auth\VerifiesEmails;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Facades\Session;
-use App\Http\Controllers\Auth\lessThan;
 use Illuminate\Http\Request;
 use Carbon\Carbon;
 
