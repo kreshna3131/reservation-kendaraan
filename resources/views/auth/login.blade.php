@@ -40,7 +40,7 @@ Sign in
     @csrf
     <div class="form-group pt-0 mb-4">
         <label>Email</label>
-        <input class="form-control kpaw_form--control @error('email') is-invalid @enderror" type="text" name="email"
+        <input class="form-control kpaw_form--control @error('email') is-invalid @enderror" id="email" type="text" name="email"
             autocomplete="on" autofocus value="{{ old('email') }}" />
         @error('email')
         <span class="invalid-feedback" role="alert">
@@ -55,7 +55,7 @@ Sign in
                 <label>Password</label>
             </div>
         </div>
-        <input class="form-control kpaw_form--control @error('password') is-invalid @enderror" type="password"
+        <input class="form-control kpaw_form--control @error('password') is-invalid @enderror" id="password" type="password"
             name="password" autocomplete="on" />
         @error('password')
         <span class="invalid-feedback" role="alert">
@@ -64,7 +64,7 @@ Sign in
         @enderror
     </div>
 
-    <button anim="ripple" type="submit" class="btn kpaw_btn kpaw_btn--primary kpaw_weight--bold w-100">
+    <button anim="ripple" type="submit" class="btn kpaw_btn kpaw_btn--primary kpaw_weight--bold w-100" id="submitButton">
         Sign in
     </button>
 
@@ -110,7 +110,30 @@ Sign in
             }
         }, 1000);
     }
+</script>
 
+<script>
+    // Fungsi untuk memeriksa isian email dan password
+    function checkInputs() {
+      const email = document.getElementById('email').value.trim();
+      const password = document.getElementById('password').value.trim();
+      const submitButton = document.getElementById('submitButton');
+
+      if (email !== '' && password !== '') {
+        // Jika email dan password terisi, aktifkan tombol submit
+        submitButton.disabled = false;
+      } else {
+        // Jika salah satu atau keduanya kosong, nonaktifkan tombol submit
+        submitButton.disabled = true;
+      }
+    }
+
+    // Mendengarkan perubahan pada input email dan password
+    document.getElementById('email').addEventListener('input', checkInputs);
+    document.getElementById('password').addEventListener('input', checkInputs);
+
+    // Memeriksa isian saat halaman dimuat
+    checkInputs();
 </script>
 
 <script>
@@ -120,6 +143,5 @@ Sign in
             $(this).remove();
         });
     }, 3000);
-
 </script>
 @endpush
