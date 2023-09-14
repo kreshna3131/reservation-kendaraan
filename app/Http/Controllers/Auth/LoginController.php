@@ -42,12 +42,12 @@ class LoginController extends Controller
 
         $user = User::where('email',$request->email)->first();
         
-        if ($user->email == null) {
+        if ($user == null) {
             Session::flash('login_error', 'Login Gagal, Pastikan Username dan Password Anda Benar!!!.');
-            return redirect()->route('/login');
+            return redirect()->back();
         } elseif ($user->email_verified == 0) {
             Session::flash('verifikasi_error', 'Email Belum Di Verifikasi.');
-            return redirect()->route('/verification');
+            return redirect()->route('verification');
         }
         
         $credentials = $request->only('email', 'password');
