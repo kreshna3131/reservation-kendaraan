@@ -22,16 +22,13 @@ Register
 </div>
 @endif
 
-
-
-
 <form action="{{ route('register') }}" method="post">
     @csrf
     <div class="form-group pt-0 mb-4">
         <label>Email</label>
         {{-- <input class="form-control kpaw_form--control @error('email') is-invalid @enderror" type="text" name="email" --}}
-        <input class="form-control kpaw_form--control" type="text" name="email"
-            autocomplete="on" autofocus value="{{ old('email') }}" />
+        <input class="form-control kpaw_form--control" type="text" id="email" name="email" autocomplete="on" autofocus
+            value="{{ old('email') }}" />
         @error('email')
         <span class="invalid-feedback" role="alert">
             {{ $message }}
@@ -46,8 +43,7 @@ Register
             </div>
         </div>
         {{-- <input class="form-control kpaw_form--control @error('password') is-invalid @enderror" type="password" --}}
-        <input class="form-control kpaw_form--control" type="password"
-            name="password" autocomplete="on" />
+        <input class="form-control kpaw_form--control" type="password" name="password" autocomplete="on" id="password" />
         @error('password')
         <span class="invalid-feedback" role="alert">
             {{ $message }}
@@ -62,8 +58,7 @@ Register
             </div>
         </div>
         {{-- <input class="form-control kpaw_form--control @error('password') is-invalid @enderror" type="password" --}}
-        <input class="form-control kpaw_form--control" type="password"
-            name="password confirmation" autocomplete="on" />
+        <input class="form-control kpaw_form--control" type="password" id="password" name="password confirmation" autocomplete="on" />
         {{-- jika konfirmasi password tidak sama dengan password maka munculkan pesan error --}}
         @error('password')
         <span class="invalid-feedback" role="alert">
@@ -75,7 +70,7 @@ Register
     <div class="custom-control custom-checkbox kpaw_custom--checkbox">
     </div>
 
-    <button anim="ripple" type="submit" class="btn kpaw_btn kpaw_btn--primary kpaw_weight--bold w-100">
+    <button anim="ripple" type="submit" id="submitButton" class="btn kpaw_btn kpaw_btn--primary kpaw_weight--bold w-100">
         Register
     </button>
 </form>
@@ -84,24 +79,50 @@ Register
 <script src="https://moment.github.io/luxon/global/luxon.min.js"></script>
 <script>
     if ($("#throttle-alert").length) {
-            const DateTime = luxon.DateTime;
-            const throttle_end = $("#throttle-alert").data('throttle-end');
-            let countDownDate = DateTime.fromSQL(throttle_end).toMillis();
+        const DateTime = luxon.DateTime;
+        const throttle_end = $("#throttle-alert").data('throttle-end');
+        let countDownDate = DateTime.fromSQL(throttle_end).toMillis();
 
-            setInterval(() => {
-                let now = DateTime.now().toMillis();
-                let distance = countDownDate - now;
+        setInterval(() => {
+            let now = DateTime.now().toMillis();
+            let distance = countDownDate - now;
 
-                let minutes = Math.floor((distance % (400 * 60 * 60)) / (400 * 60));
-                let seconds = Math.floor((distance % (400 * 60)) / 400);
+            let minutes = Math.floor((distance % (400 * 60 * 60)) / (400 * 60));
+            let seconds = Math.floor((distance % (400 * 60)) / 400);
 
-                minutes < 10 ? $("#minutes").html(`0${minutes}`) : $("#minutes").html(minutes);
-                seconds < 10 ? $("#seconds").html(`0${seconds}`) : $("#seconds").html(seconds);
+            minutes < 10 ? $("#minutes").html(`0${minutes}`) : $("#minutes").html(minutes);
+            seconds < 10 ? $("#seconds").html(`0${seconds}`) : $("#seconds").html(seconds);
 
-                if (distance < 0) {
-                    $("#throttle-alert").remove();
-                }
-            }, 1000);
+            if (distance < 0) {
+                $("#throttle-alert").remove();
+            }
+        }, 1000);
+    }
+
+</script>
+
+<script>
+    // Fungsi untuk memeriksa isian email dan password
+    function checkInputs() {
+        const email = document.getElementById('email').value.trim();
+        const password = document.getElementById('password').value.trim();
+        const submitButton = document.getElementById('submitButton');
+
+        if (email !== '' && password !== '') {
+            // Jika email dan password terisi, aktifkan tombol submit
+            submitButton.disabled = false;
+        } else {
+            // Jika salah satu atau keduanya kosong, nonaktifkan tombol submit
+            submitButton.disabled = true;
         }
+    }
+
+    // Mendengarkan perubahan pada input email dan password
+    document.getElementById('email').addEventListener('input', checkInputs);
+    document.getElementById('password').addEventListener('input', checkInputs);
+
+    // Memeriksa isian saat halaman dimuat
+    checkInputs();
+
 </script>
 @endpush
