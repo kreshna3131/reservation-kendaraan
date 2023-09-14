@@ -32,8 +32,8 @@ class ForgotPasswordController extends Controller
                 'email'     => 'required|email',
             ],
             [
-                'email.required' => 'Kolom Email Wajib Diisi.',
-                'email.email' => 'Kolom Email Harus Berisi Email Yang Benar.',
+                'email.required' => 'Email Tidak Valid.',
+                'email.email' => 'Email Tidak Valid.',
             ]
         );
 

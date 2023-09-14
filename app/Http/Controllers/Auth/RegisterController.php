@@ -29,13 +29,13 @@ class RegisterController extends Controller
                 'password'  => 'required|min:8|alpha_num:ascii|confirmed'
             ],
             [
-                'email.required' => 'Kolom Email Wajib Diisi.',
-                'email.email' => 'Kolom Email Harus Berisi Email Yang Benar.',
-                'email.unique' => 'Email Sudah Digunakan.',
-                'email.max' => 'Email Terlalu Panjang.',
-                'password.required' => 'Kolom Password Wajib Diisi.',
-                'password.alpha_num' => 'Kolom Password Harus Berisi Karakter Huruf Dan Angka.',
-                'password.min' => 'Password Terlalu Pendek.',
+                'email.required' => 'Kolom Email Tidak Valid.',
+                'email.email' => 'Kolom Email Tidak Valid.',
+                'email.unique' => 'Kolom Email Tidak Valid.',
+                'email.max' => 'Kolom Email Tidak Valid.',
+                'password.required' => 'Kolom Password Tidak Valid.',
+                'password.alpha_num' => 'Kolom Password Tidak Valid.',
+                'password.min' => 'Kolom Password Tidak Valid.',
                 'password.confirmed' => 'Password Tidak Sama.',
             ]
         );

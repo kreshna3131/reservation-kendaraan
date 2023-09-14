@@ -25,10 +25,10 @@ class ResetPasswordController extends Controller
                 'password'  => 'required|min:8|alpha_num:ascii|confirmed'
             ],
             [
-                'password.required' => 'Kolom Password Wajib Diisi.',
-                'password.alpha_num' => 'Kolom Password Harus Berisi Karakter Huruf Dan Angka.',
-                'password.min' => 'Password Terlalu Pendek.',
-                'password.confirmed' => 'Password Tidak Sama.',
+                'password.required' => 'Password Tidak Valid.',
+                'password.alpha_num' => 'Password Tidak Valid.',
+                'password.min' => 'Password Tidak Valid.',
+                'password.confirmed' => 'Password Tidak Valid.',
             ]
         );
 
