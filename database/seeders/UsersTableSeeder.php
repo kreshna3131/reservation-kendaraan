@@ -15,9 +15,12 @@ class UsersTableSeeder extends Seeder
      */
     public function run()
     {
-        User::create([
-            'email' => 'admin@gmail.com',
-            'password' => '$2y$10$u6dYyV/JHB72q0D8hCWwWuCJdvojm5BItV9F6Lwb/vWELWd7BgDwa',
-        ]);
+        DB::transaction(function () {
+            User::create([
+                'email' => 'admin@gmail.com',
+                'password' => bcrypt('admin123'),
+                'email_verified' => '1',
+            ]);
+        });
     }
 }
