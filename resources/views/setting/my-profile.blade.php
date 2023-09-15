@@ -2,6 +2,10 @@
 @section('title')
     Profil Saya
 @endsection
+@section('blockhead')
+<link rel="stylesheet" href="{{ asset('assets/css/team.css') }}" />
+<link rel="stylesheet" href="{{ asset('porto/vendor/cropper/cropper.min.css') }}">
+@endsection
 @section('content')
     <header class="page-header page-header-left-inline-breadcrumb">
         <h2 class="font-weight-bold">Profil Saya</h2>
@@ -40,6 +44,17 @@
                                     </div>
                                 </div>
                                 <div class="form-group row">
+                                    <label class="col-lg-5 col-xl-4 control-label kpaw_weight--semi-bold mt-2 mb-2 mb-lg-0">NIK</label>
+                                    <div class="col-lg-7 col-xl-8">
+                                        <input
+                                            type="text"
+                                            class="form-control kpaw_form--control"
+                                            name="nik"
+                                            value=""
+                                        />
+                                    </div>
+                                </div>
+                                <div class="form-group row">
                                     <label class="col-lg-5 col-xl-4 control-label kpaw_weight--semi-bold mt-2 mb-2 mb-lg-0">Email</label>
                                     <div class="col-lg-7 col-xl-8">
                                         <input
@@ -47,38 +62,36 @@
                                             class="form-control kpaw_form--control"
                                             name="email"
                                             value=""
-                                            disabled
+                                            {{-- disabled --}}
                                         />
                                     </div>
                                 </div>
                                 <div class="form-group row">
-                                    <label class="col-lg-5 col-xl-4 control-label kpaw_weight--semi-bold mt-2 mb-2 mb-lg-0">Password</label>
+                                    <label
+                                        class="col-lg-5 col-xl-4 control-label kpaw_weight--semi-bold mt-2 mb-2 mb-lg-0">No.
+                                        Telepon</label>
                                     <div class="col-lg-7 col-xl-8">
-                                        <input
-                                            type="password"
-                                            class="form-control kpaw_form--control"
-                                            name="password"
-                                            value=""
-                                        />
-                                        <div id="password-strength" class="strength kpaw_password--strength mt-3"><span></span></div>
-                                        <div class="kpaw_form--note">Kosongkan jika tidak ingin mengganti password.</div>
+                                        <div class="input-group">
+                                            <div class="input-group-prepend">62</div>
+                                            <input type="number" class="form-control kpaw_form--control"
+                                                name="handphone_number" value="" />
+                                        </div>
                                     </div>
                                 </div>
-                                <div class="form-group row mb-0">
-                                    <label class="col-lg-5 col-xl-4 control-label kpaw_weight--semi-bold mt-2 mb-2 mb-lg-0">Konfirmasi Password</label>
+                                <div class="form-group row">
+                                    <label for="jeniskelamin"
+                                        class="col-lg-5 col-xl-4 control-label kpaw_weight--semi-bold mt-2 mb-2 mb-lg-0">Jenis Kelamin</label>
                                     <div class="col-lg-7 col-xl-8">
-                                        <input
-                                            type="password"
-                                            class="form-control kpaw_form--control"
-                                            name="password_confirmation"
-                                            value=""
-                                        />
-                                        <div class="kpaw_form--note">Kosongkan jika tidak ingin mengganti password.</div>
-                                    </div>
-                                </div>
-                                <div class="form-group row justify-content-end mb-0">
-                                    <div class="col-lg-7 col-xl-8">
-                                        <div id="week-password-checkbox"></div>
+                                        <select class="form-control kpaw_form--control w-100" id="team" name="status_team"
+                                            data-plugin-selectTwo>
+                                            <option value="" selected disabled title="Select">Select</option>
+                                            <option value="pria">
+                                                Pria
+                                            </option>
+                                            <option value="wanita">
+                                                Wanita
+                                            </option>
+                                        </select>
                                     </div>
                                 </div>
                                 <div class="d-flex justify-content-end mt-4 pt-3">
