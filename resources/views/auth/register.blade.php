@@ -58,7 +58,7 @@ Register
             </div>
         </div>
         {{-- <input class="form-control kpaw_form--control @error('password') is-invalid @enderror" type="password" --}}
-        <input class="form-control kpaw_form--control" type="password" id="password" name="password confirmation" autocomplete="on" />
+        <input class="form-control kpaw_form--control" type="password" id="konfirmasipassword" name="password confirmation" autocomplete="on" />
         {{-- jika konfirmasi password tidak sama dengan password maka munculkan pesan error --}}
         @error('password')
         <span class="invalid-feedback" role="alert">
@@ -120,6 +120,7 @@ Register
     // Mendengarkan perubahan pada input email dan password
     document.getElementById('email').addEventListener('input', checkInputs);
     document.getElementById('password').addEventListener('input', checkInputs);
+    document.getElementById('konfirmasipassword').addEventListener('input', checkInputs);
 
     // Memeriksa isian saat halaman dimuat
     checkInputs();

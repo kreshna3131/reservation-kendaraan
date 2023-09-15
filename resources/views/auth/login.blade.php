@@ -145,7 +145,7 @@ Sign in
         $('.verifikasi-alert').fadeOut('slow', function () {
             $(this).remove();
         });
-    }, 3000);
+    }, 7000);
 
 </script>
 @endpush
