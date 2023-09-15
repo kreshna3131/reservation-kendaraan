@@ -18,7 +18,7 @@
         </div>
     </header>
 
-    <form action="{{ route('setting.updateMyProfile') }}" method="POST" class="kpaw_main_form">
+    <form action="{{ route('setting.updateMyProfile') }}" method="POST" class="kpaw_main_form mb-3">
         @csrf
         @method('PATCH')
         <div class="row">
@@ -92,6 +92,59 @@
                                                 Wanita
                                             </option>
                                         </select>
+                                    </div>
+                                </div>
+                                <div class="d-flex justify-content-end mt-4 pt-3">
+                                    <a
+                                        anim="ripple"
+                                        href="#"
+                                        class="cancel-button btn kpaw_btn kpaw_btn--light-primary kpaw_weight--bold mr-3"
+                                    >Batal</a>
+                                    <button
+                                        anim="ripple"
+                                        type="submit"
+                                        class="submit-button btn kpaw_btn kpaw_btn--primary kpaw_weight--bold"
+                                    >Simpan</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </form>
+    <form action="#" method="POST" class="kpaw_main_form">
+        @csrf
+        @method('PATCH')
+        <div class="row">
+            <div class="col">
+                <section class="card card-modern card-big-info kpaw_form--container">
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-lg-2-5 col-xl-1-5 px-4">
+                                <img src="{{ asset('assets/svg/icons/Add-New-User.svg') }}" alt="">
+                                <h5 class="kpaw_weight--bold">Password anda</h5>
+                                <p>Jika ingin mengganti password bisa disini.</p>
+                            </div>
+                            <div class="col-lg-3-5 col-xl-4-5 kpaw_card--advanced">
+                                <div class="form-group row">
+                                    <label
+                                        class="col-lg-5 col-xl-4 control-label kpaw_weight--semi-bold mt-2 mb-2 mb-lg-0">Password</label>
+                                    <div class="col-lg-7 col-xl-8">
+                                        <div class="input-group">
+                                            <input type="password" class="form-control kpaw_form--control"
+                                                name="password" value="" />
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label
+                                        class="col-lg-5 col-xl-4 control-label kpaw_weight--semi-bold mt-2 mb-2 mb-lg-0">Konfirmasi Password</label>
+                                    <div class="col-lg-7 col-xl-8">
+                                        <div class="input-group">
+                                            <input type="password" class="form-control kpaw_form--control"
+                                                name="konfirmasipassword" value="" />
+                                        </div>
                                     </div>
                                 </div>
                                 <div class="d-flex justify-content-end mt-4 pt-3">
