@@ -56,16 +56,16 @@ Route::get('/contact', [HomepageController::class, 'showContact'])->name('contac
 Route::get('users/list', [UsersController::class, 'list'])->name('users.list');
 Route::resource('users', UsersController::class);
 
-Route::get('masterkendaraan/list', [MasterKendaraanController::class, 'list'])->name('masterkendaraan.list');
-Route::resource('masterkendaraan', MasterKendaraanController::class);
-
-Route::get('kendaraan/list', [KendaraanController::class, 'list'])->name('kendaraan.list');
-Route::resource('kendaraan', KendaraanController::class);
-
 Route::get('/faq', [FaqController::class, 'index'])->name('faq.index');
 
 Route::middleware('auth')->group(function () {
-    Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard.index');
+  Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard.index');
+  
+  // Route::get('/kendaraan', [KendaraanController::class, 'list'])->name('kendaraan.list');
+  // Route::resource('/kendaraan', KendaraanController::class);
+  Route::prefix('/kendaraan')->group(function () {
+    Route::get('/', [KendaraanController::class, 'list'])->name('kendaraan.list');
+  });
 });
 
 Route::get('/my-profile', [MyprofileController::class, 'myProfile'])->name('setting.myProfile');

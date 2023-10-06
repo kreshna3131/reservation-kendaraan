@@ -9,5 +9,5 @@ class Kendaraan extends Model
 {
     use HasFactory;
 
-    protected $table = 'kendaraan';
+    protected $table = 'tb_kendaraan';
 }

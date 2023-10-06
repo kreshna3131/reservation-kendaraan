@@ -9,12 +9,6 @@ use Illuminate\Support\Facades\Storage;
 
 class KendaraanController extends Controller
 {
-    // use UploadTraits;
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
     public function index()
     {
         return view('kendaraan.index');
@@ -22,16 +16,19 @@ class KendaraanController extends Controller
 
     public function list()
     {
+        $fotopath = "assets/img/kendaraan/";
         $kendaraans = Kendaraan::orderBy('created_at', 'desc')->get();
 
         $data = [];
 
         foreach ($kendaraans as $kendaraan) {
             $data[] = [
-                'photo' => "<div class='kpaw_circle_foto' style='background-image: url(" . Storage::url($kendaraan->photo_path) . ")'></div>",
-                'name' => $kendaraan->name,
-                'jeniskendaraan' => $kendaraan->jeniskendaraan,
-                'jumlahunit' => $kendaraan->jumlahunit,
+                'nama' => $kendaraan->nama,
+                'foto' => "<div class='kpaw_circle_foto' style='background-image: url(" . Storage::url($fotopath . $kendaraan->foto) . ")'></div>",
+                'jenis_kendaraan' => $kendaraan->jenis_kendaraan,
+                'jumlah_unit' => $kendaraan->jumlah_unit,
+                'harga_sewa' => $kendaraan->harga_sewa,
+                'keterangan' => $kendaraan->keterangan,
             ];
         }
 
@@ -40,12 +37,6 @@ class KendaraanController extends Controller
         ]);
     }
 
-
-    /**
-     * menampilkan halaman create kendaraan.
-     *
-     * @return \Illuminate\Http\Response
-     */
     public function create()
     {
         return view('kendaraan.create');
