@@ -13,13 +13,14 @@ class CreateKendaraanTable extends Migration
      */
     public function up()
     {
-        Schema::create('kendaraan', function (Blueprint $table) {
+        Schema::create('tb_kendaraan', function (Blueprint $table) {
             $table->id();
-            $table->string('photo_name')->nullable();
-            $table->string('photo_path')->nullable();
-            $table->string('name'); // Menghapus nullable() agar kolom ini tidak dapat bernilai null
-            $table->string('jeniskendaraan'); // Menghapus nullable() agar kolom ini tidak dapat bernilai null
-            $table->integer('jumlahunit'); // Mengubah tipe data ke integer, dan menghapus nullable()
+            $table->string('nama'); // Menghapus nullable() agar kolom ini tidak dapat bernilai null
+            $table->string('foto');
+            $table->string('jenis_kendaraan'); // Menghapus nullable() agar kolom ini tidak dapat bernilai null
+            $table->integer('jumlah_unit'); // Mengubah tipe data ke integer, dan menghapus nullable()
+            $table->string('harga_sewa'); // Menghapus nullable() agar kolom ini tidak dapat bernilai null
+            $table->longText('keterangan'); // Menghapus nullable() agar kolom ini tidak dapat bernilai null
             $table->timestamps();
         });
     }
@@ -32,6 +33,6 @@ class CreateKendaraanTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('kendaraan');
+        Schema::dropIfExists('tb_kendaraan');
     }
 }
