@@ -7,6 +7,7 @@ use App\Http\Controllers\UsersController;
 use App\Http\Controllers\HomepageController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\KendaraanController;
+use App\Http\Controllers\BookingController;
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\Auth\RegisterController;
 use App\Http\Controllers\MasterKendaraanController;
@@ -61,11 +62,12 @@ Route::get('/faq', [FaqController::class, 'index'])->name('faq.index');
 Route::middleware('auth')->group(function () {
   Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard.index');
   
-  // Route::get('/kendaraan', [KendaraanController::class, 'list'])->name('kendaraan.list');
-  // Route::resource('/kendaraan', KendaraanController::class);
-  Route::prefix('/kendaraan')->group(function () {
-    Route::get('/', [KendaraanController::class, 'list'])->name('kendaraan.list');
-  });
+  Route::get('/kendaraan', [KendaraanController::class, 'list'])->name('kendaraan.list');
+  Route::resource('/kendaraan', KendaraanController::class);
+  // Route::prefix('/kendaraan')->group(function () {
+  //   Route::get('/', [KendaraanController::class, 'list'])->name('kendaraan.list');
+  // });
+  Route::resource('booking', BookingController::class);
 });
 
 Route::get('/my-profile', [MyprofileController::class, 'myProfile'])->name('setting.myProfile');
