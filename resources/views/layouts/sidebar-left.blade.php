@@ -47,7 +47,7 @@
                             <span class="kpaw_weight-semi-bold">Kelola Users</span>
                         </a>
                     </li>
-                    <li class="kpaw_masterkendaraan">
+                    {{-- <li class="kpaw_masterkendaraan">
                         <a anim="ripple" class="nav-link" href="/masterkendaraan">
                             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
                                 <g id="Group_9907" data-name="Group 9907" transform="translate(11442 11106)">
@@ -65,7 +65,7 @@
                             </svg>
                             <span class="kpaw_weight-semi-bold">Master Kendaraan</span>
                         </a>
-                    </li>
+                    </li> --}}
 
                     <li class="kpaw_kendaraan">
                         <a anim="ripple" class="nav-link" href="/kendaraan">
