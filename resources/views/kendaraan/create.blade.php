@@ -105,7 +105,7 @@ Kendaraan
                             <div class="form-group row">
                                 <label
                                     class="col-lg-5 col-xl-4 control-label kpaw_weight--semi-bold mt-2 mb-2 mb-lg-0">Nama
-                                    Kendaraan</label>
+                                </label>
                                 <div class="col-lg-7 col-xl-8">
                                     <input type="text" class="form-control kpaw_form--control" name="name"
                                         value="{{ old('name') }}" />
@@ -116,8 +116,8 @@ Kendaraan
                                     class="col-lg-5 col-xl-4 control-label kpaw_weight--semi-bold mt-2 mb-2 mb-lg-0">Jenis
                                     Kendaraan</label>
                                 <div class="col-lg-7 col-xl-8">
-                                    <input type="text" class="form-control kpaw_form--control" name="jeniskendaraan"
-                                        value="{{ old('jeniskendaraan') }}" />
+                                    <input type="text" class="form-control kpaw_form--control" name="jenis_kendaraan"
+                                        value="{{ old('jenis_kendaraan') }}" />
                                 </div>
                             </div>
                             <div class="form-group row">
@@ -125,8 +125,26 @@ Kendaraan
                                     class="col-lg-5 col-xl-4 control-label kpaw_weight--semi-bold mt-2 mb-2 mb-lg-0">Jumlah
                                     Unit</label>
                                 <div class="col-lg-7 col-xl-8">
-                                    <input type="number" class="form-control kpaw_form--control" name="jumlahunit"
-                                        value="{{ old('jumlahunit') }}" />
+                                    <input type="number" class="form-control kpaw_form--control" name="jumlah_unit"
+                                        value="{{ old('jumlah_unit') }}" />
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label
+                                    class="col-lg-5 col-xl-4 control-label kpaw_weight--semi-bold mt-2 mb-2 mb-lg-0">Harga
+                                    Sewa</label>
+                                <div class="col-lg-7 col-xl-8">
+                                    <input type="number" class="form-control kpaw_form--control" name="harga_sewa"
+                                        value="{{ old('harga_sewa') }}" />
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label
+                                    class="col-lg-5 col-xl-4 control-label kpaw_weight--semi-bold mt-2 mb-2 mb-lg-0">Keterangan
+                                    </label>
+                                <div class="col-lg-7 col-xl-8">
+                                    <input type="number" class="form-control kpaw_form--control" name="keterangan"
+                                        value="{{ old('keterangan') }}" />
                                 </div>
                             </div>
                             <div class="d-flex justify-content-end mt-4 pt-3">

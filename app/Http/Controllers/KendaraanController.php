@@ -46,9 +46,9 @@ class KendaraanController extends Controller
     {
         // Validasi input data
         $validatedData = $request->validate([
-            'name' => 'required|string|max:255',
-            'jeniskendaraan' => 'required|string|max:255',
-            'jumlahunit' => 'required|integer',
+            'nama' => 'required|string|max:255',
+            'jenis_kendaraan' => 'required|string|max:255',
+            'jumlah_unit' => 'required|integer',
             'photo' => 'image|mimes:jpeg,png,jpg,gif|max:2048', // Validasi foto (sesuaikan dengan kebutuhan Anda)
         ]);
 
@@ -63,9 +63,9 @@ class KendaraanController extends Controller
 
         // Membuat instance model Kendaraan dan mengisi nilai-nilainya
         $kendaraan = new Kendaraan();
-        $kendaraan->name = $validatedData['name'];
-        $kendaraan->jeniskendaraan = $validatedData['jeniskendaraan'];
-        $kendaraan->jumlahunit = $validatedData['jumlahunit'];
+        $kendaraan->nama = $validatedData['name'];
+        $kendaraan->jenis_kendaraan = $validatedData['jeniskendaraan'];
+        $kendaraan->jumlah_unit = $validatedData['jumlahunit'];
         $kendaraan->photo_name = $photo_name;
         $kendaraan->photo_path = $photo_path;
 

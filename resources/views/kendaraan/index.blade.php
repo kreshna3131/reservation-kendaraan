@@ -44,31 +44,13 @@ Kendaraan
                                 <th width="7%">No</th>
                                 <th width="5%">Foto</th>
                                 <th width="">Jenis Kendaraan</th>
-                                <th width="">Merk Kendaraan</th>
-                                <th width="">Tipe Kendaraan</th>
                                 <th width="">Jumlah Unit</th>
-                                <th width="">Tersedia</th>
-                                <th width="">Sisa</th>
+                                <th width="">Harga Sewa</th>
+                                <th width="">Keterangan</th>
                                 <th width="12%">Actions</th>
                             </tr>
                         </thead>
                         <tbody>
-                            <tr>
-                                <td>1</td>
-                                <td></td>
-                                <td>Mobil</td>
-                                <td>Honda</td>
-                                <td>Civic</td>
-                                <td>3 Unit</td>
-                                <td>1 Unit</td>
-                                <td>2 Unit</td>
-                                <td>
-                                    <button
-                                        class="btn btn-block kpaw_btn kpaw_btn--light-warning kpaw_weight--bold mb-2">Edit</button>
-                                    <button
-                                        class="btn btn-block kpaw_btn kpaw_btn--light-danger kpaw_weight--bold">Hapus</button>
-                                </td>
-                            </tr>
                         </tbody>
                     </table>
 
@@ -90,54 +72,77 @@ Kendaraan
 {{-- @include('include.modal-delete') --}}
 @endsection
 @section('blockfoot')
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script src="{{ asset('porto/vendor/datatables/media/js/jquery.dataTables.min.js') }}"></script>
 <script src="{{ asset('porto/vendor/datatables/media/js/dataTables.bootstrap4.min.js') }}"></script>
 <script src="{{ asset('porto/vendor/bootstrap-datepicker/js/bootstrap-datepicker.min.js') }}"></script>
 <script src="{{ asset('porto/vendor/bootstrap-datepicker/locales/bootstrap-datepicker.id.min.js') }}"></script>
-<script src="{{ asset('assets/js/kendaraan/datatable-serverside.js') }}"></script>
-<script src="{{ asset('assets/js/kendaraan/kendaraan-datatable.js') }}"></script>
 <script src="{{ asset('assets/js/default-delete.js') }}"></script>
 <script src="{{ asset('assets/js/modals.js') }}"></script>
 <script src="{{ asset('assets/js/default-ajax.js') }}"></script>
 <script src="{{ asset('assets/js/default-datatable.js') }}"></script>
-<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
-{{-- <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script>
+    let orderDatatable;
+    let orderFalse = [1];
+    let visibleFalse = [];
+
+    $("th").each(function (index, element) {
+        $(element).hasClass("invisible") ? visibleFalse.push(index) : false;
+    })
+
+    $(function () {
+        orderDatatable = initDatatables(url, visibleFalse);
+    })
+
     $(document).ready(function () {
-        $.ajax({
-            url: "{{ route('kendaraan.list') }}",
-            method: 'GET',
-            dataType: 'json',
-            success: function (data) {
-                var kendaraanTable = $('#kendaraan-table');
-
-                // Hapus semua baris yang ada di tabel
-                kendaraanTable.empty();
-
-                // Tambahkan baris-baris baru berdasarkan data yang diterima
-                $.each(data.data, function (index, row) {
-                    kendaraanTable.append('<tr><td>' + row[0] + '</td><td>' + row[1] + '</td><td>' + row[2] + '</td><td>' + row[3] + '</td></tr>');
-                });
-            },
-            error: function () {
-                alert('Gagal mengambil data kendaraan.');
-            }
-        });
-    });
-</script> --}}
-<script>
-    const url = "{{ route('kendaraan.list') }}";
-        let orderDatatable;
-        let orderFalse = [1, 6];
-        let visibleFalse = [];
-
-        $("th").each(function (index, element) {
-            $(element).hasClass("invisible") ? visibleFalse.push(index) : false;
-        })
-
         $('.kpaw_kendaraan').addClass('nav-expanded nav-active');
         $('.kpaw_kendaraan_all').addClass('nav-active');
+    })
 
+    var dataTable = $('.table').DataTable({
+        sDom: '<"text-right mb-md"T><"d-none"lf><"table-responsive"t>pr',
+            serverSide: true,
+            language: {
+                search: "",
+                searchPlaceholder: "Search",
+                processing: '<div class="d-flex justify-content-center align-items-center kpaw_dt_spinner"><div class="spinner-border text-light" role="status"></div> Sedang memproses</div>',
+                loadingRecords: "",
+                paginate: {
+                    next: 'Next',
+                    previous: 'Previous',
+                },
+                emptyTable: "Belum ada Data Kendaraan",
+                zeroRecords: "Data Kendaraan yang kamu cari tidak ada",
+            },
+            ajax: {
+                url: "{{ route('kendaraan.list') }}", // Replace with your data source URL
+                type: "GET",
+                dataSrc: 'data', // This specifies where the data is located in the JSON response
+                error: function (res) {
+                    // Handle errors here
+                    console.log("Error:", res);
+                },
+            },
+
+            columns: [
+            { data: 'nama' },
+            { data: 'foto' },
+            { data: 'jenis_kendaraan' },
+            { data: 'jumlah_unit' },
+            { data: 'harga_sewa' },
+            { data: 'keterangan' },
+            {
+                data: null,
+                render: function (data, type, row) {
+                    // Add your custom action buttons here
+                    return `
+                        <button class="btn btn-block kpaw_btn kpaw_btn--light-warning kpaw_weight--bold mb-2">Edit</button>
+                        <button class="btn btn-block kpaw_btn kpaw_btn--light-danger kpaw_weight--bold">Hapus</button>
+                    `;
+                },
+            },
+        ],
+    })
 </script>
 @endsection
