@@ -116,9 +116,9 @@ Kendaraan
                 zeroRecords: "Data Kendaraan yang kamu cari tidak ada",
             },
             ajax: {
-                url: "{{ route('kendaraan.list') }}", // Replace with your data source URL
+                url: "{{ route('kendaraan.list') }}",
                 type: "GET",
-                dataSrc: 'data', // This specifies where the data is located in the JSON response
+                dataSrc: 'data',
                 error: function (res) {
                     // Handle errors here
                     console.log("Error:", res);
@@ -135,7 +135,6 @@ Kendaraan
             {
                 data: null,
                 render: function (data, type, row) {
-                    // Add your custom action buttons here
                     return `
                         <button class="btn btn-block kpaw_btn kpaw_btn--light-warning kpaw_weight--bold mb-2">Edit</button>
                         <button class="btn btn-block kpaw_btn kpaw_btn--light-danger kpaw_weight--bold">Hapus</button>
